@@ -15,7 +15,7 @@ This function
 
 > Advice: If you have trouble with your ```load_from_csv()```, we recommend reviewing Section 9.6, and 9.7 on zyBooks. 
 
-To implement your function, you must ```import csv``` in the **functions.py** file. For more information, refer to zyBooks section 9.7. You can also refer to [LA 9.8](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/9/section/8).
+To implement your function, you must ```import csv``` in the **functions.py** file. For more information, refer to zyBooks section 9.7. You should be able to reuse your code directly from [LA 9.8](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/9/section/8).
 
 The function requires the `import csv` as well as `import os`. **NO OTHER import libraries/modules are allowed!**
 
@@ -66,14 +66,11 @@ def load_menu_from_csv(filename, restaurant_menu_list, spicy_scale_map):
 
 Below are the contents of a CSV file that is used in the sample program flow below. This file has no empty rows (lines) and no bad (invalid) data. If it did, that row would counted as being invalid.
 
-**`matni_songs_allgood.csv`**  # TODO: replace this csv file
+**`menu.csv`**
 ```
-Cardigan,Taylor Swift,03:59,Folklore,"folk,indie rock",4,07/27/2020,True,12332
-Soul Meets Body,Death Cab for Cutie,04:04,Plans,"indie pop,indie rock",5,07/16/2005,True,14567
-X&Y,Coldplay,04:11,X&Y,"rock",5,07/18/2005,True,14568
-Fake Love,BTS,04:02,,"hip hop,electro pop,Korean pop",3,05/18/2018,False,78210
-Fake Love - VERSION 2,BTS,04:02,,"hip hop,electro pop,Korean pop",3,05/18/2018,False,78211
-Foil,'Weird Al' Yankovic,02:22,Mandatory Fun,"pop,parody",5,07/15/2014,True,99105
+burrito,500,12.9,yes,2
+rice bowl,400,14.9,no,3
+margherita,800,18.9,no,2
 ```
 The corresponding code for the **main program** is similar to the one for the option `S`. Your task to figure out what to add using the following user interactions. 
 
@@ -191,22 +188,19 @@ You selected |A| to list |complete menu|.
 ```
 > NEW! - More Detailed Instructions: What if the CSV file has **bad** data?
 
-Now, what if the CSV file has "invalid data" in it? "Invalid data" is **only** defined as data that would be flagged as an error by the `get_new_menu_dish()` function (example: bad name, bad format, etc...). For example, a blank Album string, should not be considered to be "invalid" because that is not something that is validated by `get_new_menu_dish()`.  #TODO: check here
+Now, what if the CSV file has "invalid data" in it? "Invalid data" is **only** defined as data that would be flagged as an error by the `get_new_menu_dish()` function (example: bad name, bad format, etc...). For example, a dish with price `10.001`, should not be considered to be "invalid" because that is not something that is validated by `get_new_menu_dish()`.  #TODO: double check this
 
 For instance, if the CSV file being read is:
 
-**`menu_somebad.csv`**  # TODO: replace this csv
+**`menu_somebad.csv`**
 ```
-Cardigan,Taylor Swift,3:59,Folklore,"folk,indie rock",4,07/27/2020,True,12332
-Soul Meets Body,Death Cab for Cutie,04:04,Plans,"indie pop,indie rock",5,07/16/2005,True,14567
-X&Y,Coldplay,04:11,X&Y,"rock",5,07/1B/2005,True,14568
-Fake Love,BTS,04:02,,"hip hop,electro pop,Korean pop",3,05/18/2018,False,78210
-Fake Love - VERSION 2,BTS,04:02,,"hip hop,electro pop,Korean pop",3,05/18/2018,False,78211
-Foil,'Weird Al' Yankovic,02:22,Mandatory Fun,"pop,parody",5,07/15/2014,True,99105
+burrito,500,12.9,maybe,2
+rice bowl,400,14.9,no,3
+margherita,800,18.9,no,100
 ```
 
-Notice that line (row) 1 has a bad (invalid) time format (`3:59`) and that line 3 has a bad date format (`07/1B/2005`).
-The function `load_from_csv()` should update the menu dictionary with new dishes from lines 2, 4, 5, and 6 _only_ AND it should return a list that is **[1, 3]** (because lines 1 and 3 are the ones with invalid data in them).
+Notice that line (row) 1 has a bad (invalid) is_vegetarian (`maybe`) and that line 3 has a bad spicy_level (`100` - that's too hot!).
+The function `load_from_csv()` should update the menu dictionary with new dishes from line 2 _only_ AND it should return a list that is **[1, 3]** (because lines 1 and 3 are the ones with invalid data in them).
 
 Here's a sample run for when a file, like the one above, is restored:
 
@@ -226,10 +220,10 @@ Q - Quit this program
 > r
 You selected option R to > Restore data from file.
 ::: Enter the filename ending with '.csv'.
-> wrong_menu.csv
-WARNING: |wrong_menu.csv| contains invalid data!
+> menu_somebad.csv
+WARNING: |menu_somebad.csv| contains invalid data!
 The following rows from the file were not loaded:
-[1, 2]
+[1, 3]
 ::: Would you like to try again? Enter 'y' to try again.
 ```
 
