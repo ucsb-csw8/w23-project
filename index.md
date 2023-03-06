@@ -21,5 +21,5 @@ The links on the menu describe the steps towards completion of the final project
 All submissions are through Gradescope
 
 * Checkpoint 1: {{site.checkpoint1 | date: "%a, %b %d, %H:%M" }}
-* Checkpoint 2: {{site.checkpoint1 | date: "%a, %b %d, %H:%M" }}
+* Checkpoint 2: {{site.checkpoint2 | date: "%a, %b %d, %H:%M" }}
 * Final Submission: {{site.checkpoint3 | date: "%a, %b %d, %H:%M" }}
