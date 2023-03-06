@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Step 1 - Overview
+link_to_shared_gradescope_for_final_project: https://www.gradescope.com/courses/518308
 ---
 
 # {{page.title}}
@@ -47,8 +48,6 @@ Please complete **your own work** (without using resources other than your own k
 ## Required files
 You will not need to submit anything on zyBooks. You will need to submit three (3) Python files to Gradescope.
 
-
-
 **Important**: The files need to be in the _same folder_ on your computer. The import statements in your code will not work correctly, if the files are in different locations on your hard drive.
 
 **File 1 - all your functions**
@@ -81,6 +80,12 @@ Write your own `assert` statements to make sure to test all edge cases specified
 **You will need to submit all files at the same time to Gradescope (again, not in zyBooks).**
 
 ## Uploading / backing up to Gradescope
+
+When submitting to Gradescope, you'll be submitting to a *different course* than what you've been using throughout the quarter. 
+
+It looks like the screenshot below, and is at this url: <{{page.link_to_shared_gradescope_for_final_project}}>
+
+<img width="353" alt="image" src="https://user-images.githubusercontent.com/1119017/223179642-a474760c-f640-45f5-926f-bb3b7a0f23a2.png">
 
 There are **required Checkpoint submissions**, which are described below. EVERYTHING is submitted via Gradescope (NOT zyBooks).
 
