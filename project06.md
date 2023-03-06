@@ -58,61 +58,67 @@ The `delete_helper` can start off with:
 1. Deleting ALL dishes. Note that the user can only do this by selecting "A" (only the upper case "A") and then by confirming with "Yes" (not "Y", not "yes", ...)
 
 ```
+::: Enter a menu option
+> D
 You selected option D to > Delete.
-******************************************
-      ID: 12332 |   TITLE: Cardigan
-      ID: 14567 |   TITLE: Soul Meets Body
-      ID: 78210 |   TITLE: Fake Love
-      ID: 99105 |   TITLE: Foil
-Which song would you like to delete?
-X - Delete all songs at once
-::: OR Enter the number corresponding to the song ID
-::: OR press 'M' to cancel and return to the main menu.
-> X
-::: WARNING! Are you sure you want to delete ALL songs?
+Which dish would you like to delete?
+Press A to delete the entire menu for this restaurant, B otherwise 
+------------------------------------------
+1. BURRITO
+2. RICE BOWL
+3. MARGHERITA
+------------------------------------------
+> A
+::: WARNING! Are you sure you want to delete the entire menu ?
 ::: Type Yes to continue the deletion.
 > Yes
-Deleted all songs.
+Deleted the entire menu.
 ::: Press Enter to continue
 ```
 
 You can check that every dish got deleted by next going to the main menu, and selecting "L"ist:
 ```
+::: Enter a menu option
 > L
 You selected option L to > List.
-WARNING: There is nothing to display!
+::: What field would you like to list?
+A - complete menu
+V - vegetarian dishes only
+::: Enter your selection
+> A
+You selected |A| to list |complete menu|.
+------------------------------------------
+------------------------------------------
 ::: Press Enter to continue
 ```
 2. Deleting one dish - example below shows what happens if the **wrong** dish ID is used, but then the user is given another chance to delete and they use the **correct** dish ID:
 
 ```
+::: Enter a menu option
+> D
 You selected option D to > Delete.
-******************************************
-      ID: 12332 |   TITLE: Cardigan
-      ID: 14567 |   TITLE: Soul Meets Body
-      ID: 78210 |   TITLE: Fake Love
-      ID: 99105 |   TITLE: Foil
-Which song would you like to delete?
-X - Delete all songs at once
-::: OR Enter the number corresponding to the song ID
-::: OR press 'M' to cancel and return to the main menu.
-> 12333
-WARNING: |12333| is an invalid song ID!
-::: Would you like to delete another song? Enter 'y' to continue.
+Which dish would you like to delete?
+Press A to delete the entire menu for this restaurant, B otherwise 
+------------------------------------------
+1. BURRITO
+2. RICE BOWL
+3. MARGHERITA
+------------------------------------------
+> 4
+WARNING: |4| is an invalid dish number!
+::: Would you like to delete another dish? Enter 'y' to continue.
 > y
-******************************************
-      ID: 12332 |   TITLE: Cardigan
-      ID: 14567 |   TITLE: Soul Meets Body
-      ID: 78210 |   TITLE: Fake Love
-      ID: 99105 |   TITLE: Foil
-Which song would you like to delete?
-X - Delete all songs at once
-::: OR Enter the number corresponding to the song ID
-::: OR press 'M' to cancel and return to the main menu.
-> 12332
+Which dish would you like to delete?
+Press A to delete the entire menu for this restaurant, B otherwise 
+------------------------------------------
+1. BURRITO
+2. RICE BOWL
+3. MARGHERITA
+------------------------------------------
+> 1
 Success!
-Deleted the song |Cardigan|
-::: Would you like to delete another song? Enter 'y' to continue.
+Deleted the dish |burrito|
+::: Would you like to delete another dish? Enter 'y' to continue.
 > n
 ::: Press Enter to continue
 ```
@@ -121,24 +127,33 @@ Note that the user CAN keep choosing to enter 'y' at the "Would you like to dele
 
 Again ,you can check that the dish example from above (Cardigan) got deleted by next going to the main menu, and selecting "L"ist:
 ```
+::: Enter a menu option
 > L
 You selected option L to > List.
-::: What would you like to list?
-A - all songs - full
-B - all songs - titles only
-F - favorite songs
-G - songs of a specific genre
+::: What field would you like to list?
+A - complete menu
+V - vegetarian dishes only
 ::: Enter your selection
-> b
-You selected |B| to list |all songs - titles only|.
-******************************************
- TITLE: Soul Meets Body
- TITLE: Fake Love
- TITLE: Foil
+> A
+You selected |A| to list |complete menu|.
+------------------------------------------
+1. RICE BOWL
+* Calories: 400
+* Price: 14.9
+* Is it vegetarian: no
+* Spicy level: Hot
+
+2. MARGHERITA
+* Calories: 800
+* Price: 18.9
+* Is it vegetarian: no
+* Spicy level: Low key spicy
+
+------------------------------------------
 ::: Press Enter to continue
 ```
 
-3. The "go back to the main menu" option (M):
+<!-- 3. The "go back to the main menu" option (M):
 ```
 You selected option D to > Delete.
 ******************************************
@@ -164,11 +179,12 @@ Q - Quit this program
 ==========================
 ::: Enter a menu option
 > 
-```
+``` -->
 
-4. Example of nothing gets deleted (i.e. you already deleted every dish and now you select delete again).
+3. Example of nothing gets deleted (i.e. you already deleted every dish and now you select delete again).
 ```
-> d
+::: Enter a menu option
+> D
 You selected option D to > Delete.
 WARNING: There is nothing to delete!
 ::: Press Enter to continue
