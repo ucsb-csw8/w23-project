@@ -7,6 +7,7 @@ title: Step 5 - "Edit" option
 
 New functions needed:
 * `update_helper()`
+* `is_valid_index()`
 * `update_menu_dish()`
 
 Add the following branch to your **main program**
