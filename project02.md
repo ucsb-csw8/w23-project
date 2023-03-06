@@ -5,11 +5,11 @@ title: Step 2 - Introduction
 
 # {{page.title}}
 
-# Song Information Management System 📝
+# Restaurant Menu Management System 📝
 
 ## Read these guidelines _in their entirety_ before implementing anything.
 
-In this project, similar in structure to the Grades Management System from Lab 8, you will create a **song information management system**!
+In this project, similar in structure to the Grades Management System from Lab 8, you will create a **Restaurant Menu Management System**!
 
 Incorporate functions from multiple labs to implement an interactive program, which you can use to collect and create data needed to store song information. 
 
@@ -80,7 +80,7 @@ The `print_main_menu()` function does not return anything, it just prints the co
 **NOTE:** We will run anti-cheating programs on your submissions. If we find that you copied code from another student or from a website source, you will FAIL your project and FAIL this course AND be reported to the University for academic dishonesty.
 
 ```
-from song_functions import *
+from functions import *
 
 the_menu = ... # TODO 1: add the options from the instructions
 opt = None
