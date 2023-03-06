@@ -5,7 +5,7 @@ title: Step 1 - Overview
 
 # {{page.title}}
 
-In this project, you are asked to create a **Song Information Management System**, which can help with managing a database of songs.
+In this project, you are asked to create a **Restaurant Menu Management System**, which can help with managing a database containing a restaurants menu items (i.e. the food and beverage items that would appears on their printed menu, or a display menu on a computer monitor, for example.)
 
 For this project you will need to submit final project code in the form of THREE (3) files via Gradescope.
 
