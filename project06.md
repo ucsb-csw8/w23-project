@@ -7,30 +7,35 @@ title: Step 6 - "Delete" option
 
 
 New functions needed:
-* `delete_song()`
+* `delete_dish()`
 
-You will need to refer to the `delete_item()` function (from [LAB 8.14](https://learn.zybooks.com/zybook/UCSBCMPSCW8MatniFall2022/chapter/8/section/14)).
+You will need to refer to the `delete_item()` function (from [LAB 8.14](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/8/section/14)).
 This is very similar (but not the same) as it was in the previous lab.
 
 ```
-def delete_song(song_dict, songid):
+def delete_dish(in_list, idx, start_idx=0):
     """
-    param: song_dict - a dictionary of songs (dict of dict)
-    param: songid (str) - a string that is expected to
-            contain the key to a song dictionary (i.e. same as its unique ID)
-
-    The function first checks if the dictionary of songs is empty.
-    The function then validates the song ID to verify
-    that the provided ID key can access an element from song_dict
-    On success, the function saves the item's "title" from song_dict
-    and returns that string ("title" value)
-    after the item is deleted from song_dict.
-
+    param: in_list - a list from which to remove a dish
+    param: idx (str) - a string that is expected to
+            contain a representation of an integer index
+            of a dish in the provided list
+    param: start_idx (int) - by default, set to 0;
+            an expected starting value for idx that
+            gets subtracted from idx for 0-based indexing
+    The function first checks if the input list is empty.
+    The function then calls is_valid_index() to verify
+    that the provided index idx is a valid positive
+    index that can access an element from in_list.
+    On success, the function saves the dish from in_list
+    and returns it after it is deleted from in_list.
     returns:
-    If the input dictionary is empty, return 0.
-    If the ID is not valid (i.e. not found in the song_dict), return -1.
-    Otherwise, on success, the entire song is removed from song_dict
-    and the function returns the title of the deleted song.
+    If the input list is empty, return 0.
+    If idx is not of type string, return None.
+    If is_valid_index() returns False, return -1.
+    Otherwise, on success, the function returns the element
+    that was just removed from the input list.
+    Helper functions:
+    - is_valid_index()
     """
 ```
 
@@ -39,14 +44,18 @@ Your main task is to figure out how to assemble the **main program** portion for
 The main program portion should start off with:
 ```
     elif opt == 'D':
-       continue_action = 'y'
-       while continue_action == 'y':
+        restaurant_menu_list = delete_helper(restaurant_menu_list, spicy_scale_map)
+```
+The `delete_helper` can start off with: 
+```
+    continue_action = 'y'
+    while continue_action == 'y':
     #TODO : the rest of it...
 ```
 
 # Sample Program Flow
 
-1. Deleting ALL songs. Note that the user can only do this by selecting "X" (only the upper case "X") and then by confirming with "Yes" (not "Y", not "yes", ...)
+1. Deleting ALL dishes. Note that the user can only do this by selecting "A" (only the upper case "A") and then by confirming with "Yes" (not "Y", not "yes", ...)
 
 ```
 You selected option D to > Delete.
@@ -67,14 +76,14 @@ Deleted all songs.
 ::: Press Enter to continue
 ```
 
-You can check that every song got deleted by next going to the main menu, and selecting "L"ist:
+You can check that every dish got deleted by next going to the main menu, and selecting "L"ist:
 ```
 > L
 You selected option L to > List.
 WARNING: There is nothing to display!
 ::: Press Enter to continue
 ```
-2. Deleting one song - example below shows what happens if the **wrong** song ID is used, but then the user is given another chance to delete and they use the **correct** song ID:
+2. Deleting one dish - example below shows what happens if the **wrong** dish ID is used, but then the user is given another chance to delete and they use the **correct** dish ID:
 
 ```
 You selected option D to > Delete.
@@ -108,9 +117,9 @@ Deleted the song |Cardigan|
 ::: Press Enter to continue
 ```
 
-Note that the user CAN keep choosing to enter 'y' at the "Would you like to delete another song?..." prompt and be able to go back to the start of the delete menu choices. This would allow them to keep deleting songs one by one.
+Note that the user CAN keep choosing to enter 'y' at the "Would you like to delete another dish?..." prompt and be able to go back to the start of the delete menu choices. This would allow them to keep deleting dishs one by one.
 
-Again ,you can check that the song example from above (Cardigan) got deleted by next going to the main menu, and selecting "L"ist:
+Again ,you can check that the dish example from above (Cardigan) got deleted by next going to the main menu, and selecting "L"ist:
 ```
 > L
 You selected option L to > List.
@@ -157,7 +166,7 @@ Q - Quit this program
 > 
 ```
 
-4. Example of nothing gets deleted (i.e. you already deleted every song and now you select delete again).
+4. Example of nothing gets deleted (i.e. you already deleted every dish and now you select delete again).
 ```
 > d
 You selected option D to > Delete.
