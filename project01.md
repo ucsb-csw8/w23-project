@@ -7,8 +7,6 @@ title: Step 1 - Overview
 
 In this project, you are asked to create a **Restaurant Menu Management System**, which can help with managing a database containing a restaurants menu items (i.e. the food and beverage items that would appears on their printed menu, or a display menu on a computer monitor, for example.)
 
-For this project you will need to submit final project code in the form of THREE (3) files via Gradescope.
-
 The due dates and intermediate checkpoints are listed below.
 
 **START WORKING ON THIS PROJECT RIGHT AWAY to give yourselves adequate time to get all of it done. The deadlines are not flexible and we will not accept any late submissions.**
@@ -49,25 +47,27 @@ Please complete **your own work** (without using resources other than your own k
 ## Required files
 You will not need to submit anything on zyBooks. You will need to submit three (3) Python files to Gradescope.
 
+
+
 **Important**: The files need to be in the _same folder_ on your computer. The import statements in your code will not work correctly, if the files are in different locations on your hard drive.
 
 **File 1 - all your functions**
-Create a file called **`song_functions.py`** in which you will assemble all the relevant functions.
+Create a file called **`functions.py`** in which you will assemble all the relevant functions.
 
 You do not need to use `if __name__ == 'main'` in _any_ of your files, because we can import your functions as shown below.
 
-At the start of the _other two files_, you will need to import the function file you wrote as follows (`song_functions` is the name of our Python file/module; the asterisk `*` means "all/everything"):
+At the start of the _other two files_, you will need to import the function file you wrote as follows (`functions` is the name of our Python file/module; the asterisk `*` means "all/everything"):
 
-**`from song_functions import *`**
+**`from functions import *`**
 
 Again, all this project's functions will need to be implemented and added to this file.
 
 
 **File 2 - the main program**
-Create a new file **`song_system.py,`** which will contain your main program. As you will place all function definitions in the `song_functions.py`, you can import them here, as per the above import statement.
+Create a new file **`main.py,`** which will contain your main program. As you will place all function definitions in the `functions.py`, you can import them here, as per the above import statement.
 
 **File 3 - test code**
-Create a separate file to test your work. Call it **`song_tests.py`** - this is where the `assert` statements will be collected to help you verify that your implementation of each function is correct.
+Create a separate file to test your work. Call it **`tests.py`** - this is where the `assert` statements will be collected to help you verify that your implementation of each function is correct.
 
 **Important**: you need to run this file separately: running the main program will not execute the assert statements.
 Each function that returns values will need to have the corresponding assert statements to check its correctness.
