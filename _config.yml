@@ -25,6 +25,10 @@ exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
 www: 'https://ucsb-csw8.github.io/w23-project' # to enable using {{ site.www }}, instead of {{ site.url }}{{ site.baseurl }}
 
 
+checkpoint1: 2023-03-15 23:59
+checkpoint2: 2023-03-18 23:59
+checkpoint3: 2023-03-24 23:59
+
 # Back to top link
 back_to_top: true
 back_to_top_text: "Back to top"

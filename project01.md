@@ -28,13 +28,21 @@ The due dates and intermediate checkpoints are listed below.
 
 # Instructions about Academic Honesty <a name="academichonesty"></a>
 
-This project is supposed to be your **own individual work**. This project is open book, open notes, however, you are not allowed to ask others for help with coding (in-person or virtually) or look things up online -- doing so constitutes plagiarism or cheating. A violation of academic integrity on the final project can result in getting an **F** in the **entire course**, since it puts into question your work throughout the quarter.
+This project is supposed to be your **own individual work**. This project is open book, open notes, however, you are not allowed to ask others for help with coding (in-person or virtually) or look things up in sources other than the zyBook and the course lecture notes.  Doing so constitutes an academic integrity violation. A violation of academic integrity on the final project can result in getting an **F** in the **entire course**, since it puts into question your work throughout the quarter.
 
 We will run an automatic similarity check, which is not easily fooled by the variable / whitespace changes or other modifications.
 
-You **CANNOT USE**  material or techniques that we haven't covered in this course. This usually indicates that someone looked things up online, thus considered to be a violation. You will **FAIL** this project if you do so.
+## Using advanced Python concepts
 
-All students involved in a plagiarism incident, regardless if they are copying or sharing their work, are going to be reported to The Office of Student Conduct, and get an **F** grade in the course.
+You **MAY NOT USE**  material or techniques that we haven't covered in this course, either in the zyBook or in lecture, without *express advance permission* from the course staff.   If you do, you are subject to a grade of **FAIL** for the project.
+
+Here's why: when very advanced Python concepts show up in your code, it's often an indication that you got a solution to a problem from an online source rather than solving it yourself.
+
+If you are unsure about a specific , please check in via private post on Piazza.  You will **FAIL** this project if you do so.
+
+## Academic Integrity Reporting
+
+All students involved in an academic integrity incident, regardless if they are copying or sharing their work, are going to be reported to The Office of Student Conduct, and get an **F** grade in the course.
 
 Please complete **your own work** (without using resources other than your own knowledge) and keep it to yourself. You should not share your code or answers directly with other students.
 
@@ -46,6 +54,7 @@ Please complete **your own work** (without using resources other than your own k
 # Submissions to Gradescope <a name="gradescope"></a>
 
 ## Required files
+
 You will not need to submit anything on zyBooks. You will need to submit three (3) Python files to Gradescope.
 
 **Important**: The files need to be in the _same folder_ on your computer. The import statements in your code will not work correctly, if the files are in different locations on your hard drive.
@@ -112,7 +121,9 @@ The following components will count in your final project grade as follows:
 
 The autograder for the project functions will be added to the assignment after Checkpoint 2 closes. Until then, make sure that you write the assert statements and test your program interactively on your Python IDLE (or other IDE if you want).
 
-## Checkpoint 1: due Wednesday, November 30, before 11:59 PM.
+## Checkpoint 1: due {{site.checkpoint1 | date: "%a, %b %d, %H:%M" }}
+}}
+
 Create the required files listed above and verify that you can submit them all at once to Gradescope. If you run into any issues, let the TAs and/or ULAs know during your lab in Week 10.
 
 To get full score for Checkpoint 1, make sure that you correctly implemented the **"List"**, **"Delete"**, and **"Quit"** menu options and everything that they need (see further sections about what those are).
@@ -121,7 +132,7 @@ To get full score for Checkpoint 1, make sure that you correctly implemented the
 - Add the code and proper documentation (i.e. docsis and comments) for all functions.
 - Add the function stubs and the documentation for the rest of the functions that are not implemented here - full functionality is not required for this checkpoint but you are welcome to include it as well.
 
-## Checkpoint 2: due Friday, December 2, before 11:59 PM.
+## Checkpoint 2: due {{site.checkpoint2 | date: "%a, %b %d, %H:%M" }}
 Checkpoint 2 assignment will open up on Gradescope as soon as Checkpoint 1 closes.
 
 To get a full score for Checkpoint 2, make sure that you correctly implemented the **"Add"**, **"Restore"** and **"Save"** menu options and everything that they need. 
@@ -130,7 +141,7 @@ To get a full score for Checkpoint 2, make sure that you correctly implemented t
 - Add the code and proper documentation (i.e. docsis and comments) for all functions.
 - Add the function stubs and the documentation for the rest of the functions that are not implemented here (i.e. the menu options for **"Edit"** and **"Show statistical data on"**) - full functionality is not required for this checkpoint but you are welcome to include it as well.
 
-## Final Submission: due Monday, December 5, before 11:59 PM.
+## Final Submission: due {{site.checkpoint3 | date: "%a, %b %d, %H:%M" }}
 The Final Project assignment will open up on Gradescope as soon as Checkpoint 2 closes.
 Submit your final version of the entire project here (i.e. full functionality required).
 
@@ -140,7 +151,7 @@ Submit your final version of the entire project here (i.e. full functionality re
 
 Submitting late Checkpoint 1 and Checkpoint 2 (by a max of 24 hours) will cause a 20% loss in grade for those checkpoints. Once Gradescope is closed for submission, it will not be re-opened.
 
-**We will not accept any late submissions at all for the final submission.** Monday, Dec. 5th is absolutely the last day to submit. This is a hard rule to ensure that we can grade the submissions in a timely manner and submit the final grades before the university deadline.
+**We will not accept any late submissions at all for the final submission.** The deadline for checkpoint 3 (i.e. {{site.checkpoint3 | date: "%a, %b %d, %H:%M" }}) is **absolutely the last day to submit**. This is a hard rule to ensure that we can grade the submissions in a timely manner and submit the final grades before the university deadline.
 
 Please plan accordingly to make sure that travel, Internet or electricity outages or any other unexpected circumstances or events will not have a severe effect on your submission. **Start early, test often, and backup your work on Gradescope periodically.**
 
@@ -207,7 +218,7 @@ Long before each checkpoint deadline, walk through these steps:
 
 -----
 
-# Asking for Help <a name="help"></a> 
+# Asking for Staff Help <a name="help"></a> 
 
 This assignment is supposed to be like an exam in that it is supposed to test your knowledge and understanding of the course material, so it is supposed to be your own work. Make sure that you read and follow the instructions carefully.
 

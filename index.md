@@ -14,4 +14,12 @@ seo:
 
 ## CMPSC W 8, Final Project, W23
 
-The links at left describe the steps towards completion of the final project.
+The links on the menu describe the steps towards completion of the final project.
+
+# Due Dates
+
+All submissions are through Gradescope
+
+* Checkpoint 1: {{site.checkpoint1 | date: "%a, %b %d, %H:%M" }}
+* Checkpoint 2: {{site.checkpoint1 | date: "%a, %b %d, %H:%M" }}
+* Final Submission: {{site.checkpoint3 | date: "%a, %b %d, %H:%M" }}
