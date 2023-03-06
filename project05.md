@@ -51,7 +51,31 @@ def update_helper(restaurant_menu_list, spicy_scale_map):
         # ---------------------------------------------------------------
  ```
 
-Define a new function `update_menu_dish()` to edit the menu dictionary appropriately:
+Define two new functions `is_valid_index` and `update_menu_dish()` to edit the menu dictionary appropriately:
+
+```
+def is_valid_index(idx, in_list, start_idx=0):
+    """
+    param: idx (str) - a string that is expected to
+            contain an integer index to validate
+    param: in_list - a list that the idx indexes
+    param: start_idx (int) - by default, set to 0;
+            an expected starting value for idx that
+            gets subtracted from idx for 0-based indexing
+
+    The function checks if the input string contains
+    only digits and verifies that (idx - start_idx) is >= 0,
+    which allows to retrieve an element from in_list.
+
+    returns:
+    - True, if idx is a numeric index >= start_idx
+    that can retrieve an element from in_list.
+    - False if idx is not a string that represents an
+    integer value, if int(idx) is < start_idx,
+    or if it exceeds the size of in_list.
+    """
+```
+
 ```
 def update_menu_dish(restaurant_menu_list, idx, spicy_scale_map, field_key, field_info, start_idx=0):
     """
