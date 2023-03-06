@@ -38,7 +38,7 @@ You **MAY NOT USE**  material or techniques that we haven't covered in this cour
 
 Here's why: when very advanced Python concepts show up in your code, it's often an indication that you got a solution to a problem from an online source rather than solving it yourself.
 
-If you are unsure about a specific , please check in via private post on Piazza.  You will **FAIL** this project if you do so.
+If you are unsure about a specific , please check in via private post on Piazza.  
 
 ## Academic Integrity Reporting
 
