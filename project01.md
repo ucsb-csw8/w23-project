@@ -136,7 +136,7 @@ The autograder for the project functions will be added to the assignment after C
 
 ## Checkpoint 1: due {{site.checkpoint1 | date: "%a, %b %d, %H:%M" }}
 
-Create the required files listed above and verify that you can submit them all at once to Gradescope. If you run into any issues, let the TAs and/or ULAs know during your lab in Week 10.
+During your first lab working on this project, create the required files listed above and verify that you can submit them all at once to Gradescope. If you run into any issues, let the TAs and/or ULAs know during your first lab working on this project.
 
 To get full score for Checkpoint 1, make sure that you correctly implemented the **"List"**, **"Delete"**, and **"Quit"** menu options and everything that they need (see further sections about what those are).
 
@@ -151,7 +151,7 @@ To get a full score for Checkpoint 2, make sure that you correctly implemented t
 
 - Upload the requested files shown above with the required functions added to them.
 - Add the code and proper documentation (i.e. docsis and comments) for all functions.
-- Add the function stubs and the documentation for the rest of the functions that are not implemented here (i.e. the menu options for **"Edit"** and **"Show statistical data on"**) - full functionality is not required for this checkpoint but you are welcome to include it as well.
+- Add the function stubs and the documentation for the rest of the functions that are not implemented here (i.e. the menu options for **"Edit"** and **"Show average price"**) - full functionality is not required for this checkpoint but you are welcome to include it as well.
 
 ## Final Submission: due {{site.checkpoint3 | date: "%a, %b %d, %H:%M" }}
 The Final Project assignment will open up on Gradescope as soon as Checkpoint 2 closes.
