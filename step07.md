@@ -13,15 +13,15 @@ This function
 * validates it by trying to create a menu
 * stores that data into the menu dictionary. 
 
-> Advice: If you have trouble with your ```load_from_csv()```, we recommend reviewing Section 9.6, and 9.7 on zyBooks. 
+> Advice: If you have trouble with your `load_from_csv()`, we recommend reviewing Section 9.6, and 9.7 on zyBooks. 
 
 To implement your function, you must ```import csv``` in the **functions.py** file. For more information, refer to zyBooks section 9.7. You should be able to reuse your code directly from [LA 9.8](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/9/section/8).
 
 The function requires the `import csv` as well as `import os`. **NO OTHER import libraries/modules are allowed!**
 
-The template for ```load_from_csv()``` is provided below.
+The template for `load_from_csv()` is provided below.
 
-```py
+```python
 def load_menu_from_csv(filename, restaurant_menu_list, spicy_scale_map):
     """
     param: filename (str) - A string variable which represents the
@@ -67,11 +67,13 @@ def load_menu_from_csv(filename, restaurant_menu_list, spicy_scale_map):
 Below are the contents of a CSV file that is used in the sample program flow below. This file has no empty rows (lines) and no bad (invalid) data. If it did, that row would counted as being invalid.
 
 **`menu.csv`**
-```
+
+```csv
 burrito,500,12.9,yes,2
 rice bowl,400,14.9,no,3
 margherita,800,18.9,no,2
 ```
+
 The corresponding code for the **main program** is similar to the one for the option `S`. Your task to figure out what to add using the following user interactions. 
 
 # Sample Program Flow
@@ -194,7 +196,8 @@ Now, what if the CSV file has "invalid data" in it? "Invalid data" is **only** d
 For instance, if the CSV file being read is:
 
 **`menu_somebad.csv`**
-```
+
+```csv
 burrito,500,12.9,maybe,2
 rice bowl,400,14.9,no,3
 margherita,800,18.9,no,100
@@ -230,10 +233,11 @@ The following rows from the file were not loaded:
 
 # A hint
 
-If your ```Save the data to file``` option is working correctly, the file you wrote into using that option should work perfectly with this option and your entire menu information should be loaded properly.
+If the `Save` option from the previous step is working correctly, the file you wrote into using that option should work perfectly with your new `Restore` option.
 
-You may want to try saving and restoring a few times to make sure that
-everything works.
+When saving and restoring, your entire menu information should be loaded properly.
+
+You may want to try saving, restoring, and listing a few times to make sure that everything works.
 
 
 # Checkpoint 2
