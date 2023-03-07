@@ -27,7 +27,7 @@ assert is_valid_name("soup") == True
 # `print_dish()`
 Define a new function `print_dish()` that will list an **individual** menu item.
 
-```
+```python
 def print_dish(dish, spicy_scale_map, name_only=False):
     """
     param: dish (dict) - a dictionary object that is expected to contain the following keys:
@@ -53,7 +53,7 @@ Add the following branch to your **main program**; replace the ellipses with the
         add_helper(...)
 ```
 
-```
+```python
 
 def add_helper(restaurant_menu_list, spicy_scale_map):
     continue_action = 'y'
