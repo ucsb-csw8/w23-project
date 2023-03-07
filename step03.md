@@ -82,7 +82,7 @@ Additionally, you need to add two more variables to your **main program**:
 
 Next, add the following code to your **main program** to implement the listing of the menu items - you do not need to change it.
 
-Note that there are new functions `list_helper()`, `get_selection()` that is _also_ given to you after the code below.
+Note that there are new functions `list_helper()`, `get_selection()` that are _also_ given to you after the code below.
 
 ```python
     elif opt == 'L':
