@@ -53,22 +53,83 @@ Please complete **your own work** (without using resources other than your own k
 
 # Submissions to Gradescope <a name="gradescope"></a>
 
-## Required files
-
 You will not need to submit anything on zyBooks. You will need to submit three (3) Python files to Gradescope:
 
 * `functions.py`
 * `main.py`
 * `tests.py`
 
-Each of these is explained below.
+## Your first submission to Gradescope
+
+To get started on this project, create a new folder/directory for your work on this project (you might call it `csw8-project`, for example.)
+
+In that directory, store three new Python files with these names and contents, all stored in the same folder/directory, with these contents:
+
+**`functions.py`**, initially with just this one comment:
+
+```python
+# functions.py: function definitions for csw8 final project
+
+```
+
+**`main.py`**, initially with only this one line of code:
+
+```python
+from functions import *
+```
+
+**`tests.py`**, initially with just that same line of code as `main.py`:
+
+```python
+from functions import *
+```
+
+Now that you have these three files created, try running `main.py` and `tests.py` to make sure that they don't have any syntax errors.
+
+Then, we'll submit them to Gradescope as an initial sanity check.
+
+# Submit the three files to Gradescope
+
+TODO: Now that you have these three files, **submit your files to Checkpoint 1 on Gradescope**. 
+
+Find this course on Gradescope.  It's different from the one you submitted to before:
+
+<img width="375" alt="image" src="https://user-images.githubusercontent.com/1119017/223495600-abfc1b30-2ab0-400c-9976-16436eefe94f.png">
+
+and then find this assignment:
+
+<img width="1137" alt="image" src="https://user-images.githubusercontent.com/1119017/223496436-1f2db0c9-37ea-4bfe-97e1-350930078acb.png">
+
+and then submit these three files:
+
+<img width="599" alt="image" src="https://user-images.githubusercontent.com/1119017/223496631-566f69ef-7b70-41df-8ac0-00f4ba86fb60.png">
+
+You should get back at least one passing test from the autograder, like this:
+
+<img width="393" alt="image" src="https://user-images.githubusercontent.com/1119017/223496802-11578364-6be6-4d9e-b2c8-b9eb35f1e5a3.png">
+
+
+## Why submit to Gradescope now?
+
+* to ensure that you are able to submit
+* as evidence that you've gotten started on the project.   
+
+It likely won't pass any tests other than the 1 point you get for "three required files".  At this point that's fine.  You'll have to complete steps 3 and 4  also before it passes all of the Checkpoint 1 tests.    
+
+But at least you've gotten started! We hope that you enjoy putting this project together!
+
+
+## Required files
 
 You need to be running your code in an IDE (IDLE or another program) - they will warn you each time you run it if your code contains syntax errors. Code that contains syntax errors might get a 0 for the entire autograded portion, so make sure to **run your code** before submitting it (see [more info about it](#reqs)).
 
-**Important**: The files need to be in the _same folder_ on your computer. The import statements in your code will not work correctly, if the files are in different locations on your hard drive.
+**Important**: The three files (`functions.py`, `main.py`, and `tests.py`) need to be in the _same folder_ on your computer. The import statements in your code will not work correctly, if the files are in different locations on your hard drive.
+
+# Explanation of the three files
 
 **File 1 - all your functions**
-Create a file called **`functions.py`** in which you will assemble all the relevant functions.
+
+The file  **`functions.py`** in where you will assemble all the relevant functions.
 
 You do not need to use `if __name__ == 'main'` in this file, because we can import your functions as shown below.
 
@@ -76,7 +137,8 @@ Again, **all** relevant functions for this project will need to be implemented a
 
 
 **File 2 - the main program**
-Create a new file **`main.py,`** which will contain your main program. As you will place all function definitions in the `functions.py`, you can import them here using this statement:
+
+The file **`main.py,`**  will contain your main program. As you will place all function definitions in the `functions.py`, you can import them here using this statement:
 
 ```python
 from functions import *
@@ -84,7 +146,7 @@ from functions import *
 
 **File 3 - test code**
 
-Create a separate file to test your work. Call it **`tests.py`** - this is where the `assert` statements will be collected to help you verify that your implementation of each function is correct.
+The file **`tests.py`** is where the `assert` statements will be collected to help you verify that your implementation of each function is correct.
 
 Put this at the top to import all of the functions from `functions.py`
 
@@ -102,7 +164,7 @@ If you are getting an `AssertionError`, then fix the corresponding function - do
 
 Write your own `assert` statements to make sure to test all edge cases specified in the instructions: the autograder will be verifying that those work correctly.
 
-**You will need to submit all files at the same time to Gradescope (again, not in zyBooks).**
+Each time you submit, **you will need to submit all files at the same time to Gradescope (again, not in zyBooks).**
 
 ## Uploading / backing up to Gradescope
 
@@ -135,7 +197,7 @@ The following components will count in your final project grade as follows:
 - 20% - Checkpoint 2 grade
 - 75% - Final submission grade
 
-<!--The autograder for the project functions will be added to the assignment after Checkpoint 2 closes. Until then, -->
+
 Make sure that you write the assert statements and test your program interactively on your Python IDLE (or other IDE if you want).
 
 ## Checkpoint 1: due {{site.checkpoint1 | date: "%a, %b %d, %H:%M" }} <a name="checkpoint1"></a>
