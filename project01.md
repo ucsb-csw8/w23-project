@@ -135,7 +135,6 @@ The following components will count in your final project grade as follows:
 The autograder for the project functions will be added to the assignment after Checkpoint 2 closes. Until then, make sure that you write the assert statements and test your program interactively on your Python IDLE (or other IDE if you want).
 
 ## Checkpoint 1: due {{site.checkpoint1 | date: "%a, %b %d, %H:%M" }}
-}}
 
 Create the required files listed above and verify that you can submit them all at once to Gradescope. If you run into any issues, let the TAs and/or ULAs know during your lab in Week 10.
 
