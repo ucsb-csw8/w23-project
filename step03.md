@@ -85,11 +85,11 @@ restaurant_menu_list = [
 
 # Your TODO <a name="inittodo"></a>
 
-* Create a variable to hold a nested dictionary of menu item information data (dictionaries) at the top of your **main program**. We will refer to it as `restaurant_menu_list`.
+First, create a variable to hold a nested dictionary of menu item information data (dictionaries) at the top of your **main program**. We will refer to it as `restaurant_menu_list`.
 
-* Additionally, you need to add two more dictionaries to your **main program**:
-  * `list_menu` will contain the "List" menu sub-options
-  * `spicy_scale_map` will contain the mapping of the spicy_level values, as integers, to a string for the name of the spice level
+Additionally, you need to add two more dictionaries to your **main program**:
+* `list_menu` will contain the "List" menu sub-options
+* `spicy_scale_map` will contain the mapping of the spicy_level values, as integers, to a string for the name of the spice level
 
 ```python
 
@@ -106,15 +106,16 @@ restaurant_menu_list = [
     }
 ```
 
-* Next, add the following code to your **main program** to implement the listing of the menu items - you do not need to change it as shown below.
-  * Note that there are new functions `list_helper()`, `get_selection()` that needs to be implemented and that is _also_ given to you after the code below.
+Next, add the following code to your **main program** to implement the listing of the menu items - you do not need to change it as shown below.
+
+Note that there are new functions `list_helper()`, `get_selection()` that needs to be implemented and that is _also_ given to you after the code below.
 
 ```python
     elif opt == 'L':
         list_helper(list_menu, restaurant_menu_list, spicy_scale_map)
 ```
 
-* In your **functions.py**, copy the `list_helper` and `get_selection()` functions given below - you will use these functions as-is. These functions are central to many of the menu options this program can perform. We have an option in the function parameters (`go_back`) that can be used if the user changes their mind and wants to return to the main menu.
+In your **functions.py**, copy the `list_helper` and `get_selection()` functions given below - you will use these functions as-is. These functions are central to many of the menu options this program can perform. We have an option in the function parameters (`go_back`) that can be used if the user changes their mind and wants to return to the main menu.
 
 ```python
 
@@ -179,9 +180,11 @@ def get_selection(action, suboptions, to_upper=True, go_back=False):
     return selection
 ```
 
-* NOW: Define 2 new functions: `print_dish()`, `print_restaurant_menu()`. 
+Next, define 2 new functions: `print_dish()`, `print_restaurant_menu()`. 
 
-1. List an **individual** menu item.
+## `print_dish()`
+
+The function `print_dish()` will list an **individual** menu item.
 
 ```python
 def print_dish(dish, spicy_scale_map, name_only=False):
@@ -209,7 +212,9 @@ def print_dish(dish, spicy_scale_map, name_only=False):
     #    To see what these should look like, see further below for example runs.
 ```
 
-2. List all or some of the menu items stored in the restaurant_menu list. 
+## `print_restaurant_menu()`
+
+The function `print_restaurant_menu()` will list all or some of the menu items stored in the restaurant_menu list. 
 
 ```python
 def print_restaurant_menu(restaurant_menu, spicy_scale_map, name_only, show_idx, start_idx, vegetarian_only):
@@ -253,69 +258,73 @@ def print_restaurant_menu(restaurant_menu, spicy_scale_map, name_only, show_idx,
     - print_dish() to print individual menu items
     """
 ```
-Make sure that:
-* the `vegetarian_only` field correctly displays either all menu items (setting is False - the default) or **only** menu items that are vegetarian (setting is True), depending on what was selected by the user in the main program. If none of the menu items are marked as vegetarian, then nothing is printed.
+
+# Notes on these functions
+
+Make sure that the `vegetarian_only` field correctly displays either all menu items (setting is False - the default) or **only** menu items that are vegetarian (setting is True), depending on what was selected by the user in the main program. 
+
+If none of the menu items are marked as vegetarian, then nothing is printed.
 
 # Sample Program Flows for "List" Menu Options
 
-1. Assuming the restaurant menu list that's hard-coded above, below is a sample program output for listing `complete menu`.
+1.  Assuming the restaurant menu list that's hard-coded above, below is a sample program output for listing `complete menu`.
 
-```
-==========================
-What would you like to do?
-L - List
-A - Add
-U - Edit
-D - Delete
-H - Display restaurant expense rating 
-S - Save the data to file
-R - Restore data from file
-Q - Quit this program
-==========================
-::: Enter a menu option
-> L
-You selected option L to > List.
-::: What field would you like to list?
-A - complete menu
-V - vegetarian dishes only
-::: Enter your selection
-> A
-You selected |A| to list |complete menu|.
-------------------------------------------
-1. BURRITO
-* Calories: 500
-* Price: 12.9
-* Is it vegetarian: yes
-* Spicy level: Low key spicy
+    ```
+    ==========================
+    What would you like to do?
+    L - List
+    A - Add
+    U - Edit
+    D - Delete
+    H - Display restaurant expense rating 
+    S - Save the data to file
+    R - Restore data from file
+    Q - Quit this program
+    ==========================
+    ::: Enter a menu option
+    > L
+    You selected option L to > List.
+    ::: What field would you like to list?
+    A - complete menu
+    V - vegetarian dishes only
+    ::: Enter your selection
+    > A
+    You selected |A| to list |complete menu|.
+    ------------------------------------------
+    1. BURRITO
+    * Calories: 500
+    * Price: 12.9
+    * Is it vegetarian: yes
+    * Spicy level: Low key spicy
 
-2. RICE BOWL
-* Calories: 400
-* Price: 14.9
-* Is it vegetarian: no
-* Spicy level: Hot
+    2. RICE BOWL
+    * Calories: 400
+    * Price: 14.9
+    * Is it vegetarian: no
+    * Spicy level: Hot
 
-3. MARGHERITA
-* Calories: 800
-* Price: 18.9
-* Is it vegetarian: no
-* Spicy level: Low key spicy
+    3. MARGHERITA
+    * Calories: 800
+    * Price: 18.9
+    * Is it vegetarian: no
+    * Spicy level: Low key spicy
 
-------------------------------------------
-::: Press Enter to continue
-```
+    ------------------------------------------
+    ::: Press Enter to continue
+    ```
 
-2. Below is another sample program output for listing V (vegetarian menu items only).
+2.  Below is another sample program output for listing V (vegetarian menu items only).
 
-```
-You selected |V| to list |vegetarian dishes only|.
-------------------------------------------
-1. BURRITO
-* Calories: 500
-* Price: 12.9
-* Is it vegetarian: yes
-* Spicy level: Low key spicy
+    ```
+    You selected |V| to list |vegetarian dishes only|.
+    ------------------------------------------
+    1. BURRITO
+    * Calories: 500
+    * Price: 12.9
+    * Is it vegetarian: yes
+    * Spicy level: Low key spicy
 
-------------------------------------------
-::: Press Enter to continue
-```
+    ------------------------------------------
+    ::: Press Enter to continue
+    ```
 
