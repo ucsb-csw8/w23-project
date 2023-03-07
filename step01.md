@@ -241,12 +241,34 @@ Long before each checkpoint deadline, walk through these steps:
 
 This assignment is supposed to be like an exam in that it is supposed to test your knowledge and understanding of the course material, so it is supposed to be your own work. Make sure that you read and follow the instructions carefully.
 
-- No project-related coding questions during the office hours! You can ask questions on concepts or general techniques, but not specific coding questions.
-- It's actually best to have your questions or clarifications be made as a public post on Piazza (so everyone can benefit).
-   - Posts have to follow the forum guidelines - no publicly shared code/solutions! Violation of the forum guidelines will result in a deduction of 10% of your grade per violation.
-   - If necessary, post a short, self-contained snippet to reproduce the error: follow the style/examples that we've discussed as part of how to debug a program.
-   - No posts after the final submission is due (i.e. after Monday, December 5, at 11:59 PM).
-- Do not email the TAs/ULAs directly: again - use Piazza instead.
+**Office Hours will be different for the project**
+
+You may find that:
+* Staff are far more overwhelmed with questions and they might not even get to your question.
+* Staff will expect you to be more self-reliant.
+* Staff will not debug your code for you.
+* Staff will not cover material that was already covered in the zyBook or lecture.
+
+If you ask questions about the project during office hours, first be very sure that:
+
+1. You have read *all* of the instructions *completely and thoroughly*.
+2. Do not ask questions that are already clearly covered in the instructions.  You *may* ask clarifying questions *about* the instructions if they are unclear, or seem to be contradictory.
+3. If your question is about an error on the autograder, do not ask questions about it unless you have first completely read the message from the autograder, thought about it, and can explain what you have already tried.
+
+Go in with the expectation that:
+
+1. Staff may be stingier with help than they have been in the past.  
+2. Staff may help clarify the requirements--if they are unclear or ambiguous, but not if you are simply not putting in the work to read the instructoins.
+3. Staff will *not* be helping you understanding *how* to meet those requirements.
+4. Debugging is a skill you were expected to learn and practice during the weeks leading up to this project.  Now, you need to demonstrate whether you have learned that skill or not.
+
+It's actually best to have your questions or clarifications be made as a public post on Piazza (so everyone can benefit).
+
+Posts have to follow the forum guidelines - no publicly shared code/solutions! Violation of the forum guidelines will result in a deduction of 10% of your grade per violation.
+
+- If necessary, post a short, self-contained snippet to reproduce the error: follow the style/examples that we've discussed as part of how to debug a program.
+- No posts after the final submission is due (i.e. after {{site.checkpoint3 | date: "%a, %b %d, %H:%M" }}).
+- Do not email the TAs/ULAs/instructor directly: again - use Piazza instead.   Emails sent directly to TAs/LAs/Instructor may be left unopened and unanswered.
 - Make sure to submit your code to Gradescope before posting something on the forum (if necessary, we can load your submission for reference).
 - If you are asking a question that is too open-ended, we cannot guarantee that we can provide you with a hint. We will try and give you as much help as we can, _but in the end we cannot provide any solutions to you_. Again, this project is supposed to be your own work.
 
