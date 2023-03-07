@@ -257,8 +257,8 @@ If you ask questions about the project during office hours, first be very sure t
 
 Go in with the expectation that:
 
-1. Staff may be stingier with help than they have been in the past.  
-2. Staff may help clarify the requirements--if they are unclear or ambiguous, but not if you are simply not putting in the work to read the instructoins.
+1. Staff will not respond to your questions as thoroughly and in as much detail as they have in the past.
+2. Staff may help clarify the requirements&mdash;if they are unclear or ambiguous&mdash;but not if you are simply not putting in the work to read the instructoins.
 3. Staff will *not* be helping you understanding *how* to meet those requirements.
 4. Debugging is a skill you were expected to learn and practice during the weeks leading up to this project.  Now, you need to demonstrate whether you have learned that skill or not.
 
