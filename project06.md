@@ -153,34 +153,6 @@ You selected |A| to list |complete menu|.
 ::: Press Enter to continue
 ```
 
-<!-- 3. The "go back to the main menu" option (M):
-```
-You selected option D to > Delete.
-******************************************
-      ID: 14567 |   TITLE: Soul Meets Body
-      ID: 78210 |   TITLE: Fake Love
-      ID: 99105 |   TITLE: Foil
-Which song would you like to delete?
-X - Delete all songs at once
-::: OR Enter the number corresponding to the song ID
-::: OR press 'M' to cancel and return to the main menu.
-> m
-::: Press Enter to continue
-==========================
-What would you like to do?
-L - List
-A - Add
-E - Edit
-D - Delete
-M - Show statistical data on
-S - Save the data to file
-R - Restore data from file
-Q - Quit this program
-==========================
-::: Enter a menu option
-> 
-``` -->
-
 3. Example of nothing gets deleted (i.e. you already deleted every dish and now you select delete again).
 ```
 ::: Enter a menu option
