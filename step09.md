@@ -12,7 +12,7 @@ New functions needed:
 For this menu item, in your main program, you will use the restaurant menu list. This part of your main program will call the function **`get_restaurant_expense_rating()`**.
 
 
-```
+```python
 def get_restaurant_expense_rating(restaurant_menu_list):
     """
     Computes the average price of all the items on the menu and display the expense rating of the restaurant.
@@ -29,12 +29,13 @@ Here are some hints on how to go about this:
 * You should collect all the menu items' prices for a given restaurant into one list.
 * You've done calculating means (averages) from lists before...
 
-```
+
 
 # Sample Program Flow
 
 Below is a demo of computing the average price of an item in a given restaurant menu:
-==========================
+
+```
 What would you like to do?
 L - List
 A - Add

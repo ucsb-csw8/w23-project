@@ -11,14 +11,15 @@ New functions needed:
 * `update_menu_dish()`
 
 Add the following branch to your **main program**
-```
+
+```python
     elif opt == 'U':
         update_helper(restaurant_menu_list, spicy_scale_map)
 ```
 
 Define a new function update_helper() as follows, replacing the ellipses with the appropriate values:
-```
 
+```python
 def update_helper(restaurant_menu_list, spicy_scale_map):
     continue_action = 'y'
     while continue_action == 'y':
@@ -54,7 +55,7 @@ def update_helper(restaurant_menu_list, spicy_scale_map):
 
 Define two new functions `is_valid_index` and `update_menu_dish()` to edit the menu dictionary appropriately:
 
-```
+```python
 def is_valid_index(idx, in_list, start_idx=0):
     """
     param: idx (str) - a string that is expected to
@@ -75,9 +76,7 @@ def is_valid_index(idx, in_list, start_idx=0):
     integer value, if int(idx) is < start_idx,
     or if it exceeds the size of in_list.
     """
-```
 
-```
 def update_menu_dish(restaurant_menu_list, idx, spicy_scale_map, field_key, field_info, start_idx=0):
     """
     param: restaurant_menu_list (list) - a menu that contains
@@ -123,6 +122,7 @@ def update_menu_dish(restaurant_menu_list, idx, spicy_scale_map, field_key, fiel
 # Sample Program Workflow
 
 Below is a demo of editing with an incorrect value (bad rating value):
+
 ```
 You selected option U to > Edit.
 ::: Which dish would you like to update?
@@ -151,6 +151,7 @@ The menu was not updated.
 ```
 
 This is a demo of editing that same field correctly:
+
 ```
 You selected option U to > Edit.
 ::: Which dish would you like to update?
