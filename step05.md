@@ -15,7 +15,7 @@ New functions needed:
 * `is_valid_spicy_level()`
 
 Add the following branch to your **main program**; replace the ellipses with the appropriate values. See below for sample run outputs.
-```
+```python
     elif opt == 'A':
         continue_action = 'y'
         while continue_action == 'y':
@@ -44,7 +44,7 @@ Add the following branch to your **main program**; replace the ellipses with the
 ```
 
 In your **functions file**, define `get_new_menu_dish()` that takes 2 parameters: a list of fields to check for a new dish, a dictionary that indicates spicy scale of a dish. See more details below.
-```
+```python
 def get_new_menu_dish(..., ...,): 
     """
     Document the function correctly
@@ -83,7 +83,7 @@ The first input parameter is a **list** of all needed song dictionary values sto
    * The order of the fields is ** name, calories, price, is_vegetarian, spicy_level.**
    * If the provided field values are valid, return a new dictionary:
 
-```
+```python
 {
     "name": ...,  # str
     "calories": ..., # int
@@ -100,6 +100,7 @@ The helper functions will need to be added first, before defining `get_new_menu_
 
 Example of asserts you could have in your **test file**:
 ```
+FIXME: UNFINISHED AS OF 03/06 9:35PM
 ```
 
 
@@ -107,12 +108,12 @@ Example of asserts you could have in your **test file**:
 
 Below is a demo of adding an incorrect menu dish:
 ```
-
+FIXME: UNFINISHED AS OF 03/06 9:35PM
 ```
 
 Here is a demo of adding a different incorrect menu dish:
 ```
-
+FIXME: UNFINISHED AS OF 03/06 9:35PM
 ```
 
 Finally, here's a demo of adding a new menu dish successfully:
@@ -121,5 +122,6 @@ Finally, here's a demo of adding a new menu dish successfully:
 
 After successfully adding a new menu dish, you should be able to see it in the List menu option. For example:
 ```
+FIXME: UNFINISHED AS OF 03/06 9:35PM
 ```
 
