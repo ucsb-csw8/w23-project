@@ -1,139 +1,202 @@
 ---
 layout: default
-title: Step 5 - "Add" option
+title: Step 5 - "Delete" option
 ---
 
 # {{page.title}}
 
-The functions needed (from Project Component labs of Week 7 - [LAB 7.20](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/7/section/20)):
-* `get_new_menu_dish()`
-* `is_valid_name()`
-* `is_valid_calories()`
-* `is_valid_price()`
-* `is_valid_is_vegetarian()`
-* `is_valid_spicy_level()`
 
-As a reminder: the function `get_new_menu_dish()` checks all of the values passed in, and if any of them is invalid, 
-it returns a *tuple* consisting of the name of the invalid field, and the value of the invalid field, e.g. `('price', '$xxx')` or
-(`spicy_level`,`idk, maybe`).  See the [LAB 7.20](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/7/section/20)) instructions for more information.
+New functions needed:
+* `delete_dish()`
 
-Add your solutions to **functions.py** file. Add your `assert` statements **tests.py**.
-
-Example of asserts you could have in your **test file**:
-```
-assert is_valid_name("a") == False
-assert is_valid_name("bo") == False
-assert is_valid_name(42) == False
-assert is_valid_name(["soup"]) == False
-assert is_valid_name("soup") == True
-```
-
-# `print_dish()`
-Define a new function `print_dish()` that will list an **individual** menu item.
+Refer to the `delete_item()` function (from [LAB 8.14](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/8/section/14)) to see how to implement the function below.
+This is very similar (but not the same) as it was in the Week 8 lab.
 
 ```python
-def print_dish(dish, spicy_scale_map, name_only=False):
+def delete_dish(in_list, idx, start_idx=0):
     """
-    param: dish (dict) - a dictionary object that is expected to contain the following keys:
-            - "dish": dish's name
-            - "calories": calories for this dish
-            - "price": price of this dish
-            - "is_vegetarian": boolean whether this dish is for vegetarian
-            - "spicy_level": integer that represents the level of spiciness
-    param: spicy_scale_map (dict) - a dictionary object that is expected
-            to have the integer keys that correspond to the "level of spiciness."
-            values for each corresponding key are string description of the
-            level of spiciness
-    param: name_only (Boolean) - by default, set to False.
-            If True, then only the name of the dish is printed.
-            Otherwise, displays the formatted restaurant menues.
-    returns: None; only prints the restaurant menu item
+    param: in_list - a list from which to remove a dish
+    param: idx (str) - a string that is expected to
+            contain a representation of an integer index
+            of a dish in the provided list
+    param: start_idx (int) - by default, set to 0;
+            an expected starting value for idx that
+            gets subtracted from idx for 0-based indexing
+    The function first checks if the input list is empty.
+    The function then calls is_valid_index() to verify
+    that the provided index idx is a valid positive
+    index that can access an element from in_list.
+    On success, the function saves the dish from in_list
+    and returns it after it is deleted from in_list.
+    returns:
+    If the input list is empty, return 0.
+    If idx is not of type string, return None.
+    If is_valid_index() returns False, return -1.
+    Otherwise, on success, the function returns the element
+    that was just removed from the input list.
+    Helper functions:
+    - is_valid_index()
     """
 ```
 
-Add the following branch to your **main program**; replace the ellipses with the appropriate values. See below for sample run outputs.
+
+The main program portion should contain:
 ```python
-    elif opt == 'A':
-        add_helper(...)
+    elif opt == 'D':
+        restaurant_menu_list = delete_helper(restaurant_menu_list, spicy_scale_map)
 ```
 
+Complete the `delete_helper` given to you below: 
 ```python
-
-def add_helper(restaurant_menu_list, spicy_scale_map):
+def delete_helper(restaurant_menu_list, spicy_scale_map):
     continue_action = 'y'
     while continue_action == 'y':
-        print("::: Enter each required field, separated by commas.")
-        # * `name` : name of the dish
-        #     * `calories`: number of calories per serving
-        #     * 'is_vegetarian' : if the item is vegetarian
-        #     * `price` : price of the item
-        #     * 'spicy_level' : 1 - 4
-        print("::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )")
-        dish_data = input("> ")  # TODO: get and process the data into a list
-        dish_values = dish_data.split(",")
-        result_dict = get_new_menu_dish(..., spicy_scale_map)  # TODO: attempt to create a new dish for the menu
-        if type(result_dict) == dict:
-            restaurant_menu_list.append(...)  # TODO: add a new dish to the list of dish menus
-            print(f"Successfully added a new dish!")
-            print_dish(result_dict, spicy_scale_map)
-        elif type(result_dict) == int:
-            print(f"WARNING: invalid number of fields!")
-            print(f"You provided {result_dict}, instead of the expected 5.\n")
-        else:
-            print(f"WARNING: invalid dish field: {result_dict}\n")
+        if not restaurant_menu_list:
+            print("WARNING: There is nothing to delete!")
+            break
+        print("Which dish would you like to delete?")
+        print("Press A to delete the entire menu for this restaurant, M to cancel this operation")
+        print_restaurant_menu(restaurant_menu_list, spicy_scale_map, name_only=True, show_idx=True, start_idx=1)
+        user_option = input("> ")
+        if user_option == "A" or user_option == "a":
+            print(f"::: WARNING! Are you sure you want to delete the entire menu ?")
+            print("::: Type Yes to continue the deletion.")
+            user_option = input("> ")
+            if user_option == ...:
+                restaurant_menu_list = ...
+                print(f"Deleted the entire menu.")
+            else:
+                print(f"You entered '{...}' instead of Yes.")
+                print("Canceling the deletion of the entire menu.")
+            break
+        elif user_option == 'M' or user_option == 'm':
+            break
+        result = delete_dish(restaurant_menu_list, user_option, 1)
+        if type(result) == dict:
+            print("Success!")
+            print(f"Deleted the dish |{result['name']}|")
+        elif result == 0:  # delete_item() returned an error
+            print("WARNING: There is nothing to delete.")
+        elif result == -1:  # is_valid_index() returned False
+            print(f"WARNING: |{user_option}| is an invalid dish number!")
 
-        print("::: Would you like to add another dish?", end=" ")
+        print("::: Would you like to delete another dish?", end=" ")
         continue_action = input("Enter 'y' to continue.\n> ")
         continue_action = continue_action.lower()
-```
+    return restaurant_menu_list
 
+```
 
 # Sample Program Flow
 
-1. Below is a demo of adding an incorrect menu dish:
+1.  Deleting ALL dishes. Note that the user can only do this by selecting "A" (only the upper case "A") and then by confirming with "Yes" (not "Y", not "yes", ...)
 
-   ```
-    You selected option A to > Add.
-    ::: Enter each required field, separated by commas.
-    ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
-    > yum bowl, 100, 5.99, yes, 0
-    WARNING: invalid dish field: ('spicy_level', '0')
+    ```
+    ::: Enter a menu option
+    > D
+    You selected option D to > Delete.
+    Which dish would you like to delete?
+    Press A to delete the entire menu for this restaurant, M to cancel this operation 
+    ------------------------------------------
+    1. BURRITO
+    2. RICE BOWL
+    3. MARGHERITA
+    ------------------------------------------
+    > A
+    ::: WARNING! Are you sure you want to delete the entire menu ?
+    ::: Type Yes to continue the deletion.
+    > Yes
+    Deleted the entire menu.
+    ::: Press Enter to continue
+    ```
 
-   ```
+    You can check that every dish got deleted by next going to the main menu, and selecting "L"ist:
 
-2. Here is a demo of adding a different incorrect dishes:
+    ```
+    ::: Enter a menu option
+    > L
+    You selected option L to > List.
+    ::: What field would you like to list?
+    A - complete menu
+    V - vegetarian dishes only
+    ::: Enter your selection
+    > A
+    You selected |A| to list |complete menu|.
+    ------------------------------------------
+    ------------------------------------------
+    ::: Press Enter to continue
+    ```
 
-   ```
-    ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
-    > um, 5, 5, no, 1
-    WARNING: invalid dish field: ('name', 'um')
-    ...
+2.  Deleting one dish - example below shows what happens if the **wrong** dish ID is used, but then the user is given another chance to delete and they use the **correct** dish ID:
 
-    ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
-    > ,,,,,
-    WARNING: invalid number of fields!
-    You provided 6, instead of the expected 5.
-    ...
+    ```
+    ::: Enter a menu option
+    > D
+    You selected option D to > Delete.
+    Which dish would you like to delete?
+    Press A to delete the entire menu for this restaurant, M to cancel this operation 
+    ------------------------------------------
+    1. BURRITO
+    2. RICE BOWL
+    3. MARGHERITA
+    ------------------------------------------
+    > 4
+    WARNING: |4| is an invalid dish number!
+    ::: Would you like to delete another dish? Enter 'y' to continue.
+    > y
+    Which dish would you like to delete?
+    Press A to delete the entire menu for this restaurant, M to cancel this operation 
+    ------------------------------------------
+    1. BURRITO
+    2. RICE BOWL
+    3. MARGHERITA
+    ------------------------------------------
+    > 1
+    Success!
+    Deleted the dish |burrito|
+    ::: Would you like to delete another dish? Enter 'y' to continue.
+    > n
+    ::: Press Enter to continue
+    ```
 
-    ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
-    > sandwich
-    WARNING: invalid number of fields!
-    You provided 1, instead of the expected 5.
+    Note that the user CAN keep choosing to enter 'y' at the "Would you like to delete another dish?..." prompt and be able to go back to the start of the delete menu choices. This would allow them to keep deleting dishs one by one.
 
-   ```
+    Again, you can check that the dish example from above (burrito) got deleted by going to the main menu, and selecting "L"ist:
 
-3. Finally, here's a demo of adding a new menu dish successfully:
+    ```
+    ::: Enter a menu option
+    > L
+    You selected option L to > List.
+    ::: What field would you like to list?
+    A - complete menu
+    V - vegetarian dishes only
+    ::: Enter your selection
+    > A
+    You selected |A| to list |complete menu|.
+    ------------------------------------------
+    1. RICE BOWL
+    * Calories: 400
+    * Price: 14.9
+    * Is it vegetarian: no
+    * Spicy level: Hot
 
-   ```
-    ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
-    > Soup, 100, 5, yes, 1
-    Successfully added a new dish!
-    SOUP
-    * Calories: 100
-    * Price: 5.0
-    * Is it vegetarian: yes
-    * Spicy level: Not spicy
+    2. MARGHERITA
+    * Calories: 800
+    * Price: 18.9
+    * Is it vegetarian: no
+    * Spicy level: Low key spicy
 
-   ```
+    ------------------------------------------
+    ::: Press Enter to continue
+    ```
 
-4. After successfully adding a new menu dish, you should be able to see it in the List menu option.
+3.  Example when nothing gets deleted (i.e. you already deleted every dish and now you select delete again).
+
+    ```
+    ::: Enter a menu option
+    > D
+    You selected option D to > Delete.
+    WARNING: There is nothing to delete!
+    ::: Press Enter to continue
+    ```
+
