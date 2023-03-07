@@ -55,112 +55,116 @@ The `delete_helper` can start off with:
 
 # Sample Program Flow
 
-1. Deleting ALL dishes. Note that the user can only do this by selecting "A" (only the upper case "A") and then by confirming with "Yes" (not "Y", not "yes", ...)
+1.  Deleting ALL dishes. Note that the user can only do this by selecting "A" (only the upper case "A") and then by confirming with "Yes" (not "Y", not "yes", ...)
 
-```
-::: Enter a menu option
-> D
-You selected option D to > Delete.
-Which dish would you like to delete?
-Press A to delete the entire menu for this restaurant, B otherwise 
-------------------------------------------
-1. BURRITO
-2. RICE BOWL
-3. MARGHERITA
-------------------------------------------
-> A
-::: WARNING! Are you sure you want to delete the entire menu ?
-::: Type Yes to continue the deletion.
-> Yes
-Deleted the entire menu.
-::: Press Enter to continue
-```
+    ```
+    ::: Enter a menu option
+    > D
+    You selected option D to > Delete.
+    Which dish would you like to delete?
+    Press A to delete the entire menu for this restaurant, B otherwise 
+    ------------------------------------------
+    1. BURRITO
+    2. RICE BOWL
+    3. MARGHERITA
+    ------------------------------------------
+    > A
+    ::: WARNING! Are you sure you want to delete the entire menu ?
+    ::: Type Yes to continue the deletion.
+    > Yes
+    Deleted the entire menu.
+    ::: Press Enter to continue
+    ```
 
-You can check that every dish got deleted by next going to the main menu, and selecting "L"ist:
-```
-::: Enter a menu option
-> L
-You selected option L to > List.
-::: What field would you like to list?
-A - complete menu
-V - vegetarian dishes only
-::: Enter your selection
-> A
-You selected |A| to list |complete menu|.
-------------------------------------------
-------------------------------------------
-::: Press Enter to continue
-```
-2. Deleting one dish - example below shows what happens if the **wrong** dish ID is used, but then the user is given another chance to delete and they use the **correct** dish ID:
+    You can check that every dish got deleted by next going to the main menu, and selecting "L"ist:
 
-```
-::: Enter a menu option
-> D
-You selected option D to > Delete.
-Which dish would you like to delete?
-Press A to delete the entire menu for this restaurant, B otherwise 
-------------------------------------------
-1. BURRITO
-2. RICE BOWL
-3. MARGHERITA
-------------------------------------------
-> 4
-WARNING: |4| is an invalid dish number!
-::: Would you like to delete another dish? Enter 'y' to continue.
-> y
-Which dish would you like to delete?
-Press A to delete the entire menu for this restaurant, B otherwise 
-------------------------------------------
-1. BURRITO
-2. RICE BOWL
-3. MARGHERITA
-------------------------------------------
-> 1
-Success!
-Deleted the dish |burrito|
-::: Would you like to delete another dish? Enter 'y' to continue.
-> n
-::: Press Enter to continue
-```
+    ```
+    ::: Enter a menu option
+    > L
+    You selected option L to > List.
+    ::: What field would you like to list?
+    A - complete menu
+    V - vegetarian dishes only
+    ::: Enter your selection
+    > A
+    You selected |A| to list |complete menu|.
+    ------------------------------------------
+    ------------------------------------------
+    ::: Press Enter to continue
+    ```
 
-Note that the user CAN keep choosing to enter 'y' at the "Would you like to delete another dish?..." prompt and be able to go back to the start of the delete menu choices. This would allow them to keep deleting dishs one by one.
+2.  Deleting one dish - example below shows what happens if the **wrong** dish ID is used, but then the user is given another chance to delete and they use the **correct** dish ID:
 
-Again ,you can check that the dish example from above (Cardigan) got deleted by next going to the main menu, and selecting "L"ist:
-```
-::: Enter a menu option
-> L
-You selected option L to > List.
-::: What field would you like to list?
-A - complete menu
-V - vegetarian dishes only
-::: Enter your selection
-> A
-You selected |A| to list |complete menu|.
-------------------------------------------
-1. RICE BOWL
-* Calories: 400
-* Price: 14.9
-* Is it vegetarian: no
-* Spicy level: Hot
+    ```
+    ::: Enter a menu option
+    > D
+    You selected option D to > Delete.
+    Which dish would you like to delete?
+    Press A to delete the entire menu for this restaurant, B otherwise 
+    ------------------------------------------
+    1. BURRITO
+    2. RICE BOWL
+    3. MARGHERITA
+    ------------------------------------------
+    > 4
+    WARNING: |4| is an invalid dish number!
+    ::: Would you like to delete another dish? Enter 'y' to continue.
+    > y
+    Which dish would you like to delete?
+    Press A to delete the entire menu for this restaurant, B otherwise 
+    ------------------------------------------
+    1. BURRITO
+    2. RICE BOWL
+    3. MARGHERITA
+    ------------------------------------------
+    > 1
+    Success!
+    Deleted the dish |burrito|
+    ::: Would you like to delete another dish? Enter 'y' to continue.
+    > n
+    ::: Press Enter to continue
+    ```
 
-2. MARGHERITA
-* Calories: 800
-* Price: 18.9
-* Is it vegetarian: no
-* Spicy level: Low key spicy
+    Note that the user CAN keep choosing to enter 'y' at the "Would you like to delete another dish?..." prompt and be able to go back to the start of the delete menu choices. This would allow them to keep deleting dishs one by one.
 
-------------------------------------------
-::: Press Enter to continue
-```
+    Again ,you can check that the dish example from above (Cardigan) got deleted by next going to the main menu, and selecting "L"ist:
 
-3. Example of nothing gets deleted (i.e. you already deleted every dish and now you select delete again).
-```
-::: Enter a menu option
-> D
-You selected option D to > Delete.
-WARNING: There is nothing to delete!
-::: Press Enter to continue
-```
+    ```
+    ::: Enter a menu option
+    > L
+    You selected option L to > List.
+    ::: What field would you like to list?
+    A - complete menu
+    V - vegetarian dishes only
+    ::: Enter your selection
+    > A
+    You selected |A| to list |complete menu|.
+    ------------------------------------------
+    1. RICE BOWL
+    * Calories: 400
+    * Price: 14.9
+    * Is it vegetarian: no
+    * Spicy level: Hot
+
+    2. MARGHERITA
+    * Calories: 800
+    * Price: 18.9
+    * Is it vegetarian: no
+    * Spicy level: Low key spicy
+
+    ------------------------------------------
+    ::: Press Enter to continue
+    ```
+
+3.  Example of nothing gets deleted (i.e. you already deleted every dish and now you select delete again).
+
+    ```
+    ::: Enter a menu option
+    > D
+    You selected option D to > Delete.
+    WARNING: There is nothing to delete!
+    ::: Press Enter to continue
+    ```
 
 # Checkpoint 1
 
