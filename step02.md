@@ -120,11 +120,30 @@ In the rest of the instructions, you will get to implement the rest of the optio
 
 You should now have a basic structure for the system, and you are ready to begin implementing each option.
 
-TODO: Once you assembled the above template and your main program, and the testing code runs without any errors, **submit your files to Checkpoint 1 on Gradescope**.  Why?
+TODO: Once you assembled the above template and your main program, and the testing code runs without any errors, **submit your files to Checkpoint 1 on Gradescope**.  
+
+That is, find this course on Gradescope:
+
+<img width="375" alt="image" src="https://user-images.githubusercontent.com/1119017/223495600-abfc1b30-2ab0-400c-9976-16436eefe94f.png">
+
+and then find this assignment:
+
+<img width="1137" alt="image" src="https://user-images.githubusercontent.com/1119017/223496436-1f2db0c9-37ea-4bfe-97e1-350930078acb.png">
+
+and then submit these three files:
+
+<img width="599" alt="image" src="https://user-images.githubusercontent.com/1119017/223496631-566f69ef-7b70-41df-8ac0-00f4ba86fb60.png">
+
+You should get back at least one passing test from the autograder, like this:
+
+<img width="393" alt="image" src="https://user-images.githubusercontent.com/1119017/223496802-11578364-6be6-4d9e-b2c8-b9eb35f1e5a3.png">
+
+
+## Why submit to Gradescope now?
 
 * to ensure that you are able to submit
 * as evidence that you've gotten started on the project.   
 
-It likely won't pass all the tests; at this point that's fine.  You'll have to complete step02 and step03 also.    But at least you've gotten started.
+It likely won't pass any tests other than the 1 point you get for "three required files".  At this point that's fine.  You'll have to complete steps 3 and 4  also before it passes all of the Checkpoint 1 tests.    
 
-We hope that you enjoy putting this project together!
+But at least you've gotten started! We hope that you enjoy putting this project together!
