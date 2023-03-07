@@ -275,3 +275,11 @@ If none of the menu items are marked as vegetarian, then nothing is printed.
     ::: Press Enter to continue
     ```
 
+# Submit on Gradescope
+
+If you submit to Checkpoint 1 on Gradescope after finishing the work in this Step ({{page.title}}), you should be able to pass
+at least these tests:
+
+<img width="245" alt="image" src="https://user-images.githubusercontent.com/1119017/223523109-12704769-3b4b-4d8a-b203-b619444dfe20.png">
+
+Once you pass at least these, you are ready to move to the next step.
