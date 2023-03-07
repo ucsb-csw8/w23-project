@@ -122,7 +122,7 @@ In the rest of the instructions, you will get to implement the rest of the optio
 
 ## Create the test file <a name="testfile"></a>
 
-For _each function that **returns** something_ in the **functions.py** file, you should add the corresponding `assert` statements to the **restaurant\_tests.py**.  # TODO: Please confirm the file name (restaurant_functions.py or functions.py)
+For _each function that **returns** something_ in the **functions.py** file, you should add the corresponding `assert` statements to the **tests.py**.  # TODO: Please confirm the file name (restaurant_functions.py or functions.py)
 
 For now, since the next steps will rely on it:
 * add the `get_written_date()` function implementation from [LAB 7.18](https://learn.zybooks.com/zybook/UCSBCMPSCW8MatniFall2022/chapter/7/section/18) to the **functions.py** # TODO: Please upload new links for LAB 7.18 W23
