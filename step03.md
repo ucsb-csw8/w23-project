@@ -94,7 +94,7 @@ In your **functions.py**, copy the `list_helper` and `get_selection()` functions
 ```python
 
 def list_helper(list_menu, restaurant_menu_list, spicy_scale_map):
-    if restaurant_menu_list == {}:
+    if len(restaurant_menu_list) == 0:
         print("WARNING: There is nothing to display!")
         # Pause before going back to the main menu
         input("::: Press Enter to continue")
