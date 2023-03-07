@@ -59,7 +59,7 @@ restaurant_menu_list = [
 
 # Your TODO <a name="inittodo"></a>
 
-First, create a variable to hold a nested dictionary of menu item information data (dictionaries) at the top of your **main program**. We will refer to it as `restaurant_menu_list`.
+First, create a variable `restaurant_menu_list` to hold the list of menu items (stored as as list of dictionaries, as shown above) at the top of your **main program**. We will refer to it as `restaurant_menu_list`.
 
 Additionally, you need to add two more variables to your **main program**:
 * `list_menu` will contain the "List" menu sub-options
