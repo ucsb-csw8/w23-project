@@ -93,50 +93,47 @@ restaurant_menu_list = [
   * `spicy_scale_map` will contain the mapping of the spicy_level values, as integers, to a string for the name of the spice level
 
 ```
-list_menu = {
-    "A": "all songs - full",
-    "B": "all songs - titles only",
-    "F": "favorite songs",
-    "G": "songs of a specific genre"
-}
+    list_menu = {
+        "A": "complete menu",
+        "V": "vegetarian dishes only",
+    }
 
-rating_map = {
-    "1": "Hate",
-    "2": "Dislike",
-    "3": "Neutral",
-    "4": "Like",
-    "5": "Love!"
-}
+    spicy_scale_map = {
+        1: "Not spicy",
+        2: "Low key spicy",
+        3: "Hot",
+        4: "Diabolical",
+    }
 ```
 
 * Next, add the following code to your **main program** to implement the listing of the menu items - you do not need to change it as shown below.
-  * Note that there is a new function `get_selection()` that needs to be implemented and that is _also_ given to you after the code below.
+  * Note that there are new functions `list_helper()`, `get_selection()` that needs to be implemented and that is _also_ given to you after the code below.
 
 ```
     elif opt == 'L':
-        if all_songs == {}:
-            print("WARNING: There is nothing to display!")
-            # Pause before going back to the main menu
-            input("::: Press Enter to continue")
-            continue
+    
+        list_helper(list_menu, restaurant_menu_list, spicy_scale_map)
+```
 
-        subopt = get_selection(the_menu[opt], list_menu)
+* In your **functions.py**, copy the `list_helper` and `get_selection()` functions given below - you will use these functions as-is. These functions are central to many of the menu options this program can perform. We have an option in the function parameters (`go_back`) that can be used if the user changes their mind and wants to return to the main menu.
+
+```
+
+def list_helper(list_menu, restaurant_menu_list, spicy_scale_map):
+    if restaurant_menu_list == {}:
+        print("WARNING: There is nothing to display!")
+        # Pause before going back to the main menu
+        input("::: Press Enter to continue")
+    else:
+        subopt = get_selection("List", list_menu)
         if subopt == 'A':
-            print_songs(all_songs, rating_map, showid = True)
-        elif subopt == 'B':
-            print_songs(all_songs, rating_map, title_only = True)
-        elif subopt == 'F':
-            print_songs(all_songs, rating_map, fave = True)
-        elif subopt == 'G':
-            print_songs(all_songs, rating_map, get_genre = True)
-```
+            print_restaurant_menu(restaurant_menu_list, spicy_scale_map, show_idx=True, start_idx=1)
+        elif subopt == 'V':
+            print_restaurant_menu(restaurant_menu_list, spicy_scale_map, show_idx=True, start_idx=1, vegetarian_only=True)
 
-* In your **song\_functions.py**, copy the `get_selection()` function given below - you will use this function as-is. This function is central to many of the menu options this program can perform. We have an option in the function parameters (`go_back`) that can be used if the user changes their mind and wants to return to the main menu.
-
-```
 ######## LIST OPTION ########
 
-def get_selection(action, suboptions, to_upper = True, go_back = False):
+def get_selection(action, suboptions, to_upper=True, go_back=False):
     """
     param: action (string) - the action that the user
             would like to perform; printed as part of
@@ -150,13 +147,11 @@ def get_selection(action, suboptions, to_upper = True, go_back = False):
     param: go_back (Boolean) - by default, set to False.
             If set to True, then allows the user to select the
             option M to return back to the main menu
-
-    The function displays a submenu for the user to choose from. 
-    Asks the user to select an option using the input() function. 
+    The function displays a submenu for the user to choose from.
+    Asks the user to select an option using the input() function.
     Re-prints the submenu if an invalid option is given.
     Prints the confirmation of the selection by retrieving the
     description of the option from the suboptions dictionary.
-
     returns: the option selection (by default, an upper-case string).
             The selection be a valid key in the suboptions
             or a letter M, if go_back is True.
@@ -166,123 +161,100 @@ def get_selection(action, suboptions, to_upper = True, go_back = False):
         if 'm' in suboptions or 'M' in suboptions:
             print("Invalid submenu, which contains M as a key.")
             return None
-
     while selection not in suboptions:
-        print(f"::: What would you like to {action.lower()}?")
+        print(f"::: What field would you like to {action.lower()}?")
         for key in suboptions:
             print(f"{key} - {suboptions[key]}")
-        if go_back == True:
+        if go_back:
             selection = input(f"::: Enter your selection "
                               f"or press 'm' to return to the main menu\n> ")
         else:
             selection = input("::: Enter your selection\n> ")
         if to_upper:
-            selection = selection.upper() # to allow us to input lower- or upper-case letters
+            selection = selection.upper()  # to allow us to input lower- or upper-case letters
         if go_back and selection.upper() == 'M':
             return 'M'
-        
-    if to_upper:    
-        print(f"You selected |{selection}| to",
-              f"{action.lower()} |{suboptions[selection].lower()}|.")
-    else:
-        print(f"You selected |{selection}| to",
+
+    print(f"You selected |{selection}| to",
           f"{action.lower()} |{suboptions[selection]}|.")
     return selection
 ```
 
-* NOW: Define 3 new functions: `print_song()`, `print_songs()`, `get_written_date()`. 
-    * Does that last one sound familiar? (it should from a prior chapter)
-    * ⚠️ **Add the implementation based on the documentation provided below.**
-    * ⚠️  See the example of the `print_song()` output provided below in the Sample Program Flow section.
-    * you should have already added the `get_written_date()` function implementation from [LAB 7.18](https://learn.zybooks.com/zybook/UCSBCMPSCW8MatniFall2022/chapter/7/section/18)
+* NOW: Define 2 new functions: `print_dish()`, `print_restaurant_menu()`. 
 
 1. List an **individual** song.
 ```
-def print_song(song, rating_map, title_only = False, showid=False):
+def print_dish(dish, spicy_scale_map, name_only=False):
+    # TODO : is spicy_scale_map used in this function?
     """
-    param: song (dict) - a single song dictionary
-    param: rating_map (dict) - a dictionary object that is expected
-            to have the string keys that correspond to the "rating"
-            integer values stored in the song; the stored value is displayed for the
-            rating field, instead of the numeric value.
-    param: title_only (Boolean) - by default, set to False.
-            If True, then only the name of the song is printed.
-            Otherwise, displays the formatted song fields.
-    param: showid (Boolean) - by default, set to False.
-            If False, then the id number of the song is not displayed.
-            Otherwise, displays the id number.
-
-    returns: None; only prints the song values
-
-    Helper functions:
-    - get_written_date() to display the 'duedate' field
-        You created a similar function in a previous lab.
+    restaurant_menu (dict) - a dictionary object that is expected to contain the following keys:
+            - "dish": dish's name
+            - "calories": calories for this dish
+            - "price": price of this dish
+            - "is_vegetarian": boolean whether this dish is for vegetarian
+            - "spicy_level": integer that represents the level of spiciness
+    param: spicy_scale_map (dict) - a dictionary object that is expected
+            to have the integer keys that correspond to the "level of spiciness."
+            values for each corresponding key are string description of the 
+            level of spiciness
+    param: name_only (Boolean) - by default, set to False.
+            If False, then only the name of the dish is printed.
+            Otherwise, displays the formatted restaurant menues.
+    returns: None; only prints the restaurant menu
     """
-    # TO-DO: print some or all information of one song (dict),
+    # TO-DO: print some or all information of one menu item (dict),
     #              depending on the options in the parameters
     #    You have to ensure that you use f-strings with the following padding settings:
     #              pad your string labels with 9 spaces and justify right.
     #    To see what these should look like, see further below for example runs.
 ```
 
-2. List all or some of the songs stored in the nested song dictionary. 
+2. List all or some of the menu items stored in the restaurant_menu list. 
 
 ```
-def print_songs(song_dict, rating_map, title_only = False, showid = False, fave = False, get_genre = False):
+def print_restaurant_menu(restaurant_menu, spicy_scale_map, name_only, show_idx, start_idx, vegetarian_only):
     """
-    param: song_dict (dict) - a dictionary containing dictionaries with
-            the song data
-    param: rating_map (dict) - a dictionary object that is expected
-            to have the integer keys that correspond to the "rating"
-            integer values stored in the song; the stored value is displayed 
-            for the rating field, instead of the numeric value.
-    param: title_only (Boolean) - by default, set to False.
-            If True, then only the title of the song is printed.
-            Otherwise, displays the formatted song fields.
-    param: showid (Boolean) - by default, set to False.
-            If False, then the key (unique ID number) of the song is not displayed.
-            Otherwise, displays the id number.
-    param: fave (Boolean) - by default, set to False, and prints all songs.
-            Otherwise, if it is set to True, prints only the songs marked as favorite.
-            This parameter is meant to be used exclusive of get_genre
-            (i.e. if fave=True, then get_genre should be False, and vice versa).
-    param: get_genre (Boolean) - by default, set to False, and prints all songs.
-            If set to True, then the function should ask the user for a
-            genre keyword (string) and print only those songs that contain that string in its genre value.
-            This parameter is meant to be used exclusive of fave (i.e. if fave=True, then get_genre should be False, and vice versa).
-            NOTE: If a song has multiple instances of that genre keyword, you should only print the song once.
-
-    returns: None; only prints the song values from the song_list
+    restaurant_menu (list) - a list object that is expected
+            to have the dictionaries for each dish that the restaurant 
+            offers.
+    param: spicy_scale_map (dict) - a dictionary object that is expected
+            to have the integer keys that correspond to the "level of spiciness."
+    param: name_only (Boolean)
+            If True, then only the name of the dish is printed.
+            Otherwise, displays the formatted restaurant menu.
+    param: show_idx (Boolean)
+            If False, then the index of the menu is not displayed.
+            Otherwise, displays the "{idx + start_idx}." before the
+            dish name.
+    param: start_idx (int)
+            an expected starting value for idx that
+            gets displayed for the first dish, if show_idx is True.
+    param:  vegetarian_only (Boolean)
+            By default, prints all dishes, regardless of their
+            is_vegetarian status ("yes/no" field status).
+            Otherwise, it displays only the dishes with
+            "is_vegetarian" status as "yes.
+    returns: None; only prints the restaurant menu
+    """
+   # Go through all the dishes in the restaurant menu:
+    print("*"*42)
+    for ...: 
+        # if vegetarian_only is True and the dish is not vegetarian, skip
+        if vegetarian_only == True:
+            if ..... :
+                .....
+        # if the index of the task needs to be displayed (show_idx is True), print dish index only
+        if show_idx == True:  
+            print(.....)
+        # if name_only is False
+        print_dish(...)
 
     Helper functions:
-    - print_song() to print individual songs
+    - print_dish() to print individual menu items
     """
-    print("*"*42)
-    # Check to see if get_genre is True, so that you can ask for the genre keyword
-   # Go through all the songs in the song dictionary:
-    for ...: 
-        # if not asking for favorites or specific genres: print everything
-        if fave == False and ... :
-            print_song(.....)
-        # otherwise: if asking for favorites, print just those:
-        elif fave and .... :
-            print_song(.....)
-        # otherwise: if asking for a specific genre, print just those:
-        elif get_genre:
-            # search all the songs' genres for the genre keyword
-            # and print only those songs where that keyword appears in the genre value
-            # NOTE: You should only print a song *once* 
-            # even if the genre keyword appears more than once in it
-            print_song(.....)
-
-        # ... TO DO: fill in the missing parts of this function
 ```
 Make sure that:
-* the `fave` field correctly displays either all songs (setting is False - the default) or **only** songs that are marked as favorite (setting is True), depending on what was selected by the user in the main program. If none of the songs are marked as favorite, then nothing is printed.
-* the `get_genre` field correctly displays either all songs (setting is False - the default) or **only** a specific genre (setting is True), depending on what was selected by the user in the main program. If the setting is True, then the function should ask the user for a genre  keyword(string) and print only those songs whose genre value contains this keyword in it. If the genre keyword given is not found in any of the songs, then nothing is printed.
-
-Additionally, to make your lives easier, the `fave`  and `get_genre` fields are meant to be used (meaning, as arguments) exclusive of one another, i.e. if `fave`=`True`, then `get_genre` should be used with a `False` value, and vice versa. In other words, no one will be looking for favorites AND specific genres - just one or the other.
-
+* the `vegetarian_only` field correctly displays either all menu items (setting is False - the default) or **only** menu items that are vegetarian (setting is True), depending on what was selected by the user in the main program. If none of the menu items are marked as vegetarian, then nothing is printed.
 
 # Sample Program Flows for "List" Menu Options
 
