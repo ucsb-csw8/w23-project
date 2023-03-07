@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Step 2 - Introduction
+title: 'Step 2 - Intro, and "Quit" option'
 ---
 
 # {{page.title}}

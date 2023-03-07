@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Step 9 - "Restore" option
+title: Step 7 - "Restore" option
 ---
 
 # {{page.title}}
@@ -230,3 +230,8 @@ The following rows from the file were not loaded:
 **ADDITIONAL NOTE:** If your ```Save the data to file``` option is working correctly, the file you wrote into using that option should work perfectly with this option and your entire menu information should be loaded properly.
 
 
+# Checkpoint 2
+
+After finishing this step, you are ready for Checkpoint 1.
+
+See the [Checkpoint 2 instructions at Step 2](/w23-project/step01#checkpoint2) for more information

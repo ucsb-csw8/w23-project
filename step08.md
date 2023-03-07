@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Step 5 - "Edit" option
+title: Step 8 - "Edit" option
 ---
 
 # {{page.title}}
