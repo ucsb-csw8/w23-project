@@ -23,7 +23,7 @@ def save_menu_to_csv(restaurant_menu_list, filename):
     """
     param: restaurant_menu_list(list of dict) - The list shore dictionary of dishes 
     param: filename (str) - A string that ends with '.csv' which represents
-               the name of the file to which to save the songs. This file will
+               the name of the file to which to save the menu items. This file will
                be created if it is not present, otherwise, it will be overwritten.
 
     The function ensures that the last 4 characters of the filename are '.csv'.
@@ -81,7 +81,7 @@ WARNING: |xxx| is an invalid file name!
 > y
 ::: Enter the filename ending with '.csv'.
 > saved_menu.csv
-Successfully stored all songs to |saved_menu.csv|
+Successfully stored all menu items to |saved_menu.csv|
 ::: Press Enter to continue
 ```
 
