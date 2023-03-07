@@ -226,7 +226,7 @@ This assignment is supposed to be like an exam in that it is supposed to test yo
 - It's actually best to have your questions or clarifications be made as a public post on Piazza (so everyone can benefit).
    - Posts have to follow the forum guidelines - no publicly shared code/solutions! Violation of the forum guidelines will result in a deduction of 10% of your grade per violation.
    - If necessary, post a short, self-contained snippet to reproduce the error: follow the style/examples that we've discussed as part of how to debug a program.
-   - No posts after the final submission is due (i.e. after Monday, December 5, at 11:59 PM).
+   - No posts after the final submission is due (i.e. after {{site.checkpoint3 | date: "%a, %b %d, %H:%M" }}).
 - Do not email the TAs/ULAs directly: again - use Piazza instead.
 - Make sure to submit your code to Gradescope before posting something on the forum (if necessary, we can load your submission for reference).
 - If you are asking a question that is too open-ended, we cannot guarantee that we can provide you with a hint. We will try and give you as much help as we can, _but in the end we cannot provide any solutions to you_. Again, this project is supposed to be your own work.
