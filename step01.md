@@ -204,7 +204,7 @@ Make sure that you write the assert statements and test your program interactive
 
 During your first lab working on this project, create the required files listed above and verify that you can submit them all at once to Gradescope. If you run into any issues, let the TAs and/or ULAs know during your first lab working on this project.
 
-To get full score for Checkpoint 1, make sure that you correctly implemented the **"List"**, **"Delete"**, and **"Quit"** menu options and everything that they need (see their respective sections about what functions they require).
+To get full score for Checkpoint 1, make sure that you correctly implemented the **"List"**, **"Add"**, and **"Quit"** menu options and everything that they need (see their respective sections about what functions they require).
 
 - Upload the requested files shown above with the required functions added to them.
 - Add the code and proper documentation (i.e. docstrings and comments) for all functions.
@@ -213,7 +213,7 @@ To get full score for Checkpoint 1, make sure that you correctly implemented the
 ## Checkpoint 2: due {{site.checkpoint2 | date: "%a, %b %d, %H:%M" }} <a name="checkpoint2"></a>
 Checkpoint 2 assignment will open up on Gradescope as soon as Checkpoint 1 closes.
 
-To get a full score for Checkpoint 2, make sure that you correctly implemented the **"Add"**, **"Restore"** and **"Save"** menu options and everything that they need. 
+To get a full score for Checkpoint 2, make sure that you correctly implemented the **"Delete"**, **"Restore"** and **"Save"** menu options and everything that they need. 
 
 - Upload the requested files shown above with the required functions added to them.
 - Add the code and proper documentation (i.e. docstrings and comments) for all functions.
