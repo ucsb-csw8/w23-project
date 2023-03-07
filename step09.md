@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Step 7 - "Show Average Price"  option
+title: Step 9 - "Show Average Price"  option
 ---
 
 # {{page.title}}
@@ -52,3 +52,9 @@ Expense rating is : $$
  
 ```
 
+
+# Final Submission
+
+After finishing this step, you are ready for Checkpoint 1.
+
+See the [Final Submission instructions at Step 1](/w23-project/step01#final-submission) for more information

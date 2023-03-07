@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Step 4 - "Add" option
+title: Step 5 - "Add" option
 ---
 
 # {{page.title}}
@@ -122,3 +122,4 @@ Finally, here's a demo of adding a new menu dish successfully:
 After successfully adding a new menu dish, you should be able to see it in the List menu option. For example:
 ```
 ```
+

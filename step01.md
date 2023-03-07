@@ -134,7 +134,7 @@ The following components will count in your final project grade as follows:
 
 The autograder for the project functions will be added to the assignment after Checkpoint 2 closes. Until then, make sure that you write the assert statements and test your program interactively on your Python IDLE (or other IDE if you want).
 
-## Checkpoint 1: due {{site.checkpoint1 | date: "%a, %b %d, %H:%M" }}
+## Checkpoint 1: due {{site.checkpoint1 | date: "%a, %b %d, %H:%M" }} <a name="checkpoint1"></a>
 
 During your first lab working on this project, create the required files listed above and verify that you can submit them all at once to Gradescope. If you run into any issues, let the TAs and/or ULAs know during your first lab working on this project.
 
@@ -144,7 +144,7 @@ To get full score for Checkpoint 1, make sure that you correctly implemented the
 - Add the code and proper documentation (i.e. docsis and comments) for all functions.
 - Add the function stubs and the documentation for the rest of the functions that are not implemented here - full functionality is not required for this checkpoint but you are welcome to include it as well.
 
-## Checkpoint 2: due {{site.checkpoint2 | date: "%a, %b %d, %H:%M" }}
+## Checkpoint 2: due {{site.checkpoint2 | date: "%a, %b %d, %H:%M" }} <a name="checkpoint2"></a>
 Checkpoint 2 assignment will open up on Gradescope as soon as Checkpoint 1 closes.
 
 To get a full score for Checkpoint 2, make sure that you correctly implemented the **"Add"**, **"Restore"** and **"Save"** menu options and everything that they need. 
@@ -153,7 +153,7 @@ To get a full score for Checkpoint 2, make sure that you correctly implemented t
 - Add the code and proper documentation (i.e. docsis and comments) for all functions.
 - Add the function stubs and the documentation for the rest of the functions that are not implemented here (i.e. the menu options for **"Edit"** and **"Show average price"**) - full functionality is not required for this checkpoint but you are welcome to include it as well.
 
-## Final Submission: due {{site.checkpoint3 | date: "%a, %b %d, %H:%M" }}
+## Final Submission: due {{site.checkpoint3 | date: "%a, %b %d, %H:%M" }} <a name="final-submission"></a>
 The Final Project assignment will open up on Gradescope as soon as Checkpoint 2 closes.
 Submit your final version of the entire project here (i.e. full functionality required).
 

@@ -3,15 +3,6 @@ layout: default
 title: Step 3 - "List" option
 ---
 
-
-# IGNORE OUT OF DATE
-# IGNORE OUT OF DATE
-# IGNORE OUT OF DATE
-# IGNORE OUT OF DATE
-# IGNORE OUT OF DATE
-# IGNORE OUT OF DATE
-
-
 # {{page.title}}
 
 
@@ -54,7 +45,7 @@ In this project, **one menu items's information** is a **dictionary** object tha
 
 Here is an example of what a dictionary with a **single menu item's information** could look like:
 
-```
+```python
 {
 "name": "burrito",
 "calories": 500,
@@ -66,7 +57,7 @@ Here is an example of what a dictionary with a **single menu item's information*
 
 In this project, for the ease of testing, we will **hard-code** a list  of menu item information at the top of the **main program**, after the dictionary `the_menu`. We will refer to it as `restaurant_menu_list`. This is just an example dictionary containing 4 menu item information dictionaries that can be used to test our system as we develop it. You can add more of your own examples as longs as they adhere to the correct formats and types of the dictionary values.
 
-```
+```python
 restaurant_menu_list = [
             {
                 "name": "burrito",
@@ -100,7 +91,7 @@ restaurant_menu_list = [
   * `list_menu` will contain the "List" menu sub-options
   * `spicy_scale_map` will contain the mapping of the spicy_level values, as integers, to a string for the name of the spice level
 
-```
+```python
     list_menu = {
         "A": "complete menu",
         "V": "vegetarian dishes only",
@@ -117,15 +108,14 @@ restaurant_menu_list = [
 * Next, add the following code to your **main program** to implement the listing of the menu items - you do not need to change it as shown below.
   * Note that there are new functions `list_helper()`, `get_selection()` that needs to be implemented and that is _also_ given to you after the code below.
 
-```
+```python
     elif opt == 'L':
-    
         list_helper(list_menu, restaurant_menu_list, spicy_scale_map)
 ```
 
 * In your **functions.py**, copy the `list_helper` and `get_selection()` functions given below - you will use these functions as-is. These functions are central to many of the menu options this program can perform. We have an option in the function parameters (`go_back`) that can be used if the user changes their mind and wants to return to the main menu.
 
-```
+```python
 
 def list_helper(list_menu, restaurant_menu_list, spicy_scale_map):
     if restaurant_menu_list == {}:
@@ -191,7 +181,8 @@ def get_selection(action, suboptions, to_upper=True, go_back=False):
 * NOW: Define 2 new functions: `print_dish()`, `print_restaurant_menu()`. 
 
 1. List an **individual** menu item.
-```
+
+```python
 def print_dish(dish, spicy_scale_map, name_only=False):
     # TODO : is spicy_scale_map used in this function?
     """
@@ -219,7 +210,7 @@ def print_dish(dish, spicy_scale_map, name_only=False):
 
 2. List all or some of the menu items stored in the restaurant_menu list. 
 
-```
+```python
 def print_restaurant_menu(restaurant_menu, spicy_scale_map, name_only, show_idx, start_idx, vegetarian_only):
     """
     restaurant_menu (list) - a list object that is expected
@@ -313,6 +304,7 @@ You selected |A| to list |complete menu|.
 ```
 
 2. Below is another sample program output for listing V (vegetarian menu items only).
+
 ```
 You selected |V| to list |vegetarian dishes only|.
 ------------------------------------------

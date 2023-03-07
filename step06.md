@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Step 8 - "Save" option
+title: Step 6 - "Save" option
 ---
 
 # {{page.title}}

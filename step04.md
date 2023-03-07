@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Step 6 - "Delete" option
+title: Step 4 - "Delete" option
 ---
 
 # {{page.title}}
@@ -162,3 +162,8 @@ WARNING: There is nothing to delete!
 ::: Press Enter to continue
 ```
 
+# Checkpoint 1
+
+After finishing this step, you are ready for Checkpoint 1.
+
+See the [Checkpoint 1 instructions at Step 1](/w23-project/step01#checkpoint1) for more information
