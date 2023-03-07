@@ -10,7 +10,7 @@ title: Step 3 - "List" option
 
 Oftentimes, data is stored in a very compact but not human-friendly way. Think of how our forum questions may be stored in Piazza databases somewhere in the cloud. One way a question-object may be stored is this:
 
-```
+```python
 {
     'title': 'Extension',
     'description': 'hey i submitted my lab 2 hours after the deadline. Do you think there is...',

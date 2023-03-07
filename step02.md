@@ -71,7 +71,7 @@ The `print_main_menu()` function does not return anything, it just prints the co
 
 **Use the following starter code** to implement the main loop for your program:
 
-```
+```python
 from functions import *
 
 the_menu = ... # TODO 1: add the options from the instructions

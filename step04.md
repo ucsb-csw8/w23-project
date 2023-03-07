@@ -12,7 +12,7 @@ New functions needed:
 You will need to refer to the `delete_item()` function (from [LAB 8.14](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/8/section/14)).
 This is very similar (but not the same) as it was in the previous lab.
 
-```
+```python
 def delete_dish(in_list, idx, start_idx=0):
     """
     param: in_list - a list from which to remove a dish
@@ -42,12 +42,12 @@ def delete_dish(in_list, idx, start_idx=0):
 Your main task is to figure out how to assemble the **main program** portion for correctly deleting an item. You can deduce this by going through the Sample Program Flow examples.
 
 The main program portion should start off with:
-```
+```python
     elif opt == 'D':
         restaurant_menu_list = delete_helper(restaurant_menu_list, spicy_scale_map)
 ```
 The `delete_helper` can start off with: 
-```
+```python
     continue_action = 'y'
     while continue_action == 'y':
     #TODO : the rest of it...
