@@ -163,7 +163,7 @@ The function `print_restaurant_menu()` will list all or some of the menu items s
 Use the implementation from [LAB 7.19](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/7/section/19).
 
 ```python
-def print_restaurant_menu(restaurant_menu, spicy_scale_map, name_only, show_idx, start_idx, vegetarian_only):
+def print_restaurant_menu(restaurant_menu, spicy_scale_map, name_only=False, show_idx=True, start_idx=0, vegetarian_only=False):
     """
     param: restaurant_menu (list) - a list object that holds the dictionaries for each dish
     param: spicy_scale_map (dict) - a dictionary object that is expected
