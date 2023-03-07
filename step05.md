@@ -52,34 +52,40 @@ def get_new_menu_dish(..., ...,):
 ```
 The function **returns** different types of values, _depending on whether it succeeds or fails_.
 
-* The function has to first validate some things:
-   * The entire input list has to be made up of strings. 
-      * If one element of them is invalid, then `get_new_menu_dish()` has to return a tuple containing the error message string `"type"` and the value of the invalid element.
+## Validations
 
-   * The `name` value has to be a string that's at least 3 characters long and at most 25 characters long. The function calls the helper function `is_valid_name()` to check this. 
-      * This helper function returns a Boolean value. 
-      * If the value is invalid, then `get_new_menu_dish()` has to return a tuple containing the message string `"name"` and the invalid `name` value.
+The function has to first validate some things
 
-   * The `calories` value has a string that is expected to be an integer to represent calories of the dish. The function calls the helper function `is_valid_calories()` to check this. 
-      * This helper function returns a Boolean value. 
-      * If the value is invalid, then `get_new_menu_dish()` has to return a tuple containing the message string `"calories"` and the invalid `calories` value.
+* The entire input list has to be made up of strings. 
+   * If one element of them is invalid, then `get_new_menu_dish()` has to return a tuple containing the error message string `"type"` and the value of the invalid element.
 
-   * The `price` value has a string that contains a float number to represent the price of the dish. The function calls the helper function `is_valid_price()` to check this.
-	   * This helper function returns a Boolean value.
-	   * If the value is invalid, then `get_new_menu_dish()` has to return a tuple containing the message string `"price"` and the invalid `price` value.``
+* The `name` value has to be a string that's at least 3 characters long and at most 25 characters long. The function calls the helper function `is_valid_name()` to check this. 
+   * This helper function returns a Boolean value. 
+   * If the value is invalid, then `get_new_menu_dish()` has to return a tuple containing the message string `"name"` and the invalid `name` value.
 
-   * The `is_vegetarian` value has to be a string that either "yes" or "no". The function calls the helper function `is_is_valid_vegetarian()` to check this.
-	   * This helper function returns a Boolean value.
-	   * If the value is invalid, then `get_new_menu_dish()` has to return a tuple containing the message string "is_vegetarian" and the invalid `is_vegetarian` value. 
- 
-   * The `spciy_level` value has to be a string that is a digit contained in `spicy_scale_map`. 
-      * If the value is invalid, then `get_new_menu_dish` has to return a tuple containing the message string `"spicy_level"` and the invalid `spicy_level` value.
+* The `calories` value has a string that is expected to be an integer to represent calories of the dish. The function calls the helper function `is_valid_calories()` to check this. 
+   * This helper function returns a Boolean value. 
+   * If the value is invalid, then `get_new_menu_dish()` has to return a tuple containing the message string `"calories"` and the invalid `calories` value.
 
-* Once validation is taken care of, then the values passed into `get_new_menu_dish()` through its list parameter, must be added as values to a **new** dictionary with the 5 song keys (i.e. "name", "calories", "price", etc...)
-   * **Important**: make sure when you add these values that they are added as the correct data type.
-   * The new dictionary gets **returned** at the conclusion of this process.
+* The `price` value has a string that contains a float number to represent the price of the dish. The function calls the helper function `is_valid_price()` to check this.
+   * This helper function returns a Boolean value.
+   * If the value is invalid, then `get_new_menu_dish()` has to return a tuple containing the message string `"price"` and the invalid `price` value.``
 
-The first input parameter is a **list** of all needed song dictionary values stored **as strings**: 
+* The `is_vegetarian` value has to be a string that either "yes" or "no". The function calls the helper function `is_is_valid_vegetarian()` to check this.
+   * This helper function returns a Boolean value.
+   * If the value is invalid, then `get_new_menu_dish()` has to return a tuple containing the message string "is_vegetarian" and the invalid `is_vegetarian` value. 
+
+* The `spicy_level` value has to be a string that is a digit contained in `spicy_scale_map`. 
+   * If the value is invalid, then `get_new_menu_dish` has to return a tuple containing the message string `"spicy_level"` and the invalid `spicy_level` value.
+
+## Creating a new dictionary item
+
+Once validation is taken care of, then the values passed into `get_new_menu_dish()` through its list parameter, must be added as values to a **new** dictionary with the 5 menu item keys (i.e. "name", "calories", "price", etc...)
+
+* **Important**: make sure when you add these values that they are added as the correct data type.
+* The new dictionary gets **returned** at the conclusion of this process.
+
+The first input parameter is a **list** of all needed menu item dictionary values stored **as strings**: 
    * The order of the fields is ** name, calories, price, is_vegetarian, spicy_level.**
    * If the provided field values are valid, return a new dictionary:
 
@@ -106,22 +112,26 @@ FIXME: UNFINISHED AS OF 03/06 9:35PM
 
 # Sample Program Flow
 
-Below is a demo of adding an incorrect menu dish:
-```
-FIXME: UNFINISHED AS OF 03/06 9:35PM
-```
+1. Below is a demo of adding an incorrect menu dish:
 
-Here is a demo of adding a different incorrect menu dish:
-```
-FIXME: UNFINISHED AS OF 03/06 9:35PM
-```
+   ```
+   FIXME: UNFINISHED AS OF 03/06 9:35PM
+   ```
 
-Finally, here's a demo of adding a new menu dish successfully:
-```
-```
+2. Here is a demo of adding a different incorrect menu dish:
 
-After successfully adding a new menu dish, you should be able to see it in the List menu option. For example:
-```
-FIXME: UNFINISHED AS OF 03/06 9:35PM
-```
+   ```
+   FIXME: UNFINISHED AS OF 03/06 9:35PM
+   ```
 
+3. Finally, here's a demo of adding a new menu dish successfully:
+
+   ```
+   FIXME: UNFINISHED AS OF 03/06 9:35PM
+   ```
+
+4. After successfully adding a new menu dish, you should be able to see it in the List menu option. For example:
+
+   ```
+   FIXME: UNFINISHED AS OF 03/06 9:35PM
+   ```
