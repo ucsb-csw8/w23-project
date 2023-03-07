@@ -6,7 +6,7 @@ link_to_shared_gradescope_for_final_project: https://www.gradescope.com/courses/
 
 # {{page.title}}
 
-In this project, you are asked to create a **Restaurant Menu Management System**, which can help with managing a database containing a restaurants menu items (i.e. the food and beverage items that would appears on their printed menu, or a display menu on a computer monitor, for example.)
+In this project, you are asked to create a **Restaurant Menu Management System**, which can help with managing a database containing a restaurant's menu items (i.e. the food and beverage items that would appears on their printed menu, or a display menu on a computer monitor, for example.)
 
 The due dates and intermediate checkpoints are listed below.
 
@@ -38,16 +38,16 @@ You **MAY NOT USE**  material or techniques that we haven't covered in this cour
 
 Here's why: when very advanced Python concepts show up in your code, it's often an indication that you got a solution to a problem from an online source rather than solving it yourself.
 
-If you are unsure about a specific , please check in via private post on Piazza.  
+If you are unsure about whether a specific technique is okay to use, please check in via a private post on Piazza _addressed to the **Instructors**_.  
 
 ## Academic Integrity Reporting
 
 All students involved in an academic integrity incident, regardless if they are copying or sharing their work, are going to be reported to The Office of Student Conduct, and get an **F** grade in the course.
 
-Please complete **your own work** (without using resources other than your own knowledge) and keep it to yourself. You should not share your code or answers directly with other students.
+Please complete **your own work** (without using resources other than your own knowledge) and keep it to yourself. You should not share your code or answers directly with other students. **All** students, regardless of copying or sharing the code, would be reported to The Office of Student Conduct.
 
 
-> By submitting your final project work, _you are asserting that **all work on this project is yours alone**_, and that you will not provide any information to anyone else doing the project, nor will you solicit help from anyone in the class or on the internet. In addition, you are agreeing that you will not discuss any part of the solutions for this project with anyone. This includes discussing the solutions with others after you finish this course or posting any information about this project on any site on the internet. Doing so constitutes a violation of the academic integrity agreement for this course, which can lead to getting an **F** in the course. We reserve the right to change the grade retroactively, even after the final grades have been posted.
+> By submitting your final project work, _you are asserting that **all work on this project is yours alone**_, and that you will not provide any information to anyone else doing the project, nor will you solicit help from anyone in the class or on the internet. In addition, you are agreeing that you will not discuss any part of the solutions for this project with anyone (except the course staff during the office hours, or on Piazza; we will not use any other channels of communication with you). Not sharing any part of the projecy includes discussing the solutions with others after you finish this course or posting any information about this project on any site on the internet. Doing so constitutes a violation of the academic integrity agreement for this course, which can lead to getting an **F** in the course. We reserve the right to change the grade retroactively, even after the final grades have been posted.
 
 -----
 
@@ -63,14 +63,16 @@ You will not need to submit anything on zyBooks. You will need to submit three (
 
 Each of these is explained below.
 
+You need to be running your code in an IDE (IDLE or another program) - they will warn you each time you run it if your code contains syntax errors. Code that contains syntax errors might get a 0 for the entire autograded portion, so make sure to **run your code** before submitting it (see [more info about it](#reqs)).
+
 **Important**: The files need to be in the _same folder_ on your computer. The import statements in your code will not work correctly, if the files are in different locations on your hard drive.
 
 **File 1 - all your functions**
 Create a file called **`functions.py`** in which you will assemble all the relevant functions.
 
-You do not need to use `if __name__ == 'main'` in this files, because we can import your functions as shown below.
+You do not need to use `if __name__ == 'main'` in this file, because we can import your functions as shown below.
 
-Again, all this project's functions will need to be implemented and added to this file.
+Again, **all** relevant functions for this project will need to be implemented and added to this file.
 
 
 **File 2 - the main program**
@@ -90,8 +92,9 @@ Put this at the top to import all of the functions from `functions.py`
 from functions import *
 ```
 
-**Important**: you need to run this file separately: running the main program will not execute the assert statements.
+**Important**: you need to run this file separately: running the main program will **not** automatically execute the assert statements.
 Each function that returns values will need to have the corresponding assert statements to check its correctness.
+Make sure that you have at least **three** assert statements for each function.
 
 If the assert statements are failing, then the autograder on Gradescope will surely fail as well.
 
@@ -116,7 +119,7 @@ The project will be automatically graded for some functions, and manually graded
 When submitting on Gradescope, remember that you can either navigate to your file or "drag-and-drop" them into the "Submit Programming Assignment" window. If you already submitted something on Gradescope, it will take you to their "Autograder Results" page. There is a "Resubmit" button on the bottom right that will allow you to update the files for your submission.
 _You can re-submit your work as many times as you would like until the deadline._
 
-Submit the files and the function stubs as soon as you read the assignment. See the Checkpoints below.
+**Submit the files and the function stubs as soon as you read the assignment.** See the Checkpoints below.
 
 Make sure to periodically backup your work by submitting it to Gradescope, so that in an unexpected event, we can use your backup, instead of giving you a 0 for a missing submission.
 
@@ -132,16 +135,17 @@ The following components will count in your final project grade as follows:
 - 20% - Checkpoint 2 grade
 - 75% - Final submission grade
 
-The autograder for the project functions will be added to the assignment after Checkpoint 2 closes. Until then, make sure that you write the assert statements and test your program interactively on your Python IDLE (or other IDE if you want).
+<!--The autograder for the project functions will be added to the assignment after Checkpoint 2 closes. Until then, -->
+Make sure that you write the assert statements and test your program interactively on your Python IDLE (or other IDE if you want).
 
 ## Checkpoint 1: due {{site.checkpoint1 | date: "%a, %b %d, %H:%M" }} <a name="checkpoint1"></a>
 
 During your first lab working on this project, create the required files listed above and verify that you can submit them all at once to Gradescope. If you run into any issues, let the TAs and/or ULAs know during your first lab working on this project.
 
-To get full score for Checkpoint 1, make sure that you correctly implemented the **"List"**, **"Delete"**, and **"Quit"** menu options and everything that they need (see further sections about what those are).
+To get full score for Checkpoint 1, make sure that you correctly implemented the **"List"**, **"Delete"**, and **"Quit"** menu options and everything that they need (see their respective sections about what functions they require).
 
 - Upload the requested files shown above with the required functions added to them.
-- Add the code and proper documentation (i.e. docsis and comments) for all functions.
+- Add the code and proper documentation (i.e. docstrings and comments) for all functions.
 - Add the function stubs and the documentation for the rest of the functions that are not implemented here - full functionality is not required for this checkpoint but you are welcome to include it as well.
 
 ## Checkpoint 2: due {{site.checkpoint2 | date: "%a, %b %d, %H:%M" }} <a name="checkpoint2"></a>
@@ -150,12 +154,12 @@ Checkpoint 2 assignment will open up on Gradescope as soon as Checkpoint 1 close
 To get a full score for Checkpoint 2, make sure that you correctly implemented the **"Add"**, **"Restore"** and **"Save"** menu options and everything that they need. 
 
 - Upload the requested files shown above with the required functions added to them.
-- Add the code and proper documentation (i.e. docsis and comments) for all functions.
-- Add the function stubs and the documentation for the rest of the functions that are not implemented here (i.e. the menu options for **"Edit"** and **"Show average price"**) - full functionality is not required for this checkpoint but you are welcome to include it as well.
+- Add the code and proper documentation (i.e. docstrings and comments) for all functions.
+- You should already have the function stubs and the documentation for the rest of the functions that are not required to be implemented here (i.e. the menu options for **"Update"** and **"Show average price"**) - full functionality is not required for this checkpoint but you are welcome to include it as well.
 
 ## Final Submission: due {{site.checkpoint3 | date: "%a, %b %d, %H:%M" }} <a name="final-submission"></a>
 The Final Project assignment will open up on Gradescope as soon as Checkpoint 2 closes.
-Submit your final version of the entire project here (i.e. full functionality required).
+Submit your final version of the entire project (i.e. full functionality required).
 
 -----
 
@@ -228,6 +232,7 @@ Long before each checkpoint deadline, walk through these steps:
 - make sure that the main program only has the necessary import (it's just one import instruction)
 - check all default values! We will test that you are using them.
 - be sure that you test for the invalid 'arguments'/'input values' in each function (use the assert statements).
+- at a minimum, include three assert statements for each function that returns a value
 - submit all properly-named Python files to Gradescope
 
 -----

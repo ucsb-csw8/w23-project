@@ -49,9 +49,9 @@ In your main program, you need to define a dictionary `the_menu` that has the op
 ```
     "L" : "List"
     "A" : "Add"
-    "E" : "Edit"
+    "E" : "Update"
     "D" : "Delete"
-    "M" : "Show statistical data on"
+    "M" : "Show average price"
     "S" : "Save the data to file"
     "R" : "Restore data from file"
     "Q" : "Quit this program"
@@ -74,28 +74,25 @@ The `print_main_menu()` function does not return anything, it just prints the co
 ```python
 from functions import *
 
-the_menu = ... # TODO 1: add the options from the instructions
-opt = None
+if __name__ == "__main__":
+    the_menu = {} # TODO 1: add the options from the instructions
+    opt = None
 
-while True:
-    # print_main_menu(...) # TODO 2: define the function, uncomment, and call with the menu as an argument
-    opt = input("::: Enter a menu option\n> ")
-    opt = opt.upper() # to allow us to input lower- or upper-case letters
+    while True:
+        # print_main_menu(...) # TODO 1: uncomment, define the function, and call with the menu as an argument
+        print("::: Enter an option")
+        opt = input("> ")
 
-    if ...: # TODO 3: check of the character stored in opt is in the_menu dictionary
-        print(f"WARNING: {opt} is an invalid menu option.\n")
-        continue
+        if opt == ...: # TODO 2: make Q or q quit the program
+            print("Goodbye!\n")
+            break # exit the main `while` loop
+        else:
+            if ...: # TODO 3: check of the character stored in opt is in the_menu dictionary
+                print(f"You selected option {opt} to > {the_menu[opt]}.")
+            else:
+                print(f"WARNING: {opt} is an invalid option.\n")
 
-    print(f"You selected option {opt} to > {the_menu[opt]}.")
-
-    if opt == ...: # TODO 4: quit the program
-        print("Goodbye!\n")
-        break # exit the main `while` loop
-
-    # Pause before going back to the main menu
-    input("::: Press Enter to continue")
-
-print("Have a nice day!")
+    print("Have a delicious day!")
 ```
 
 **Important:** Every time you see the `:::` and `>` in the prompts, it denotes the call to the `input()` function as shown in the starter code. After the `"::: Press Enter to continue"` prompt is displayed and the user presses Enter, the system is set up to print the main menu at the start of the loop.
@@ -118,27 +115,6 @@ In the rest of the instructions, you will get to implement the rest of the optio
 
 ---
 
-
-
-## Create the test file <a name="testfile"></a>
-
-For _each function that **returns** something_ in the **functions.py** file, you should add the corresponding `assert` statements to the **tests.py**.  # TODO: Please confirm the file name (restaurant_functions.py or functions.py)
-
-For now, since the next steps will rely on it:
-* add the `get_written_date()` function implementation from [LAB 7.18](https://learn.zybooks.com/zybook/UCSBCMPSCW8MatniFall2022/chapter/7/section/18) to the **functions.py** # TODO: Please upload new links for LAB 7.18 W23
-* add the `assert` statements to check the function correctness in your **test file** 
-
-If you see an `AssertionError`, check the `line` number that the error message pointed to.
-In IDLE, you can select the **"Show Line Numbers"** option from the top "Options" menu.
-
-
-**Pro Tip**: As you are reading the instructions, immediately begin adding the `assert` statements.
-* test various conditions, especially, the edge cases
-* copy into a comment the part of the instructions that the assert is supposed to test
-
-[Back to top](#top)
-
----
 
 # Submit the three files to Gradescope
 

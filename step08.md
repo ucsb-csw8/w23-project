@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Step 8 - "Edit" option
+title: Step 8 - "Update" option
 ---
 
 # {{page.title}}
@@ -17,7 +17,7 @@ Add the following branch to your **main program**
         update_helper(restaurant_menu_list, spicy_scale_map)
 ```
 
-Define a new function update_helper() as follows, replacing the ellipses with the appropriate values:
+Define a new function `update_helper()` as follows, replacing the ellipses with the appropriate values:
 
 ```python
 def update_helper(restaurant_menu_list, spicy_scale_map):
@@ -33,7 +33,7 @@ def update_helper(restaurant_menu_list, spicy_scale_map):
         if ...: #TODO - check to see if the number is valid
             dish_idx = int(user_option) - 1
             subopt = get_selection("update", restaurant_menu_list[dish_idx], to_upper=False, go_back=True)
-            if subopt == 'M':  # if the user changed their mind
+            if subopt == 'M': or subopt == 'm'  # if the user changed their mind
                 break
             print(f"::: Enter a new value for the field |{...}|") # TODO
             field_info = input("> ")
@@ -53,7 +53,7 @@ def update_helper(restaurant_menu_list, spicy_scale_map):
         # ---------------------------------------------------------------
  ```
 
-Define two new functions `is_valid_index` and `update_menu_dish()` to edit the menu dictionary appropriately:
+Define two new functions `is_valid_index()` and `update_menu_dish()` to edit the menu dictionary appropriately:
 
 ```python
 def is_valid_index(idx, in_list, start_idx=0):
@@ -124,7 +124,7 @@ def update_menu_dish(restaurant_menu_list, idx, spicy_scale_map, field_key, fiel
 Below is a demo of editing with an incorrect value (bad rating value):
 
 ```
-You selected option U to > Edit.
+You selected option U to > Update.
 ::: Which dish would you like to update?
 ------------------------------------------
 1. BURRITO
@@ -153,7 +153,7 @@ The menu was not updated.
 This is a demo of editing that same field correctly:
 
 ```
-You selected option U to > Edit.
+You selected option U to > Update.
 ::: Which dish would you like to update?
 ------------------------------------------
 1. BURRITO
