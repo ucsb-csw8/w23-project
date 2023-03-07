@@ -73,12 +73,6 @@ The `print_main_menu()` function does not return anything, it just prints the co
 
 **Use the following starter code** to implement the main loop for your program:
 
-**NOTE:** You are very limited in what import statements you can use for this project. Any unauthorized `import` statements will cause you to FAIL your project.
-
-**NOTE:** You CANNOT use Python code techniques that we did not cover in this course. Any unauthorized use of code techniques will cause you to FAIL your project.
-
-**NOTE:** We will run anti-cheating programs on your submissions. If we find that you copied code from another student or from a website source, you will FAIL your project and FAIL this course AND be reported to the University for academic dishonesty.
-
 ```
 from functions import *
 
