@@ -13,6 +13,10 @@ The functions needed (from Project Component labs of Week 7 - [LAB 7.20](https:/
 * `is_valid_is_vegetarian()`
 * `is_valid_spicy_level()`
 
+As a reminder: the function `get_new_menu_dish()` checks all of the values passed in, and if any of them is invalid, 
+it returns a *tuple* consisting of the name of the invalid field, and the value of the invalid field, e.g. `('price', '$xxx')` or
+(`spicy_level`,`idk, maybe`).  See the [LAB 7.20](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/7/section/20)) instructions for more information.
+
 Add your solutions to **functions.py** file. Add your `assert` statements **tests.py**.
 
 Example of asserts you could have in your **test file**:
