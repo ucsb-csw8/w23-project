@@ -66,7 +66,7 @@ def add_helper(restaurant_menu_list, spicy_scale_map):
         #     * 'spicy_level' : 1 - 4
         print("::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )")
         dish_data = input("> ")  # TODO: get and process the data into a list
-        dish_list = dish_data.split(",")
+        dish_values = dish_data.split(",")
         result_dict = get_new_menu_dish(..., spicy_scale_map)  # TODO: attempt to create a new dish for the menu
         if type(result_dict) == dict:
             restaurant_menu_list.append(...)  # TODO: add a new dish to the list of dish menus
