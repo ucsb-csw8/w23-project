@@ -27,101 +27,70 @@ Obviously, this format is not user-readable, so Piazza's _frontend_ team produce
 
 We have a mini-version of the same task coming up. Given a list of similar complex objects (represented by Python dictionaries, lists, and other "data containers"), display them in a user-friendly way that we'll define in these instructions.
 
-Since we will be doing this for song information items, we need to figure out how and what to store for each piece of information.
+Since we will be doing this for menu information items, we need to figure out how and what to store for each piece of information.
 
 
-# What is "song information"?
+# What is "menu information"?
 
-* In this project, for the ease of testing, you can **hard-code** a nested dictionary of "information" at the top of your **main program**, after the dictionary `the_menu`. We will refer to it as `all_songs`. This **nested dictionary** will contain **dictionaries** with each song's information.
+* In this project, for the ease of testing, you can **hard-code** a list "information" at the top of your **main program**, after the dictionary `the_menu`
+*'. We will refer to it as `all_songs`. This **list** will contain **dictionaries** with each menu item's information.
 
-In this project, **one song's information** is a **dictionary** object that is guaranteed to have the following keys:
+In this project, **one menu items's information** is a **dictionary** object that is guaranteed to have the following keys:
 
-* `"title"`: a string with the song's name.
-* `"artist"`: a string with the song's artist(s)' name.
-* `"length"`: a string with the song's length in minutes and seconds using the format `00:00`.
-* `"album"`: a string with the name of the album of the song.
+* `"name"`: a string with the menu item's name.
+* `"calories"`: an integer with the number of calories in the menu item.
+* `"price"`: a float with the menu item's price using the format 00.00.
+* `"is_vegetarian"`: a string with value "yes" or "no" for if the menu item is vegetarian.
 * `"genre"`: a variable length list of strings with the genres of the music applicable to the song.
-* `"rating"`: an integer from 1 to 5, representing the song's subjective rating.
-* `"released"`: a valid date-string representing when the song was released. This data has to be in the US date format: `<MM>/<DD>/<YEAR>` ("01/02/2022" represents January 2nd, 2022).
-* `"favorite"`: a boolean indicating if the song is tagged as a favorite or not.
-* `"uid"`: an integer unique ID. This is the same ID number that gets used as a key for this dictionary in a song collection (read on to see an example).
+* `"spicy_level"`: an integer from 1 to 4, representing the menu item's spice level.
 
-Here is an example of what a dictionary with a **single song information** could look like:
+Here is an example of what a dictionary with a **single menu item's information** could look like:
 
 ```
 {
-"title": "Cardigan",
-"artist": "Taylor Swift",
-"length": "03:59",
-"album": "Folklore",
-"genre": ["folk", "indie rock"],
-"rating": 4,
-"released": "07/27/2020",
-"favorite": True,
-"uid": 12332
+"name": "burrito",
+"calories": 500,
+"price": 12.90,
+"is_vegetarian": "yes",
+"spicy_level": 2
 }
 ```
 
-In this project, for the ease of testing, we will **hard-code** a nested dictionary of song information at the top of the **main program**, after the dictionary `the_menu`. We will refer to it as `all_songs`. This is just an example dictionary containing 4 song information dictionaries that can be used to test our system as we develop it. You can add more of your own examples as longs as they adhere to the correct formats and types of the dictionary values.
-
-Since this is a _dictionary of dictionaries_, each dictionary value should be accompanied by a key. This key has to match the song's `"uid"` value. This key is a string made up of exactly 5 digits (with no non-digits in it) with the lowest permissible value of "10000" and highest permissible value of "99999".
+In this project, for the ease of testing, we will **hard-code** a list  of menu item information at the top of the **main program**, after the dictionary `the_menu`. We will refer to it as `restaurant_menu_list`. This is just an example dictionary containing 4 menu item information dictionaries that can be used to test our system as we develop it. You can add more of your own examples as longs as they adhere to the correct formats and types of the dictionary values.
 
 ```
-all_songs = {
-   "12332": {
-      "title": "Cardigan",
-      "artist": "Taylor Swift",
-      "length": "03:59",
-      "album": "Folklore",
-      "genre": ["folk", "indie rock"],
-      "rating": 4,
-      "released": "07/27/2020",
-      "favorite": True,
-      "uid" : 12332
-   },
-   "14567": {
-      "title": "Soul Meets Body",
-      "artist": "Death Cab for Cutie",
-      "length": "",
-      "album": "Plans",
-      "genre": ["indie pop", "indie rock"],
-      "rating": 5,
-      "released": "07/16/2005",
-      "favorite": True,
-      "uid":14567
-      },
-   "78210": {
-      "title": "Fake Love",
-      "artist": "BTS",
-      "length": "04:02",
-      "album": "",
-      "genre": ["hip hop", "electro pop", "Korean pop"],
-      "rating": 3,
-      "released": "05/18/2018",
-      "favorite": False,
-      "uid":78210
-      },
-    "99105": {
-      "title": "Foil",
-      "artist": "'Weird Al' Yankovic",
-      "length": "02:22",
-      "album": "Mandatory Fun",
-      "genre": ["pop", "parody"],
-      "rating": 5,
-      "released": "07/15/2014",
-      "favorite": True,
-      "uid": 99105
-      }
-}
+restaurant_menu_list = [
+            {
+                "name": "burrito",
+                "calories": 500,
+                "price": 12.90,
+                "is_vegetarian": "yes",
+                "spicy_level": 2
+            },
+            {
+                "name": "rice bowl",
+                "calories": 400,
+                "price": 14.90,
+                "is_vegetarian": "no",
+                "spicy_level": 3
+            },
+            {
+                "name": "margherita",
+                "calories": 800,
+                "price": 18.90,
+                "is_vegetarian": "no",
+                "spicy_level": 2
+            }
+        ]
 ```
 
 # Your TODO <a name="inittodo"></a>
 
-* Create a variable to hold a nested dictionary of song information data (dictionaries) at the top of your **main program**. We will refer to it as `all_songs`.
+* Create a variable to hold a nested dictionary of menu item information data (dictionaries) at the top of your **main program**. We will refer to it as `restaurant_menu_list`.
 
 * Additionally, you need to add two more dictionaries to your **main program**:
   * `list_menu` will contain the "List" menu sub-options
-  * `rating_map` will contain the mapping of the rating values, as strings, to their textual interpretation
+  * `spicy_scale_map` will contain the mapping of the spicy_level values, as integers, to a string for the name of the spice level
 
 ```
 list_menu = {
@@ -140,7 +109,7 @@ rating_map = {
 }
 ```
 
-* Next, add the following code to your **main program** to implement the listing of the songs - you do not need to change it as shown below.
+* Next, add the following code to your **main program** to implement the listing of the menu items - you do not need to change it as shown below.
   * Note that there is a new function `get_selection()` that needs to be implemented and that is _also_ given to you after the code below.
 
 ```
