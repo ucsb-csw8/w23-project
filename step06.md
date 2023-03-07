@@ -11,14 +11,14 @@ New functions needed:
 
 We hope that by now you realize the importance of storing and retrieving data. It will help you resume your work from where you left without hardcoding those values. We will now add options that will let you store your restaurant menu into a file and read them back into your dishes information manager.
 
-You need to complete the function ```save_menu_to_csv()``` as defined below. You may refer to your ```save_menu_to_csv()``` function from [LA 9.9](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/9/section/9). Both of these functions perform similar activity. The major change is in the data written in each line of the csv file.
+You need to complete the function `save_menu_to_csv()` as defined below. You may refer to your `save_menu_to_csv()` function from [LA 9.9](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/9/section/9). Both of these functions perform similar activity. The major change is in the data written in each line of the csv file.
 
 To implement this function, we need to use `import csv` in our **functions.py** file.
 The function then uses the csv writer object to write this list as a line into the `filename` file.
 
 The function requires the `import csv` as well as `import os`. **NO OTHER import libraries/modules are allowed!**
 
-```
+```python
 def save_menu_to_csv(restaurant_menu_list, filename):
     """
     param: restaurant_menu_list(list of dict) - The list shore dictionary of dishes 
@@ -48,7 +48,7 @@ def save_menu_to_csv(restaurant_menu_list, filename):
 
 The portion of the **main program** code is provided below. Complete the missing parts and add them in the correct place to your menu information manager.
 
-```
+```python
 	elif opt == 'S':
 		continue_action = ...
 		while continue_action == 'y':
