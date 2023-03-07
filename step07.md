@@ -186,7 +186,8 @@ You selected |A| to list |complete menu|.
 
 ------------------------------------------
 ```
-> NEW! - More Detailed Instructions: What if the CSV file has **bad** data?
+
+# What if the CSV file has **bad** data?
 
 Now, what if the CSV file has "invalid data" in it? "Invalid data" is **only** defined as data that would be flagged as an error by the `get_new_menu_dish()` function (example: bad name, bad format, etc...). For example, a dish with price `10.001`, should not be considered to be "invalid" because that is not something that is validated by `get_new_menu_dish()`.  #TODO: double check this
 
@@ -227,7 +228,12 @@ The following rows from the file were not loaded:
 ::: Would you like to try again? Enter 'y' to try again.
 ```
 
-**ADDITIONAL NOTE:** If your ```Save the data to file``` option is working correctly, the file you wrote into using that option should work perfectly with this option and your entire menu information should be loaded properly.
+# A hint
+
+If your ```Save the data to file``` option is working correctly, the file you wrote into using that option should work perfectly with this option and your entire menu information should be loaded properly.
+
+You may want to try saving and restoring a few times to make sure that
+everything works.
 
 
 # Checkpoint 2
