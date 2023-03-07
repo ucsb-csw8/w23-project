@@ -55,7 +55,13 @@ Please complete **your own work** (without using resources other than your own k
 
 ## Required files
 
-You will not need to submit anything on zyBooks. You will need to submit three (3) Python files to Gradescope.
+You will not need to submit anything on zyBooks. You will need to submit three (3) Python files to Gradescope:
+
+* `functions.py`
+* `main.py`
+* `tests.py`
+
+Each of these is explained below.
 
 **Important**: The files need to be in the _same folder_ on your computer. The import statements in your code will not work correctly, if the files are in different locations on your hard drive.
 
