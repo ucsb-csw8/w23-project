@@ -45,7 +45,7 @@ You will need to use some code that you wrote in previous labs.
 
 ## Main Menu <a name="mainmenu"></a>
 
-In your main program, you need to define a dictionary `the_menu` that has the options shown below.
+In your main program (main.py), you need to define a dictionary `the_menu` that has the options shown below.
 ```
     "L" : "List"
     "A" : "Add"
@@ -59,7 +59,9 @@ In your main program, you need to define a dictionary `the_menu` that has the op
 
 The menu should be printed by the `print_main_menu()` function when the user starts this system.
 🎊 You already implemented this function in prior labs.
-* You can copy it directly into the  **functions.py**.
+
+* You can find this function definition in your prior labs and then copy it directly into the  **functions.py**.
+* If you are having trouble locating that file, you can always look at your past Gradescope and zyLabs submissions for it.
 
 The `print_main_menu()` function does not return anything, it just prints the correctly-formatted options that are provided in the dictionary.
 
