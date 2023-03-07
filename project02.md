@@ -45,8 +45,6 @@ You will need to use some code that you wrote in previous labs.
 
 ## Main Menu <a name="mainmenu"></a>
 
-**IMPORTANT: Do NOT use any global variables.**
-
 In your main program, you need to define a dictionary `the_menu` that has the options shown below.
 ```
     "L" : "List"
