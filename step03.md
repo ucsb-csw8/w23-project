@@ -47,11 +47,11 @@ Here is an example of what a dictionary with a **single menu item's information*
 
 ```python
 {
-"name": "burrito",
-"calories": 500,
-"price": 12.90,
-"is_vegetarian": "yes",
-"spicy_level": 2
+    "name": "burrito",
+    "calories": 500,
+    "price": 12.90,
+    "is_vegetarian": "yes",
+    "spicy_level": 2
 }
 ```
 
@@ -59,28 +59,28 @@ In this project, for the ease of testing, we will **hard-code** a list  of menu 
 
 ```python
 restaurant_menu_list = [
-            {
-                "name": "burrito",
-                "calories": 500,
-                "price": 12.90,
-                "is_vegetarian": "yes",
-                "spicy_level": 2
-            },
-            {
-                "name": "rice bowl",
-                "calories": 400,
-                "price": 14.90,
-                "is_vegetarian": "no",
-                "spicy_level": 3
-            },
-            {
-                "name": "margherita",
-                "calories": 800,
-                "price": 18.90,
-                "is_vegetarian": "no",
-                "spicy_level": 2
-            }
-        ]
+  {
+    "name": "burrito",
+    "calories": 500,
+    "price": 12.90,
+    "is_vegetarian": "yes",
+    "spicy_level": 2
+  },
+  {
+    "name": "rice bowl",
+    "calories": 400,
+    "price": 14.90,
+    "is_vegetarian": "no",
+    "spicy_level": 3
+  },
+  {
+    "name": "margherita",
+    "calories": 800,
+    "price": 18.90,
+    "is_vegetarian": "no",
+    "spicy_level": 2
+  }
+]
 ```
 
 # Your TODO <a name="inittodo"></a>
@@ -92,6 +92,7 @@ restaurant_menu_list = [
   * `spicy_scale_map` will contain the mapping of the spicy_level values, as integers, to a string for the name of the spice level
 
 ```python
+
     list_menu = {
         "A": "complete menu",
         "V": "vegetarian dishes only",

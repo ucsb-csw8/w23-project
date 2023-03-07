@@ -140,15 +140,15 @@ In IDLE, you can select the **"Show Line Numbers"** option from the top "Options
 
 ---
 
----
+# Submit the three files to Gradescope
 
 You should now have a basic structure for the system, and you are ready to begin implementing each option.
 
-TODO: Once you assembled the above template and your main program, and the testing code runs without any errors, **submit your files to Gradescope**.
+TODO: Once you assembled the above template and your main program, and the testing code runs without any errors, **submit your files to Checkpoint 1 on Gradescope**.  Why?
+
+* to ensure that you are able to submit
+* as evidence that you've gotten started on the project.   
+
+It likely won't pass all the tests; at this point that's fine.  You'll have to complete step02 and step03 also.    But at least you've gotten started.
 
 We hope that you enjoy putting this project together!
-
----
-
-[Back to top](#top)
-
