@@ -47,7 +47,12 @@ In your **functions file**, define `get_new_menu_dish()` that takes 2 parameters
 ```python
 def get_new_menu_dish(..., ...,): 
     """
-    Document the function correctly
+	Validate each parameter starting from "name" and until "spicy_level"
+	If one of them fails, return a tuple containing the name of the incorrect parameter and its value
+	e.g., ("name", "Mu") if "name" is not 3-25 characters long
+	or ("is_vegetarian", "none") if that field is not set to boolean.
+	If all validations pass, return the dictionary with the dish fields
+	correctly set to the parameters.
     """
 ```
 The function **returns** different types of values, _depending on whether it succeeds or fails_.
@@ -106,7 +111,9 @@ The helper functions will need to be added first, before defining `get_new_menu_
 
 Example of asserts you could have in your **test file**:
 ```
-FIXME: UNFINISHED AS OF 03/06 9:35PM
+assert type(dish['name']) is str
+assert len(dish['name']) >= 3 and len(dish['name']) <= 25
+assert type(dish['price']) is float
 ```
 
 
@@ -115,23 +122,74 @@ FIXME: UNFINISHED AS OF 03/06 9:35PM
 1. Below is a demo of adding an incorrect menu dish:
 
    ```
-   FIXME: UNFINISHED AS OF 03/06 9:35PM
+   ::: Enter a menu option
+   > A
+   > You selected option A to > Add.
+   ::: Enter each required field, separated by commas.
+   ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
+   > burrito, 500, 12.9, false, 3
+   WARNING: invalid dish field: ('is_vegetarian', 'false')
+   
+   ::: Would you like to add another dish? Enter 'y' to continue.
+   > 
    ```
 
 2. Here is a demo of adding a different incorrect menu dish:
 
    ```
-   FIXME: UNFINISHED AS OF 03/06 9:35PM
+   ::: Enter a menu option
+   > A
+   > You selected option A to > Add.
+   ::: Enter each required field, separated by commas.
+   ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
+   > burrito, 500, 12.9, yes, 10
+   WARNING: invalid dish field: ('spicy_level', '10')
+      
+   ::: Would you like to add another dish? Enter 'y' to continue.
+   >
    ```
 
 3. Finally, here's a demo of adding a new menu dish successfully:
 
    ```
-   FIXME: UNFINISHED AS OF 03/06 9:35PM
+   ::: Enter a menu option
+   > A
+   > You selected option A to > Add.
+   ::: Enter each required field, separated by commas.
+   ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
+   > rice bowl, 400, 14.9, no, 3
+
+   Successfully added a new dish!
+   RICE BOWL
+   * Calories: 400
+   * Price: 14.9
+   * Is it vegetarian: no
+   * Spicy level: Hot
+
+   ::: Would you like to add another dish? Enter 'y' to continue.
+   >
    ```
 
 4. After successfully adding a new menu dish, you should be able to see it in the List menu option. For example:
 
    ```
-   FIXME: UNFINISHED AS OF 03/06 9:35PM
+   ::: Enter a menu option
+   > L
+   You selected option L to > List.
+   ::: What field would you like to list?
+   A - complete menu
+   V - vegetarian dishes only
+   ::: Enter your selection
+   > A
+   You selected |A| to list |complete menu|.
+   ------------------------------------------ 
+   1. RICE BOWL
+   * Calories: 400
+   * Price: 14.9
+   * Is it vegetarian: no
+   * Spicy level: Hot
+
+   ------------------------------------------ 
+   ::: Press Enter to continue
    ```
+
