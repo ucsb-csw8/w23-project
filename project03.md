@@ -33,7 +33,7 @@ Since we will be doing this for menu information items, we need to figure out ho
 # What is "menu information"?
 
 * In this project, for the ease of testing, you can **hard-code** a list "information" at the top of your **main program**, after the dictionary `the_menu`
-*'. We will refer to it as `all_songs`. This **list** will contain **dictionaries** with each menu item's information.
+*'. We will refer to it as `restaurant_menu_list`. This **list** will contain **dictionaries** with each menu item's information.
 
 In this project, **one menu items's information** is a **dictionary** object that is guaranteed to have the following keys:
 
@@ -41,7 +41,6 @@ In this project, **one menu items's information** is a **dictionary** object tha
 * `"calories"`: an integer with the number of calories in the menu item.
 * `"price"`: a float with the menu item's price using the format 00.00.
 * `"is_vegetarian"`: a string with value "yes" or "no" for if the menu item is vegetarian.
-* `"genre"`: a variable length list of strings with the genres of the music applicable to the song.
 * `"spicy_level"`: an integer from 1 to 4, representing the menu item's spice level.
 
 Here is an example of what a dictionary with a **single menu item's information** could look like:
@@ -182,7 +181,7 @@ def get_selection(action, suboptions, to_upper=True, go_back=False):
 
 * NOW: Define 2 new functions: `print_dish()`, `print_restaurant_menu()`. 
 
-1. List an **individual** song.
+1. List an **individual** menu item.
 ```
 def print_dish(dish, spicy_scale_map, name_only=False):
     # TODO : is spicy_scale_map used in this function?
@@ -258,129 +257,63 @@ Make sure that:
 
 # Sample Program Flows for "List" Menu Options
 
-1. Assuming the song dictionary that's hard-coded above, below is a sample program output for listing `A`ll Songs (full). Note the string padding for the strings like `"ARTIST"` or  `"ALBUM"`, etc...:
+1. Assuming the restaurant menu list that's hard-coded above, below is a sample program output for listing `complete menu`.
 
 ```
+==========================
+What would you like to do?
+L - List
+A - Add
+U - Edit
+D - Delete
+H - Display restaurant expense rating 
+S - Save the data to file
+R - Restore data from file
+Q - Quit this program
+==========================
+::: Enter a menu option
+> L
 You selected option L to > List.
-::: What would you like to list?
-A - all songs - full
-B - all songs - titles only
-F - favorite songs
-G - songs of a specific genre
+::: What field would you like to list?
+A - complete menu
+V - vegetarian dishes only
 ::: Enter your selection
-> a
-You selected |A| to list |all songs - full|.
-******************************************
-      ID: 12332 |   TITLE: Cardigan
-  ARTIST: Taylor Swift
-  LENGTH: 03:59
-   ALBUM: Folklore
-   GENRE: Folk, Indie Rock
-  RATING: Like
-RELEASED: July 27, 2020
-FAVORITE: True
-******************************************
-      ID: 14567 |   TITLE: Soul Meets Body
-  ARTIST: Death Cab for Cutie
-   ALBUM: Plans
-   GENRE: Indie Pop, Indie Rock
-  RATING: Love!
-RELEASED: July 16, 2005
-FAVORITE: True
-******************************************
-      ID: 78210 |   TITLE: Fake Love
-  ARTIST: BTS
-  LENGTH: 04:02
-   GENRE: Hip Hop, Electro Pop, Korean Pop
-  RATING: Neutral
-RELEASED: May 18, 2018
-FAVORITE: False
-******************************************
-      ID: 99105 |   TITLE: Foil
-  ARTIST: 'Weird Al' Yankovic
-  LENGTH: 02:22
-   ALBUM: Mandatory Fun
-   GENRE: Pop, Parody
-  RATING: Love!
-RELEASED: July 15, 2014
-FAVORITE: True
-******************************************
+> A
+You selected |A| to list |complete menu|.
+------------------------------------------
+1. BURRITO
+* Calories: 500
+* Price: 12.9
+* Is it vegetarian: yes
+* Spicy level: Low key spicy
+
+2. RICE BOWL
+* Calories: 400
+* Price: 14.9
+* Is it vegetarian: no
+* Spicy level: Hot
+
+3. MARGHERITA
+* Calories: 800
+* Price: 18.9
+* Is it vegetarian: no
+* Spicy level: Low key spicy
+
+------------------------------------------
 ::: Press Enter to continue
 ```
 
-2. Below is another sample program output for listing B (song titles only). Again, note the string padding for the strings like `"ARTIST"` or  `"ALBUM"`, etc...:
+2. Below is another sample program output for listing V (vegetarian menu items only).
 ```
-You selected |B| to list |all songs - titles only|.
-******************************************
-   TITLE: Cardigan
-   TITLE: Soul Meets Body
-   TITLE: Fake Love
-   TITLE: Foil
+You selected |V| to list |vegetarian dishes only|.
+------------------------------------------
+1. BURRITO
+* Calories: 500
+* Price: 12.9
+* Is it vegetarian: yes
+* Spicy level: Low key spicy
+
+------------------------------------------
 ::: Press Enter to continue
 ```
 
-3. Here is a sample program output for listing F (favorite songs only):
-```
-You selected |F| to list |favorite songs|.
-******************************************
-   TITLE: Cardigan
-  ARTIST: Taylor Swift
-  LENGTH: 03:59
-   ALBUM: Folklore
-   GENRE: Folk, Indie Rock
-  RATING: Like
-RELEASED: July 27, 2020
-FAVORITE: True
-******************************************
-   TITLE: Soul Meets Body
-  ARTIST: Death Cab for Cutie
-   ALBUM: Plans
-   GENRE: Indie Pop, Indie Rock
-  RATING: Love!
-RELEASED: July 16, 2005
-FAVORITE: True
-******************************************
-   TITLE: Foil
-  ARTIST: 'Weird Al' Yankovic
-  LENGTH: 02:22
-   ALBUM: Mandatory Fun
-   GENRE: Pop, Parody
-  RATING: Love!
-RELEASED: July 15, 2014
-FAVORITE: True
-******************************************
-::: Press Enter to continue
-```
-
-4. Here is a sample program output for listing G (specific genre of songs). Note that the user is asked to input a genre (pop, in this example) and that the songs that are listed all have "pop" mentioned in their genres and never repeated.
-```
-You selected |G| to list |songs of a specific genre|.
-******************************************
-Enter genre:: pop
-   TITLE: Soul Meets Body
-  ARTIST: Death Cab for Cutie
-   ALBUM: Plans
-   GENRE: Indie Pop, Indie Rock
-  RATING: Love!
-RELEASED: July 16, 2005
-FAVORITE: True
-******************************************
-   TITLE: Fake Love
-  ARTIST: BTS
-  LENGTH: 04:02
-   GENRE: Hip Hop, Electro Pop, Korean Pop
-  RATING: Neutral
-RELEASED: May 18, 2018
-FAVORITE: False
-******************************************
-   TITLE: Foil
-  ARTIST: 'Weird Al' Yankovic
-  LENGTH: 02:22
-   ALBUM: Mandatory Fun
-   GENRE: Pop, Parody
-  RATING: Love!
-RELEASED: July 15, 2014
-FAVORITE: True
-******************************************
-::: Press Enter to continue
-```
