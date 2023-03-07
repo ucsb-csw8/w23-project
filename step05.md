@@ -93,46 +93,46 @@ def add_helper(restaurant_menu_list, spicy_scale_map):
 1. Below is a demo of adding an incorrect menu dish:
 
    ```
-You selected option A to > Add.
-::: Enter each required field, separated by commas.
-::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
-> yum bowl, 100, 5.99, yes, 0
-WARNING: invalid dish field: ('spicy_level', '0')
+    You selected option A to > Add.
+    ::: Enter each required field, separated by commas.
+    ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
+    > yum bowl, 100, 5.99, yes, 0
+    WARNING: invalid dish field: ('spicy_level', '0')
 
    ```
 
 2. Here is a demo of adding a different incorrect dishes:
 
    ```
-::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
-> um, 5, 5, no, 1
-WARNING: invalid dish field: ('name', 'um')
-...
+    ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
+    > um, 5, 5, no, 1
+    WARNING: invalid dish field: ('name', 'um')
+    ...
 
-::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
-> ,,,,,
-WARNING: invalid number of fields!
-You provided 6, instead of the expected 5.
-...
+    ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
+    > ,,,,,
+    WARNING: invalid number of fields!
+    You provided 6, instead of the expected 5.
+    ...
 
-::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
-> sandwich
-WARNING: invalid number of fields!
-You provided 1, instead of the expected 5.
+    ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
+    > sandwich
+    WARNING: invalid number of fields!
+    You provided 1, instead of the expected 5.
 
    ```
 
 3. Finally, here's a demo of adding a new menu dish successfully:
 
    ```
-::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
-> Soup, 100, 5, yes, 1
-Successfully added a new dish!
-SOUP
-* Calories: 100
-* Price: 5.0
-* Is it vegetarian: yes
-* Spicy level: Not spicy
+    ::: name of the dish, calories, price, is it vegetarian ( yes | no ), spicy_level ( 1-4 )
+    > Soup, 100, 5, yes, 1
+    Successfully added a new dish!
+    SOUP
+    * Calories: 100
+    * Price: 5.0
+    * Is it vegetarian: yes
+    * Spicy level: Not spicy
 
    ```
 
