@@ -59,7 +59,7 @@ In your main program, you need to define a dictionary `the_menu` that has the op
 
 The menu should be printed by the `print_main_menu()` function when the user starts this system.
 🎊 You already implemented this function in prior labs.
-* You can copy it directly into the  **restaurant\_functions.py**.
+* You can copy it directly into the  **functions.py**.
 
 The `print_main_menu()` function does not return anything, it just prints the correctly-formatted options that are provided in the dictionary.
 
@@ -109,7 +109,7 @@ print("Have a nice day!")
 1. Create the requested Python files.
 1. Copy the above template into your **main program file**.
 1. Upload the files to Gradescope to ensure the names are correct. **You will need to submit _all_ files at _the same_ time to Gradescope (not in zyBooks).**
-1. Address the TODO comments in the code (including adding the `print_main_menu()` to the **restaurant\_functions.py**)
+1. Address the TODO comments in the code (including adding the `print_main_menu()` to the **functions.py**)
 
 Now, you are ready to create the `if`/`elif` branches to call the functions for the various menu options. 
 In the rest of the instructions, you will get to implement the rest of the options, defining the needed functions, and calling them (remember to remove the `TODO` comments).
@@ -122,10 +122,10 @@ In the rest of the instructions, you will get to implement the rest of the optio
 
 ## Create the test file <a name="testfile"></a>
 
-For _each function that **returns** something_ in the **restaurant\_functions.py** file, you should add the corresponding `assert` statements to the **restaurant\_tests.py**.  # TODO: Please confirm the file name (restaurant_functions.py or functions.py)
+For _each function that **returns** something_ in the **functions.py** file, you should add the corresponding `assert` statements to the **restaurant\_tests.py**.  # TODO: Please confirm the file name (restaurant_functions.py or functions.py)
 
 For now, since the next steps will rely on it:
-* add the `get_written_date()` function implementation from [LAB 7.18](https://learn.zybooks.com/zybook/UCSBCMPSCW8MatniFall2022/chapter/7/section/18) to the **restaurant\_functions.py** # TODO: Please upload new links for LAB 7.18 W23
+* add the `get_written_date()` function implementation from [LAB 7.18](https://learn.zybooks.com/zybook/UCSBCMPSCW8MatniFall2022/chapter/7/section/18) to the **functions.py** # TODO: Please upload new links for LAB 7.18 W23
 * add the `assert` statements to check the function correctness in your **test file** 
 
 If you see an `AssertionError`, check the `line` number that the error message pointed to.
