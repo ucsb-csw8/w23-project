@@ -68,20 +68,27 @@ Each of these is explained below.
 **File 1 - all your functions**
 Create a file called **`functions.py`** in which you will assemble all the relevant functions.
 
-You do not need to use `if __name__ == 'main'` in _any_ of your files, because we can import your functions as shown below.
-
-At the start of the _other two files_, you will need to import the function file you wrote as follows (`functions` is the name of our Python file/module; the asterisk `*` means "all/everything"):
-
-**`from functions import *`**
+You do not need to use `if __name__ == 'main'` in this files, because we can import your functions as shown below.
 
 Again, all this project's functions will need to be implemented and added to this file.
 
 
 **File 2 - the main program**
-Create a new file **`main.py,`** which will contain your main program. As you will place all function definitions in the `functions.py`, you can import them here, as per the above import statement.
+Create a new file **`main.py,`** which will contain your main program. As you will place all function definitions in the `functions.py`, you can import them here using this statement:
+
+```python
+from functions import *
+```
 
 **File 3 - test code**
+
 Create a separate file to test your work. Call it **`tests.py`** - this is where the `assert` statements will be collected to help you verify that your implementation of each function is correct.
+
+Put this at the top to import all of the functions from `functions.py`
+
+```python
+from functions import *
+```
 
 **Important**: you need to run this file separately: running the main program will not execute the assert statements.
 Each function that returns values will need to have the corresponding assert statements to check its correctness.
@@ -177,7 +184,9 @@ Please plan accordingly to make sure that travel, Internet or electricity outage
 
 - You must correctly and appropriately comment your code to clearly explain your solution.
 
-   - Every function should include an appropriate, informative docstring that is included immediately underneath the function signature. You will be graded on the presence and quality of your documentation. Include more extensive comments for the parts that you found harder to code. There shouldn't be any `pass` or `TODO` or `FIXME` comments left in your code!
+- Every function should include an appropriate, informative docstring that is included immediately underneath the function signature. You will be graded on the presence and quality of your documentation. Include more extensive comments for the parts that you found harder to code. 
+
+- There shouldn't be any `pass` or `TODO` or `FIXME` comments left in your code!
 
 -----
 
@@ -196,7 +205,7 @@ If your project fails due to syntax errors, we will not manually grade it, autom
 
 # Workflow Recommendations <a name="workflow"></a> 
 
-We very highly recommend that you start working on this project early on. This is a large task ahead of you and good time management will help you complete this on time. Remember: you have TWO WEEKS to work on this, so **don't leave things until the last minute**. The deadlines are extremely firm.
+We very highly recommend that you start working on this project early on. This is a large task ahead of you and good time management will help you complete this on time. Remember: you have more than **two weeks** to work on this, so **don't leave things until the last minute**. The deadlines are extremely firm.
 
 As you are reading project instructions, each time you come across an edge case or a specific value that you need to check/test, immediately add an assert statement to your test file. Add a comment above it to remind you what part of the instructions you are testing.
 
