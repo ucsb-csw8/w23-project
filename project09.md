@@ -10,93 +10,88 @@ New functions needed:
 
 This function
 * reads data from a csv file, one line at a time
-* validates it by trying to create a song
-* stores that data into the song dictionary. 
+* validates it by trying to create a menu
+* stores that data into the menu dictionary. 
 
 > Advice: If you have trouble with your ```load_from_csv()```, we recommend reviewing Section 9.6, and 9.7 on zyBooks. 
 
-To implement your function, you must ```import csv``` in the **song\_functions.py** file. For more information, refer to zyBooks section 9.7. You can also refer to [LA 9.8](https://learn.zybooks.com/zybook/UCSBCMPSCW8MatniFall2022/chapter/9/section/8).
+To implement your function, you must ```import csv``` in the **functions.py** file. For more information, refer to zyBooks section 9.7. You should be able to reuse your code directly from [LA 9.8](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/9/section/8).
 
 The function requires the `import csv` as well as `import os`. **NO OTHER import libraries/modules are allowed!**
 
 The template for ```load_from_csv()``` is provided below.
 
-```
-def load_from_csv(filename, in_dict, rating_map, allkeys):
+```py
+def load_menu_from_csv(filename, restaurant_menu_list, spicy_scale_map):
     """
     param: filename (str) - A string variable which represents the
             name of the file from which to read the contents.
-    param: in_dict (dict of dict) - A dictionary of songs (dictionary objects) to which
-            the songs read from the provided filename are added.
-            If in_dict is not empty, the existing songs are not dropped.
-    param: rating_map (dict) - a dictionary object that is expected
-            to have the integer keys that correspond to the "rating"
-            integer values stored in the song; the stored value is displayed 
-            for the rating field, instead of the numeric value.
-    param: allkeys (key_list) - a key_list of all keys in the song dictionary
-    
+    param: in_list (list) - A list of dish dictionary objects to which
+            the dishes read from the provided filename are appended.
+            If in_list is not empty, the existing menu items are not dropped.
+    param: spicy_scale_map (dict) - a dictionary that contains the mapping
+            between the integer priority value (key) to its representation
+            (e.g., key 1 might map to the spicy value "Not Spicy" or "Low")
+            Needed by the helper function.
     The function ensures that the last 4 characters of the filename are '.csv'.
     The function requires the `import csv` and `import os`.
-
     If the file exists, the function will use the `with` statement to open the
     `filename` in read mode. For each row in the csv file, the function will
-    proceed to create a new song using the `get_new_song()` function.
-    - If the function `get_new_song()` returns a valid song object,
-    it gets added to `in_dict`.
-    - If the `get_new_song()` function returns an error, the 1-based
+    proceed to create a new restaurant menu item using the `get_new_menu_item()` function.
+    - If the function `get_new_menu_item()` returns a valid dish object,
+    it gets appended to the end of the `in_list`.
+    - If the `get_new_menu_item()` function returns an error, the 1-based
     row index gets recorded and added to the NEW list that is returned.
-    E.g., if the file has a single row, and that row has invalid song data,
+    E.g., if the file has a single row, and that row has invalid dish data,
     the function would return [1] to indicate that the first row caused an
-    error; in this case, the `in_dict` would not be modified.
+    error; in this case, the `in_list` would not be modified.
     If there is more than one invalid row, they get excluded from the
-    in_dict and their indices will be appended to the new list that's
+    in_list and their indices will be appended to the new list that's
     returned.
-
+    # use this for reference :
+    Restaurant_menu = [{ “dish” : “burrito”, calories : 500, price : 12:90, “in_stock” : true, “is_vegeterian” : True, “spicy_level” : 2 } ,
+    {...}, {...}, {...}]
     returns:
     * -1, if the last 4 characters in `filename` are not '.csv'
     * None, if `filename` does not exist.
-    * A new empty list, if the entire file is successfully read from `in_dict`.
+    * A new empty list, if the entire file is successfully read from `in_list`.
     * A list that records the 1-based index of invalid rows detected when
-      calling get_new_song().
-
+      calling get_new_menu_item().
     Helper functions:
-    - get_new_song()
+    - get_new_menu_item()
     """
 ```
 
-# Sample Song File
+# Sample Menu File
 
 Below are the contents of a CSV file that is used in the sample program flow below. This file has no empty rows (lines) and no bad (invalid) data. If it did, that row would counted as being invalid.
 
-**`matni_songs_allgood.csv`**
+**`menu.csv`**
 ```
-Cardigan,Taylor Swift,03:59,Folklore,"folk,indie rock",4,07/27/2020,True,12332
-Soul Meets Body,Death Cab for Cutie,04:04,Plans,"indie pop,indie rock",5,07/16/2005,True,14567
-X&Y,Coldplay,04:11,X&Y,"rock",5,07/18/2005,True,14568
-Fake Love,BTS,04:02,,"hip hop,electro pop,Korean pop",3,05/18/2018,False,78210
-Fake Love - VERSION 2,BTS,04:02,,"hip hop,electro pop,Korean pop",3,05/18/2018,False,78211
-Foil,'Weird Al' Yankovic,02:22,Mandatory Fun,"pop,parody",5,07/15/2014,True,99105
+burrito,500,12.9,yes,2
+rice bowl,400,14.9,no,3
+margherita,800,18.9,no,2
 ```
 The corresponding code for the **main program** is similar to the one for the option `S`. Your task to figure out what to add using the following user interactions. 
 
 # Sample Program Flow
 
 This example run has the user doing the following:
-* Starts by deleting all the songs
+* Starts by deleting all the dishes in current menu
 * Then attempting to restore data from a file
    * First attempt: using a bad file name (doesn't end in .csv)
    * Second attempt: using a bad file name (ends in .csv, but file doesn't exist)
    * Third attempt: successful
-* Then lists the songs to make sure they were indeed restored.
+* Then lists the menu to make sure they were indeed restored.
 
 ```
 ==========================
 What would you like to do?
 L - List
 A - Add
-E - Edit
+U - Edit
 D - Delete
-M - Show statistical data on
+H - Display restaurant expense rating
 S - Save the data to file
 R - Restore data from file
 Q - Quit this program
@@ -104,28 +99,26 @@ Q - Quit this program
 ::: Enter a menu option
 > D
 You selected option D to > Delete.
-******************************************
-      ID: 12332 | TITLE: Cardigan
-      ID: 14567 | TITLE: Soul Meets Body
-      ID: 78210 | TITLE: Fake Love
-      ID: 99105 | TITLE: Foil
-Which song would you like to delete?
-X - Delete all songs at once
-::: OR Enter the number corresponding to the song ID
-::: OR press 'M' to cancel and return to the main menu.
-> X
-::: WARNING! Are you sure you want to delete ALL songs?
+Which dish would you like to delete?
+Press A to delete the entire menu for this restaurant, B otherwise
+------------------------------------------
+1. BURRITO
+2. RICE BOWL
+3. MARGHERITA
+------------------------------------------
+> A
+::: WARNING! Are you sure you want to delete the entire menu ?
 ::: Type Yes to continue the deletion.
 > Yes
-Deleted all songs.
+Deleted the entire menu.
 ::: Press Enter to continue
 ==========================
 What would you like to do?
 L - List
 A - Add
-E - Edit
+U - Edit
 D - Delete
-M - Show statistical data on
+H - Display restaurant expense rating
 S - Save the data to file
 R - Restore data from file
 Q - Quit this program
@@ -134,28 +127,31 @@ Q - Quit this program
 > R
 You selected option R to > Restore data from file.
 ::: Enter the filename ending with '.csv'.
-> xxx
-WARNING: invalid input - must end with '.csv'
+> wrong_menu
+WARNING: |wrong_menu| is an invalid file name!
+::: Would you like to try again? Enter 'y' to try again.
+>
+WARNING: |wrong_menu| contains invalid data!
+The following rows from the file were not loaded:
+-1
+::: Would you like to load another file? Enter 'y' to try again.
+> y
+::: Enter the filename ending with '.csv'.
+> wrong_menu.csv
+WARNING: |wrong_menu.csv| was not found!
 ::: Would you like to try again? Enter 'y' to try again.
 > y
 ::: Enter the filename ending with '.csv'.
-> xxx.csv
-WARNING: |xxx.csv| was not found!
-::: Would you like to try again? Enter 'y' to try again.
-> y
-::: Enter the filename ending with '.csv'.
-> matni_songs.csv
-Successfully restored all songs from |matni_songs.csv|
-::: Would you like to try again? Enter 'y' to try again.
-> n
+> menu.csv
+Successfully restored restaurant menu from |menu.csv|
 ::: Press Enter to continue
 ==========================
 What would you like to do?
 L - List
 A - Add
-E - Edit
+U - Edit
 D - Delete
-M - Show statistical data on
+H - Display restaurant expense rating
 S - Save the data to file
 R - Restore data from file
 Q - Quit this program
@@ -163,41 +159,48 @@ Q - Quit this program
 ::: Enter a menu option
 > L
 You selected option L to > List.
-::: What would you like to list?
-A - all songs - full
-B - all songs - titles only
-F - favorite songs
-G - songs of a specific genre
+::: What field would you like to list?
+A - complete menu
+V - vegetarian dishes only
 ::: Enter your selection
-> b
-You selected |B| to list |all songs - titles only|.
-******************************************
- TITLE: Cardigan
- TITLE: Soul Meets Body
- TITLE: X&Y
- TITLE: Fake Love
- TITLE: Fake Love - VERSION 2
- TITLE: Foil
-::: Press Enter to continue
+> A
+You selected |A| to list |complete menu|.
+------------------------------------------
+1. BURRITO
+* Calories: 500
+* Price: 12.9
+* Is it vegetarian: yes
+* Spicy level: Low key spicy
+
+2. RICE BOWL
+* Calories: 400
+* Price: 14.9
+* Is it vegetarian: no
+* Spicy level: Hot
+
+3. MARGHERITA
+* Calories: 800
+* Price: 18.9
+* Is it vegetarian: no
+* Spicy level: Low key spicy
+
+------------------------------------------
 ```
 > NEW! - More Detailed Instructions: What if the CSV file has **bad** data?
 
-Now, what if the CSV file has "invalid data" in it? "Invalid data" is **only** defined as data that would be flagged as an error by the `get_new_song()` function (example: bad title, bad date format, etc...). For example, a blank Album string, should not be considered to be "invalid" because that is not something that is validated by `get_new_song()`. 
+Now, what if the CSV file has "invalid data" in it? "Invalid data" is **only** defined as data that would be flagged as an error by the `get_new_menu_dish()` function (example: bad name, bad format, etc...). For example, a dish with price `10.001`, should not be considered to be "invalid" because that is not something that is validated by `get_new_menu_dish()`.  #TODO: double check this
 
 For instance, if the CSV file being read is:
 
-**`matni_songs_somebad.csv`**
+**`menu_somebad.csv`**
 ```
-Cardigan,Taylor Swift,3:59,Folklore,"folk,indie rock",4,07/27/2020,True,12332
-Soul Meets Body,Death Cab for Cutie,04:04,Plans,"indie pop,indie rock",5,07/16/2005,True,14567
-X&Y,Coldplay,04:11,X&Y,"rock",5,07/1B/2005,True,14568
-Fake Love,BTS,04:02,,"hip hop,electro pop,Korean pop",3,05/18/2018,False,78210
-Fake Love - VERSION 2,BTS,04:02,,"hip hop,electro pop,Korean pop",3,05/18/2018,False,78211
-Foil,'Weird Al' Yankovic,02:22,Mandatory Fun,"pop,parody",5,07/15/2014,True,99105
+burrito,500,12.9,maybe,2
+rice bowl,400,14.9,no,3
+margherita,800,18.9,no,100
 ```
 
-Notice that line (row) 1 has a bad (invalid) time format (`3:59`) and that line 3 has a bad date format (`07/1B/2005`).
-The function `load_from_csv()` should update the song dictionary with new songs from lines 2, 4, 5, and 6 _only_ AND it should return a list that is **[1, 3]** (because lines 1 and 3 are the ones with invalid data in them).
+Notice that line (row) 1 has a bad (invalid) is_vegetarian (`maybe`) and that line 3 has a bad spicy_level (`100` - that's too hot!).
+The function `load_from_csv()` should update the menu dictionary with new dishes from line 2 _only_ AND it should return a list that is **[1, 3]** (because lines 1 and 3 are the ones with invalid data in them).
 
 Here's a sample run for when a file, like the one above, is restored:
 
@@ -217,13 +220,13 @@ Q - Quit this program
 > r
 You selected option R to > Restore data from file.
 ::: Enter the filename ending with '.csv'.
-> matni_songs_somebad.csv
-WARNING: |matni_songs_somebad.csv| contains invalid data!
+> menu_somebad.csv
+WARNING: |menu_somebad.csv| contains invalid data!
 The following rows from the file were not loaded:
 [1, 3]
 ::: Would you like to try again? Enter 'y' to try again.
 ```
 
-**ADDITIONAL NOTE:** If your ```Save the data to file``` option is working correctly, the file you wrote into using that option should work perfectly with this option and your entire song information should be loaded properly.
+**ADDITIONAL NOTE:** If your ```Save the data to file``` option is working correctly, the file you wrote into using that option should work perfectly with this option and your entire menu information should be loaded properly.
 
 
