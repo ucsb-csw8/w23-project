@@ -6,61 +6,19 @@ title: Step 7 - "Restore" option
 # {{page.title}}
 
 New functions needed:
-* `load_from_csv()`
+* `load_menu_from_csv()`
 
 This function
 * reads data from a csv file, one line at a time
 * validates it by trying to create a menu
 * stores that data into the menu dictionary. 
 
-> Advice: If you have trouble with your `load_from_csv()`, we recommend reviewing Section 9.6, and 9.7 on zyBooks. 
+> Advice: If you have trouble with your function, we recommend reviewing Section 9.6, and 9.7 on zyBooks. 
 
 To implement your function, you must ```import csv``` in the **functions.py** file. For more information, refer to zyBooks section 9.7. You should be able to reuse your code directly from [LA 9.8](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/9/section/8).
 
 The function requires the `import csv` as well as `import os`. **NO OTHER import libraries/modules are allowed!**
 
-The template for `load_from_csv()` is provided below.
-
-```python
-def load_menu_from_csv(filename, restaurant_menu_list, spicy_scale_map):
-    """
-    param: filename (str) - A string variable which represents the
-            name of the file from which to read the contents.
-    param: in_list (list) - A list of dish dictionary objects to which
-            the dishes read from the provided filename are appended.
-            If in_list is not empty, the existing menu items are not dropped.
-    param: spicy_scale_map (dict) - a dictionary that contains the mapping
-            between the integer priority value (key) to its representation
-            (e.g., key 1 might map to the spicy value "Not Spicy" or "Low")
-            Needed by the helper function.
-    The function ensures that the last 4 characters of the filename are '.csv'.
-    The function requires the `import csv` and `import os`.
-    If the file exists, the function will use the `with` statement to open the
-    `filename` in read mode. For each row in the csv file, the function will
-    proceed to create a new restaurant menu item using the `get_new_menu_item()` function.
-    - If the function `get_new_menu_item()` returns a valid dish object,
-    it gets appended to the end of the `in_list`.
-    - If the `get_new_menu_item()` function returns an error, the 1-based
-    row index gets recorded and added to the NEW list that is returned.
-    E.g., if the file has a single row, and that row has invalid dish data,
-    the function would return [1] to indicate that the first row caused an
-    error; in this case, the `in_list` would not be modified.
-    If there is more than one invalid row, they get excluded from the
-    in_list and their indices will be appended to the new list that's
-    returned.
-    # use this for reference :
-    Restaurant_menu = [{ “dish” : “burrito”, calories : 500, price : 12:90, “in_stock” : true, “is_vegeterian” : True, “spicy_level” : 2 } ,
-    {...}, {...}, {...}]
-    returns:
-    * -1, if the last 4 characters in `filename` are not '.csv'
-    * None, if `filename` does not exist.
-    * A new empty list, if the entire file is successfully read from `in_list`.
-    * A list that records the 1-based index of invalid rows detected when
-      calling get_new_menu_item().
-    Helper functions:
-    - get_new_menu_item()
-    """
-```
 
 # Sample Menu File
 
@@ -91,7 +49,7 @@ This example run has the user doing the following:
 What would you like to do?
 L - List
 A - Add
-U - Edit
+U - Update
 D - Delete
 H - Display restaurant expense rating
 S - Save the data to file
@@ -102,7 +60,7 @@ Q - Quit this program
 > D
 You selected option D to > Delete.
 Which dish would you like to delete?
-Press A to delete the entire menu for this restaurant, B otherwise
+Press A to delete the entire menu for this restaurant, M to cancel this operation
 ------------------------------------------
 1. BURRITO
 2. RICE BOWL
@@ -118,7 +76,7 @@ Deleted the entire menu.
 What would you like to do?
 L - List
 A - Add
-U - Edit
+U - Update
 D - Delete
 H - Display restaurant expense rating
 S - Save the data to file
@@ -151,7 +109,7 @@ Successfully restored restaurant menu from |menu.csv|
 What would you like to do?
 L - List
 A - Add
-U - Edit
+U - Update
 D - Delete
 H - Display restaurant expense rating
 S - Save the data to file
@@ -191,7 +149,7 @@ You selected |A| to list |complete menu|.
 
 # What if the CSV file has **bad** data?
 
-Now, what if the CSV file has "invalid data" in it? "Invalid data" is **only** defined as data that would be flagged as an error by the `get_new_menu_dish()` function (example: bad name, bad format, etc...). For example, a dish with price `10.001`, should not be considered to be "invalid" because that is not something that is validated by `get_new_menu_dish()`.  #TODO: double check this
+Now, what if the CSV file has "invalid data" in it? "Invalid data" is **only** defined as data that would be flagged as an error by the `get_new_menu_dish()` function (example: bad name, bad format, etc...). For example, a dish with price `10.001`, should not be considered to be "invalid" because that is not something that is validated by `get_new_menu_dish()`.  
 
 For instance, if the CSV file being read is:
 
@@ -213,7 +171,7 @@ Here's a sample run for when a file, like the one above, is restored:
 What would you like to do?
 L - List
 A - Add
-E - Edit
+E - Update
 D - Delete
 M - Show statistical data on
 S - Save the data to file
@@ -242,6 +200,6 @@ You may want to try saving, restoring, and listing a few times to make sure that
 
 # Checkpoint 2
 
-After finishing this step, you are ready for Checkpoint 1.
+After finishing this step, you are ready for Checkpoint 2.
 
 See the [Checkpoint 2 instructions at Step 2](/w23-project/step01#checkpoint2) for more information

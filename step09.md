@@ -39,7 +39,7 @@ Below is a demo of computing the average price of an item in a given restaurant 
 What would you like to do?
 L - List
 A - Add
-U - Edit
+U - Update
 D - Delete
 H - Display restaurant expense rating 
 S - Save the data to file

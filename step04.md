@@ -9,8 +9,8 @@ title: Step 4 - "Delete" option
 New functions needed:
 * `delete_dish()`
 
-You will need to refer to the `delete_item()` function (from [LAB 8.14](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/8/section/14)).
-This is very similar (but not the same) as it was in the previous lab.
+Refer to the `delete_item()` function (from [LAB 8.14](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/8/section/14)) to see how to implement the function below.
+This is very similar (but not the same) as it was in the Week 8 lab.
 
 ```python
 def delete_dish(in_list, idx, start_idx=0):
@@ -39,18 +39,52 @@ def delete_dish(in_list, idx, start_idx=0):
     """
 ```
 
-Your main task is to figure out how to assemble the **main program** portion for correctly deleting an item. You can deduce this by going through the Sample Program Flow examples.
 
-The main program portion should start off with:
+The main program portion should contain:
 ```python
     elif opt == 'D':
         restaurant_menu_list = delete_helper(restaurant_menu_list, spicy_scale_map)
 ```
-The `delete_helper` can start off with: 
+
+Complete the `delete_helper` given to you below: 
 ```python
+def delete_helper(restaurant_menu_list, spicy_scale_map):
     continue_action = 'y'
     while continue_action == 'y':
-    #TODO : the rest of it...
+        if not restaurant_menu_list:
+            print("WARNING: There is nothing to delete!")
+            break
+        print("Which dish would you like to delete?")
+        print("Press A to delete the entire menu for this restaurant, M to cancel this operation")
+        print_restaurant_menu(restaurant_menu_list, spicy_scale_map, name_only=True, show_idx=True, start_idx=1)
+        user_option = input("> ")
+        if user_option == "A" or user_option == "a":
+            print(f"::: WARNING! Are you sure you want to delete the entire menu ?")
+            print("::: Type Yes to continue the deletion.")
+            user_option = input("> ")
+            if user_option == ...:
+                restaurant_menu_list = ...
+                print(f"Deleted the entire menu.")
+            else:
+                print(f"You entered '{...}' instead of Yes.")
+                print("Canceling the deletion of the entire menu.")
+            break
+        elif user_option == 'M' or user_option == 'm':
+            break
+        result = delete_dish(restaurant_menu_list, user_option, 1)
+        if type(result) == dict:
+            print("Success!")
+            print(f"Deleted the dish |{result['name']}|")
+        elif result == 0:  # delete_item() returned an error
+            print("WARNING: There is nothing to delete.")
+        elif result == -1:  # is_valid_index() returned False
+            print(f"WARNING: |{user_option}| is an invalid dish number!")
+
+        print("::: Would you like to delete another dish?", end=" ")
+        continue_action = input("Enter 'y' to continue.\n> ")
+        continue_action = continue_action.lower()
+    return restaurant_menu_list
+
 ```
 
 # Sample Program Flow
@@ -62,7 +96,7 @@ The `delete_helper` can start off with:
     > D
     You selected option D to > Delete.
     Which dish would you like to delete?
-    Press A to delete the entire menu for this restaurant, B otherwise 
+    Press A to delete the entire menu for this restaurant, M to cancel this operation 
     ------------------------------------------
     1. BURRITO
     2. RICE BOWL
@@ -100,7 +134,7 @@ The `delete_helper` can start off with:
     > D
     You selected option D to > Delete.
     Which dish would you like to delete?
-    Press A to delete the entire menu for this restaurant, B otherwise 
+    Press A to delete the entire menu for this restaurant, M to cancel this operation 
     ------------------------------------------
     1. BURRITO
     2. RICE BOWL
@@ -111,7 +145,7 @@ The `delete_helper` can start off with:
     ::: Would you like to delete another dish? Enter 'y' to continue.
     > y
     Which dish would you like to delete?
-    Press A to delete the entire menu for this restaurant, B otherwise 
+    Press A to delete the entire menu for this restaurant, M to cancel this operation 
     ------------------------------------------
     1. BURRITO
     2. RICE BOWL
@@ -127,7 +161,7 @@ The `delete_helper` can start off with:
 
     Note that the user CAN keep choosing to enter 'y' at the "Would you like to delete another dish?..." prompt and be able to go back to the start of the delete menu choices. This would allow them to keep deleting dishs one by one.
 
-    Again ,you can check that the dish example from above (Cardigan) got deleted by next going to the main menu, and selecting "L"ist:
+    Again, you can check that the dish example from above (burrito) got deleted by going to the main menu, and selecting "L"ist:
 
     ```
     ::: Enter a menu option
@@ -156,7 +190,7 @@ The `delete_helper` can start off with:
     ::: Press Enter to continue
     ```
 
-3.  Example of nothing gets deleted (i.e. you already deleted every dish and now you select delete again).
+3.  Example when nothing gets deleted (i.e. you already deleted every dish and now you select delete again).
 
     ```
     ::: Enter a menu option

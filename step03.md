@@ -6,34 +6,8 @@ title: Step 3 - "List" option
 # {{page.title}}
 
 
-## Background
-
-Oftentimes, data is stored in a very compact but not human-friendly way. Think of how our forum questions may be stored in Piazza databases somewhere in the cloud. One way a question-object may be stored is this:
-
-```python
-{
-    'title': 'Extension',
-    'description': 'hey i submitted my lab 2 hours after the deadline. Do you think there is...',
-    'author_uid': 'a_39',
-    'answers': [],
-    'is_private': False,
-    'tags': ['logistics', 'week7'],
-    'created': '2022-05-21T05:28:43Z',
-    ...
-}
-```
-
-Obviously, this format is not user-readable, so Piazza's _frontend_ team produced many lines of code to render and display this content in a way that's more understandable to us, the Piazza users.
-
-We have a mini-version of the same task coming up. Given a list of similar complex objects (represented by Python dictionaries, lists, and other "data containers"), display them in a user-friendly way that we'll define in these instructions.
-
-Since we will be doing this for menu information items, we need to figure out how and what to store for each piece of information.
-
 
 # What is "menu information"?
-
-* In this project, for the ease of testing, you can **hard-code** a list "information" at the top of your **main program**, after the dictionary `the_menu`
-*'. We will refer to it as `restaurant_menu_list`. This **list** will contain **dictionaries** with each menu item's information.
 
 In this project, **one menu items's information** is a **dictionary** object that is guaranteed to have the following keys:
 
@@ -55,7 +29,7 @@ Here is an example of what a dictionary with a **single menu item's information*
 }
 ```
 
-In this project, for the ease of testing, we will **hard-code** a list  of menu item information at the top of the **main program**, after the dictionary `the_menu`. We will refer to it as `restaurant_menu_list`. This is just an example dictionary containing 4 menu item information dictionaries that can be used to test our system as we develop it. You can add more of your own examples as longs as they adhere to the correct formats and types of the dictionary values.
+In this project, for the ease of testing, we will **hard-code** a list of menu item information at the top of the **main program**, after the dictionary `the_menu`. We will refer to it as `restaurant_menu_list`. Below is just an example list containing the menu item information dictionaries that can be used to test our system as we develop it. We encourage you to add more of your own examples as long as they adhere to the correct formats and types of the dictionary values.
 
 ```python
 restaurant_menu_list = [
@@ -87,7 +61,7 @@ restaurant_menu_list = [
 
 First, create a variable to hold a nested dictionary of menu item information data (dictionaries) at the top of your **main program**. We will refer to it as `restaurant_menu_list`.
 
-Additionally, you need to add two more dictionaries to your **main program**:
+Additionally, you need to add two more variables to your **main program**:
 * `list_menu` will contain the "List" menu sub-options
 * `spicy_scale_map` will contain the mapping of the spicy_level values, as integers, to a string for the name of the spice level
 
@@ -106,9 +80,9 @@ Additionally, you need to add two more dictionaries to your **main program**:
     }
 ```
 
-Next, add the following code to your **main program** to implement the listing of the menu items - you do not need to change it as shown below.
+Next, add the following code to your **main program** to implement the listing of the menu items - you do not need to change it.
 
-Note that there are new functions `list_helper()`, `get_selection()` that needs to be implemented and that is _also_ given to you after the code below.
+Note that there are new functions `list_helper()`, `get_selection()` that is _also_ given to you after the code below.
 
 ```python
     elif opt == 'L':
@@ -180,86 +154,59 @@ def get_selection(action, suboptions, to_upper=True, go_back=False):
     return selection
 ```
 
-Next, define 2 new functions: `print_dish()`, `print_restaurant_menu()`. 
-
-## `print_dish()`
-
-The function `print_dish()` will list an **individual** menu item.
-
-```python
-def print_dish(dish, spicy_scale_map, name_only=False):
-    # TODO : is spicy_scale_map used in this function?
-    """
-    restaurant_menu (dict) - a dictionary object that is expected to contain the following keys:
-            - "dish": dish's name
-            - "calories": calories for this dish
-            - "price": price of this dish
-            - "is_vegetarian": boolean whether this dish is for vegetarian
-            - "spicy_level": integer that represents the level of spiciness
-    param: spicy_scale_map (dict) - a dictionary object that is expected
-            to have the integer keys that correspond to the "level of spiciness."
-            values for each corresponding key are string description of the 
-            level of spiciness
-    param: name_only (Boolean) - by default, set to False.
-            If False, then only the name of the dish is printed.
-            Otherwise, displays the formatted restaurant menues.
-    returns: None; only prints the restaurant menu
-    """
-    # TO-DO: print some or all information of one menu item (dict),
-    #              depending on the options in the parameters
-    #    You have to ensure that you use f-strings with the following padding settings:
-    #              pad your string labels with 9 spaces and justify right.
-    #    To see what these should look like, see further below for example runs.
-```
+# Add the printing function
 
 ## `print_restaurant_menu()`
 
-The function `print_restaurant_menu()` will list all or some of the menu items stored in the restaurant_menu list. 
+The function `print_restaurant_menu()` will list all or some of the menu items stored in the `restaurant_menu_list`. 
+
+Use the implementation from [LAB 7.19](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/7/section/19).
 
 ```python
 def print_restaurant_menu(restaurant_menu, spicy_scale_map, name_only, show_idx, start_idx, vegetarian_only):
     """
-    restaurant_menu (list) - a list object that is expected
-            to have the dictionaries for each dish that the restaurant 
-            offers.
+    param: restaurant_menu (list) - a list object that holds the dictionaries for each dish
     param: spicy_scale_map (dict) - a dictionary object that is expected
             to have the integer keys that correspond to the "level of spiciness."
     param: name_only (Boolean)
-            If True, then only the name of the dish is printed.
-            Otherwise, displays the formatted restaurant menu.
+            If False, then only the name of the dish is printed.
+            Otherwise, displays the formatted dish information.
     param: show_idx (Boolean)
             If False, then the index of the menu is not displayed.
             Otherwise, displays the "{idx + start_idx}." before the
-            dish name.
+            dish name, where idx is the 0-based index in the list.
     param: start_idx (int)
             an expected starting value for idx that
             gets displayed for the first dish, if show_idx is True.
     param:  vegetarian_only (Boolean)
-            By default, prints all dishes, regardless of their
+            If set to False, prints all dishes, regardless of their
             is_vegetarian status ("yes/no" field status).
-            Otherwise, it displays only the dishes with
-            "is_vegetarian" status as "yes.
+             If set to True , display only the dishes with
+            "is_vegetarian" status set to "yes".
     returns: None; only prints the restaurant menu
     """
-   # Go through all the dishes in the restaurant menu:
-    print("*"*42)
+   # Go through the dishes in the restaurant menu:
     for ...: 
         # if vegetarian_only is True and the dish is not vegetarian, skip
-        if vegetarian_only == True:
-            if ..... :
-                .....
+        if vegetarian_only and ...:
+            ..... 
+
         # if the index of the task needs to be displayed (show_idx is True), print dish index only
         if show_idx == True:  
             print(.....)
-        # if name_only is False
-        print_dish(...)
 
-    Helper functions:
-    - print_dish() to print individual menu items
+        # print the name of the dish
+
+        # if name_only is False
+        if not name_only:
+            print(.....)
+            print(.....)
+            print(.....)
+            print(.....)
     """
 ```
 
-# Notes on these functions
+# Notes 
 
 Make sure that the `vegetarian_only` field correctly displays either all menu items (setting is False - the default) or **only** menu items that are vegetarian (setting is True), depending on what was selected by the user in the main program. 
 
