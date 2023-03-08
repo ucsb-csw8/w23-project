@@ -18,6 +18,9 @@ The function then uses the csv writer object to write this list as a line into t
 
 The function requires the `import csv` as well as `import os`. **NO OTHER import libraries/modules are allowed!**
 
+Note that while it is common for Python programmers to put import statements at the very top of their code, because of the way the autograder is implemented, you must do these imports *inside the `save_menu_to_csv`* function as shown below.   Putting them at the top of the file will cause you to lose points for use of a "global variable". 
+
+
 ```python
 def save_menu_to_csv(restaurant_menu_list, filename):
     """
@@ -44,6 +47,8 @@ def save_menu_to_csv(restaurant_menu_list, filename):
     -1 if the last 4 characters in `filename` are not '.csv'
     None if we are able to successfully write into `filename`
     """
+    import csv
+    import os
 ```
 
 The helper code that needs to be added to your **functions file** is provided below. Complete the missing parts and add them in the correct place to your menu information manager.
