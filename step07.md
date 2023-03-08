@@ -32,7 +32,11 @@ rice bowl,400,14.9,no,3
 margherita,800,18.9,no,2
 ```
 
-The corresponding code for the **main program** is similar to the one for the option `S`. Your task to figure out what to add using the following user interactions. 
+# Two other things you need to do:
+
+The code to implement the `R` option is similar to the one for the option `S`. You'll need:
+* code in **`main.py`** to look for the `R` option and call the appropriate helper function
+* code for that helper function (which should go into **`functions.py`**.
 
 # Sample Program Flow
 
