@@ -15,8 +15,12 @@ For this menu item, in your main program, you will use the restaurant menu list.
 ```python
 def get_restaurant_expense_rating(restaurant_menu_list):
     """
-    Computes the average price of all the items on the menu and display the expense rating of the restaurant.
     param: restaurant_menu_list - a list of restaurants and their dishes (list of dicts)
+    
+    Computes the average price of all the items on the menu and display the expense rating of the restaurant.
+    average_price < 10 -> Expense rating is : $
+    10 <= average_price < 20 -> Expense rating is : $$
+    average_price >= 20: Expense rating is : $$$
     
     returns: Nothing! This function only PRINTS out results.    
     """
