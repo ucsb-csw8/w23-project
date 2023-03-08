@@ -19,6 +19,7 @@ To implement your function, you must ```import csv``` in the **functions.py** fi
 
 The function requires the `import csv` as well as `import os`. **NO OTHER import libraries/modules are allowed!**
 
+Note that while it is common for Python programmers to put import statements at the very top of their code, because of the way the autograder is implemented, you must do these imports *inside the `load_menu_from_csv`* function; put them right after the docstring.   Putting them at the top of the file will cause you to lose points for use of a "global variable". 
 
 # Sample Menu File
 
