@@ -13,9 +13,14 @@ The functions needed (from Project Component labs of Week 7 - [LAB 7.20](https:/
 * `is_valid_is_vegetarian()`
 * `is_valid_spicy_level()`
 
-As a reminder: the function `get_new_menu_dish()` checks all of the values passed in, and if any of them is invalid, 
-it returns a *tuple* consisting of the name of the invalid field, and the value of the invalid field, e.g. `('price', '$xxx')` or
-(`spicy_level`,`idk, maybe`).  See the [LAB 7.20](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/7/section/20)) instructions for more information.
+**Hint**: As a reminder: the function `get_new_menu_dish()` checks all of the values passed in.  As per the instructions in 
+See the [LAB 7.20](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/7/section/20)):
+
+* If the length of the list is wrong, return the length of the list.
+* If one particular field is invalid, return a tuple of its name and the value it had, e.g. `('price', '$xxx')` or
+(`spicy_level`,`idk, maybe`).  
+
+Note that this is not documented in the docstring for the function in [LAB 7.20](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/7/section/20)) (it arguably should have been), but now it has been brought to your attention.
 
 Add your solutions to **functions.py** file. Add your `assert` statements **tests.py**.
 
