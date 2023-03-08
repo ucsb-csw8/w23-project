@@ -99,8 +99,7 @@ burrito,500,12.9,yes,2
 rice bowl,400,14.9,no,3
 margherita,800,18.9,no,2
 ```
-You can also open .csv files with Microsoft Excel, Open Limbre, or Numbers (if you have such program - let us know if you don't). You would see something like this:
-
+You can also open .csv files with Microsoft Excel, or Numbers on Mac, or if you don't have either of those, you can use Google Sheets. 
 
 |       name | calories | price | is_vegetarian | spicy_level |
 |-----------:|---------:|-------|--------------:|------------:|
