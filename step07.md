@@ -35,8 +35,8 @@ margherita,800,18.9,no,2
 # Two other things you need to do:
 
 The code to implement the `R` option is similar to the one for the option `S`. You'll need:
-* code in **`main.py`** to look for the `R` option and call the appropriate helper function, which must be called `load_helper`
-* the function definition for `load_helper`, which must go into **`functions.py`**.)
+* Code in **`main.py`** to look for the `R` option and call `load_helper`, which must take these parameters: `restaurant_menu_list` and `spicy_scale_map` (this function doesn't return anything; it just implements the program flow shown below).
+* The function definition for `load_helper`, which must go into **`functions.py`**.
 
 # Sample Program Flow
 
