@@ -35,8 +35,8 @@ margherita,800,18.9,no,2
 # Two other things you need to do:
 
 The code to implement the `R` option is similar to the one for the option `S`. You'll need:
-* code in **`main.py`** to look for the `R` option and call the appropriate helper function
-* code for that helper function (which should go into **`functions.py`**.
+* code in **`main.py`** to look for the `R` option and call the appropriate helper function, which must be called `load_helper`
+* the function definition for `load_helper`, which must go into **`functions.py`**.)
 
 # Sample Program Flow
 
