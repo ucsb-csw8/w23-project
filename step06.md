@@ -64,6 +64,15 @@ def save_helper(restaurant_menu_list):
             break
 ```
 
+# Adding this option into your main
+
+To make this feature accessible from your main program, you'll need to add this in the appropriate spot (you should be able to figure out where that is):
+
+```python
+    elif opt == 'S':
+        save_helper(restaurant_menu_list)
+```
+
 # Sample Program Flow
 
 This example run has the user doing the following:
