@@ -17,7 +17,9 @@ Add the following branch to your **main program**
         update_helper(restaurant_menu_list, spicy_scale_map)
 ```
 
-Define a new function `update_helper()` as follows, replacing the ellipses with the appropriate values:
+Define a new function `update_helper()` as follows, replacing the ellipses with the appropriate values.
+
+Note that you will also need to add a docstring if you want to earn full credit.
 
 ```python
 def update_helper(restaurant_menu_list, spicy_scale_map):
