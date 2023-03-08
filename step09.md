@@ -22,7 +22,7 @@ def get_restaurant_expense_rating(restaurant_menu_list):
     10 <= average_price < 20 -> Expense rating is : $$
     average_price >= 20: Expense rating is : $$$
     
-    returns: Nothing! This function only PRINTS out results.    
+    returns: the average price of the items as a float
     """
 ```
 
