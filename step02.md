@@ -49,7 +49,7 @@ In your main program (main.py), you need to define a dictionary `the_menu` that 
 ```
     "L" : "List"
     "A" : "Add"
-    "E" : "Update"
+    "U" : "Update"
     "D" : "Delete"
     "M" : "Show average price"
     "S" : "Save the data to file"
