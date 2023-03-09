@@ -16,6 +16,10 @@ seo:
 
 The links on the menu describe the steps towards completion of the final project.
 
+# What's New
+
+* 03/09: Check out the [clarification of manual grading criteria](/w23-project/step01#manual-grading) in Step 01
+
 # Due Dates
 
 All submissions are through Gradescope

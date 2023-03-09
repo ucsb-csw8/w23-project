@@ -32,7 +32,7 @@ This project is supposed to be your **own individual work**. This project is ope
 
 We will run an automatic similarity check, which is not easily fooled by the variable / whitespace changes or other modifications.
 
-## Using advanced Python concepts
+## Using advanced Python concepts <a name="using-advanced-concepts"></a>
 
 You **MAY NOT USE**  material or techniques that we haven't covered in this course, either in the zyBook or in lecture, without *express advance permission* from the course staff.   If you do, you are subject to a grade of **FAIL** for the project.
 
@@ -259,12 +259,45 @@ Please plan accordingly to make sure that travel, Internet or electricity outage
 
 Your project will be automatically graded on Gradescope for the presence and naming of required files, functions, inclusion of docstrings, correct return values, etc. The autograder score will be the majority of the project grade.
 
-If there are no syntax errors, we will manually grade the final project checking the correct code style, use of comments, and use of asserts in your test file.
+If there are no syntax errors, we will manually grade the final project checking the correct code style, use of comments, and use of asserts in your test file (more on that below).
 
 If your project fails due to syntax errors, we will not manually grade it, automatically assigning it a 0 for the manual score. 
 
 ⚠️ Test your code for syntax errors before making a final submission!
 
+<blockquote class="new" markdown="block">
+
+# Manual Grading <a name="manual-grading"></a> 
+
+As you write your code, be mindful of the fact that there is also a manual
+component to the project grading.  
+
+Here are some of the things the manual check will be looking for:
+
+1. Did the solution use imports other than `import csv` and `import os`?
+2. Did the solution use Python features not covered in the course (e.g. lambda functions, map/reduce, etc.) without advance permission (as described in the section [Using Advanced Python Concepts](#using-advanced-concepts))?
+3. Are variable name choices reasonable?  Single letter variable names should be avoided except as the index of a for loop (e.g. `i` and `j`). As was explained in zyBooks and in class, one should meaningful variable names for better code readability and clarity.
+4. Are the docstrings actually meaningful and clear, or are they just placeholders, as in the example shown here:
+
+   ```python
+   def add_em(param1, param2):
+      """
+      this is a placeholder docstring, worse than useless
+      """
+      return param1 + param2
+
+   ```
+
+   Specifically, docstrings for functions of the form `is_valid_x` such as `is_valid_name`, `is_valid_calories` etc. should describe:
+
+   * input parameter and its type
+	* return value
+
+5. Did the student hard code specific return values for specific test cases shown by the autograder (that's bad), or did they  actually make a good faith effort to understand the problem and provide a solution (that's good)?
+
+If you have questions about this, please ask on Piazza.
+
+</blockquote>
 
 -----
 
