@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 'Step 2 - Intro, and "Quit" option'
+nav_order: 20
 ---
 
 # {{page.title}}

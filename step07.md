@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Step 7 - "Restore" option
+nav_order: 70
 ---
 
 # {{page.title}}
@@ -207,4 +208,6 @@ You may want to try saving, restoring, and listing a few times to make sure that
 
 After finishing this step, you are ready for Checkpoint 2.
 
-See the [Checkpoint 2 instructions at Step 2](/w23-project/step01#checkpoint2) for more information
+Note that you **may need to add a few stubs** for functions that are part of
+the remainder of the project.  **See the [Checkpoint 2 instructions](/w23-project/checkpoint2/) for more information**.
+

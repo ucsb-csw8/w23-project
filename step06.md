@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Step 6 - "Save" option
+nav_order: 60
 ---
 
 # {{page.title}}
