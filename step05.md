@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Step 5 - "Delete" option
+nav_order: 50
 ---
 
 # {{page.title}}

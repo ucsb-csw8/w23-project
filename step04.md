@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Step 4 - "Add" option
+nav_order: 40
 ---
 
 # {{page.title}}
@@ -147,4 +148,4 @@ def add_helper(restaurant_menu_list, spicy_scale_map):
 
 After finishing this step, you are ready to submit code for Checkpoint 1.
 
-See the [Checkpoint 1 instructions at Step 1](/w23-project/step01#checkpoint1) for more information
+See the [Checkpoint 1 instructions](/w23-project/checkpoint1/) for more information

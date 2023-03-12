@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Step 8 - "Update" option
+nav_order: 80
 ---
 
 # {{page.title}}

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Step 9 - "Show Average Price"  option
+nav_order: 90
 ---
 
 # {{page.title}}

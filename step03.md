@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Step 3 - "List" option
+nav_order: 30
 ---
 
 # {{page.title}}
