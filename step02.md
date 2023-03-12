@@ -52,7 +52,7 @@ In your main program (main.py), you need to define a dictionary `the_menu` that 
     "A" : "Add"
     "U" : "Update"
     "D" : "Delete"
-    "M" : "Show average price"
+    "H" : "Display restaurant expense rating"
     "S" : "Save the data to file"
     "R" : "Restore data from file"
     "Q" : "Quit this program"
