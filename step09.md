@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Step 9 - "Show Average Price"  option
+title: Step 9 - "Display restaurant expense rating"  option
 nav_order: 90
 ---
 
