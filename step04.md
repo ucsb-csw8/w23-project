@@ -8,6 +8,7 @@ nav_order: 40
 
 The functions needed (from Project Component labs of Week 7 - [LAB 7.20](https://learn.zybooks.com/zybook/UCSBCMPSCW8Winter2023/chapter/7/section/20)):
 * `get_new_menu_dish()`
+* `is_num()`
 * `is_valid_name()`
 * `is_valid_calories()`
 * `is_valid_price()`
