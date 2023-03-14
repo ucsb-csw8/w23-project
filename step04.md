@@ -42,7 +42,7 @@ Define a new function `print_dish()` that will list an **individual** menu item.
 def print_dish(dish, spicy_scale_map, name_only=False):
     """
     param: dish (dict) - a dictionary object that is expected to contain the following keys:
-            - "dish": dish's name
+            - "name": dish's name
             - "calories": calories for this dish
             - "price": price of this dish
             - "is_vegetarian": boolean whether this dish is for vegetarian
