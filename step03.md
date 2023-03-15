@@ -222,7 +222,7 @@ If none of the menu items are marked as vegetarian, then nothing is printed.
     What would you like to do?
     L - List
     A - Add
-    U - Edit
+    U - Update
     D - Delete
     H - Display restaurant expense rating 
     S - Save the data to file
