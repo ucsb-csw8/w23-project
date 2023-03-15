@@ -78,11 +78,11 @@ The `print_main_menu()` function does not return anything, it just prints the co
 from functions import *
 
 if __name__ == "__main__":
-    the_menu = {} # TODO 1: add the options from the instructions
+    the_menu = {} # TODO 1.0: add the options from the instructions
     opt = None
 
     while True:
-        # print_main_menu(...) # TODO 1: uncomment, define the function, and call with the menu as an argument
+        # print_main_menu(...) # TODO 1.1: uncomment, define the function, and call with the menu as an argument
         print("::: Enter an option")
         opt = input("> ")
 
