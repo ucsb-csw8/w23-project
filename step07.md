@@ -96,15 +96,17 @@ You selected option R to > Restore data from file.
 > wrong_menu
 WARNING: |wrong_menu| is an invalid file name!
 ::: Would you like to try again? Enter 'y' to try again.
->
-WARNING: |wrong_menu| contains invalid data!
-The following rows from the file were not loaded:
--1
+> y
+::: Enter the filename ending with '.csv'.
+> missing_menu.csv
+WARNING: |missing_menu.csv| was not found!
 ::: Would you like to load another file? Enter 'y' to try again.
 > y
 ::: Enter the filename ending with '.csv'.
 > wrong_menu.csv
-WARNING: |wrong_menu.csv| was not found!
+WARNING: |wrong_menu.csv| contains invalid data!
+The following rows from the file were not loaded:
+[1, 2]
 ::: Would you like to try again? Enter 'y' to try again.
 > y
 ::: Enter the filename ending with '.csv'.
